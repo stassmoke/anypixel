@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/{page}', function (string $page) {
+    return view(str_replace('/','.', $page));
+});
