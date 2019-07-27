@@ -13,7 +13,13 @@
                 </p>
                 <div class="search-form">
                     <form >
-
+                        <select>
+                            <option data-display="Select">Nothing</option>
+                            <option value="1">Some option</option>
+                            <option value="2">Another option</option>
+                            <option value="3" disabled>A disabled option</option>
+                            <option value="4">Potato</option>
+                        </select>
                     </form>
                 </div>
             </div>
