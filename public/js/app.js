@@ -10727,6 +10727,17 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/admin/app.sass":
+/*!***************************************!*\
+  !*** ./resources/sass/admin/app.sass ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.sass":
 /*!*********************************!*\
   !*** ./resources/sass/app.sass ***!
@@ -10739,14 +10750,15 @@ $(document).ready(function () {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.sass ***!
-  \*************************************************************/
+/*!*********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.sass ./resources/sass/admin/app.sass ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/video-service/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/video-service/resources/sass/app.sass */"./resources/sass/app.sass");
+__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/app.sass */"./resources/sass/app.sass");
+module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
 
 
 /***/ })
