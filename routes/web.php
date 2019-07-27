@@ -16,5 +16,20 @@ Route::get('/', function () {
 });
 
 Route::get('/{page}', function (string $page) {
-    return view(str_replace('/','.', $page));
+    return view(str_replace('-','.', $page));
 });
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->namespace('Admin')
+    ->group(function () {
+
+        Route::get('login','LoginController@loginForm')->name('login.form');
+        Route::post('login','LoginController@login')->name('login.submit');
+        Route::get('logout','LoginController@logout')->name('logout');
+
+        Route::middleware(['auth'])->group(function () {
+            Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        });
+    })
+;
