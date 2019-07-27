@@ -10745,8 +10745,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/app.sass */"./resources/sass/app.sass");
+__webpack_require__(/*! /var/www/video-service/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/video-service/resources/sass/app.sass */"./resources/sass/app.sass");
 
 
 /***/ })
