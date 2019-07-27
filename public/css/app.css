@@ -537,6 +537,7 @@ textarea {
 
 .menu-card {
   margin: 0 15px;
+  transition: 0.3s all ease;
 }
 
 .menu-card a {
@@ -547,12 +548,25 @@ textarea {
   display: inline-flex;
   align-items: center;
   color: #666e82;
+  transition: 0.3s all ease;
 }
 
 .menu-card i {
   margin-right: 10px;
   font-size: 13px;
   color: #666e82;
+  transition: 0.3s all ease;
+}
+
+.menu-card:hover a {
+  color: #fff;
+  transition: 0.3s all ease;
+  background-color: #2BADE1;
+}
+
+.menu-card:hover i {
+  color: #fff;
+  transition: 0.3s all ease;
 }
 
 .fas {

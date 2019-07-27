@@ -11,6 +11,11 @@
                 <p>
                     DigitalMarket is a powerful Digital Marketplace theme to Buy and Sell
                 </p>
+                <div class="search-form">
+                    <form >
+
+                    </form>
+                </div>
             </div>
         </div>
     </section>
