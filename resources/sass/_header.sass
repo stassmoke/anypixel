@@ -56,6 +56,9 @@
             color: #fff !important
 .menu-card
     margin: 0 15px
+    -webkit-transition: $transition
+    -o-transition: $transition
+    transition: $transition
     a
         border: 1px solid $color2
         border-radius: 50px
@@ -64,11 +67,30 @@
         display: inline-flex
         align-items: center
         color: $grey
+        -webkit-transition: $transition
+        -o-transition: $transition
+        transition: $transition
 
     i
         margin-right: 10px
         font-size: 13px
         color: $grey
+        -webkit-transition: $transition
+        -o-transition: $transition
+        transition: $transition
+    &:hover
+        a
+            color: #fff
+            -webkit-transition: $transition
+            -o-transition: $transition
+            transition: $transition
+            background-color: $color2
+
+        i
+            color: #fff
+            -webkit-transition: $transition
+            -o-transition: $transition
+            transition: $transition
 
 .fas
     display: inline-block

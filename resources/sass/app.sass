@@ -1,3 +1,6 @@
+@import '../../node_modules/jquery-nice-select/scss/nice-select'
+
+
 @import 'reset'
 @import 'variables'
 @import 'header'
@@ -32,3 +35,39 @@ h1
     font-size: 50px
     font-weight: bold
     line-height: 70px
+
+.btn
+    outline: none
+    display: inline-flex
+    width: auto
+    background: transparent
+    transition: $transition
+    padding: 12px 40px
+    color: $color2
+    text-transform: capitalize
+    border-radius: 50px
+    line-height: 30px
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2)
+    border: 2px solid transparent
+    &:hover
+        transition: $transition
+.btn-fill
+    background-color: $color2
+    color: #fff
+    font-size: 16px
+    //&:hover
+    //    background-color: transparent
+    //    border: 2px solid $color2
+    //    color: $color2
+
+.btn-border
+    background-color: transparent
+    border: 2px solid $color2
+    font-size: 16px
+    color: $color2
+    &:hover
+        background-color: $color2
+        border: 2px solid transparent
+        color: #fff
+
+
