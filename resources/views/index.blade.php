@@ -42,10 +42,76 @@
                     <a href="#" class="btn btn-fill">shop now</a>
                     <a href="#" class="btn btn-border">learn more</a>
                 </div>
-                <div class="banner-product">
-
+                <ul class="banner-product">
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/anypixel-logo__nav.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section-advantages">
+        <div class="container">
+            <div class="advantages-items">
+                <div class="advantages-item text-center">
+                    <div class="img-holder">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lock"
+                             class="svg-inline--fa fa-lock fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                  d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path>
+                        </svg>
+                    </div>
+                    <h4>Secure Transaction</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, quaerat! consectetur
+                        adipisicing elit
+                    </p>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section-filter__product">
+        <div class="container">
+            <h2>
+                Newly Added
+            </h2>
+            <p class="heading-description">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since.
+            </p>
         </div>
     </section>
 
