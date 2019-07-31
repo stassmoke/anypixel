@@ -24,6 +24,10 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "jquery-nice-select": "^1.1.0"
+    "isotope-layout": "^3.0.6",
+    "jquery-nice-select": "^1.1.0",
+    "smoothscroll-for-websites": "^1.4.9",
+    "swiper": "^4.5.0",
+    "tooltipster": "^4.2.6"
   }
 }

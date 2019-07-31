@@ -106,12 +106,327 @@
     <section class="section-filter__product">
         <div class="container">
             <h2>
-                Newly Added
+                Latest Product
             </h2>
-            <p class="heading-description">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since.
-            </p>
+            <div id="filters" class="filters-buttons">
+                <button class="btn btn-filters is-checked" data-filter="*">All Items</button>
+                <button class="btn btn-filters" data-filter=".after-effect">After Effect</button>
+                <button class="btn btn-filters" data-filter=".premiere-pro">Premiere Pro</button>
+            </div>
+            <div class="grid">
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
+                     data-tooltip-content="#tooltip_content1">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+                <div class="element-item after-effect tooltip" data-category="after-effect"
+                     data-tooltip-content="#tooltip_content">
+                    <a class="element-item__link" href="#">
+                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                             class="image"/>
+                    </a>
+                </div>
+            </div>
+            <div class="tooltip_templates">
+                <div id="tooltip_content" class="custom-tooltip">
+                    <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt=""/>
+                    <div class="body-tooltip__item">
+                        <div class="tooltip-name">
+                            Nick After Effect Project
+                        </div>
+                        <div class="create-item">
+                            Nick Chvalun
+                        </div>
+                        <div class="tag-item">
+                            After Effect
+                        </div>
+                        <div class="price-item">
+                            52.00
+                        </div>
+                    </div>
+                </div>
+                <div id="tooltip_content1" class="custom-tooltip">
+                    <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt=""/>
+                    <div class="body-tooltip__item">
+                        <div class="tooltip-name">
+                            Nick Premiere Pro Project
+                        </div>
+                        <div class="create-item">
+                            Nick Chvalun
+                        </div>
+                        <div class="tag-item">
+                            Premiere Pro
+                        </div>
+                        <div class="price-item">
+                            28.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-reviews"
+             style="background: url('http://themeplace.codecorns.com/wp-content/uploads/2019/07/testimonial.jpg') center no-repeat">
+        <div class="container">
+            <div class="swiper-container slider-reviews">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide-reviews">
+                        <div class="reviews-holder">
+                            <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-2.jpg" alt="" class="image">
+                        </div>
+                        <div class="wrap-content__slide">
+                            <p class="slide-text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled.
+                            </p>
+                            <div class="reviews-name">
+                                Jhon Doe
+                            </div>
+                            <div class="reviews-position">
+                                Java Developer
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide slide-reviews">
+                        <div class="reviews-holder">
+                            <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-3.jpg" alt="" class="image">
+                        </div>
+                        <div class="wrap-content__slide">
+                            <p class="slide-text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled.
+                            </p>
+                            <div class="reviews-name">
+                                Jhon Doe
+                            </div>
+                            <div class="reviews-position">
+                                Java Developer
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide slide-reviews">
+                        <div class="reviews-holder">
+                            <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-1.jpg" alt="" class="image">
+                        </div>
+                        <div class="wrap-content__slide">
+                            <p class="slide-text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled.
+                            </p>
+                            <div class="reviews-name">
+                                Jhon Doe
+                            </div>
+                            <div class="reviews-position">
+                                Java Developer
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
