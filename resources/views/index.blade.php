@@ -106,18 +106,18 @@
     <section class="section-filter__product">
         <div class="container">
             <h2>
-                Latest Product
+                Latest Products
             </h2>
             <div id="filters" class="filters-buttons">
                 <button class="btn btn-filters is-checked" data-filter="*">All Items</button>
-                <button class="btn btn-filters" data-filter=".after-effect">After Effect</button>
+                <button class="btn btn-filters" data-filter=".after-effect">After Effects</button>
                 <button class="btn btn-filters" data-filter=".premiere-pro">Premiere Pro</button>
             </div>
             <div class="grid">
                 <div class="element-item after-effect tooltip" data-category="after-effect"
                      data-tooltip-content="#tooltip_content">
                     <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
+                        <img src="img/Dynamic Intro Thumbnail.jpg" alt="image"
                              class="image"/>
                     </a>
                 </div>
@@ -327,10 +327,10 @@
             </div>
             <div class="tooltip_templates">
                 <div id="tooltip_content" class="custom-tooltip">
-                    <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt=""/>
+                    <img src="img/Dynamic Intro Preview Image.jpg" alt=""/>
                     <div class="body-tooltip__item">
                         <div class="tooltip-name">
-                            Nick After Effect Project
+                            Nick After Effects Project
                         </div>
                         <div class="create-item">
                             Nick Chvalun
