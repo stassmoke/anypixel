@@ -28,6 +28,8 @@
     "jquery-nice-select": "^1.1.0",
     "smoothscroll-for-websites": "^1.4.9",
     "swiper": "^4.5.0",
-    "tooltipster": "^4.2.6"
+    "v-slim-dialog": "^0.0.9",
+    "vue-resource": "^1.5.1",
+    "vuedraggable": "^2.23.0"
   }
 }

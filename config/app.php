@@ -175,6 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        App\Providers\FactoryServiceProvider::class,
+        DevMarketer\EasyNav\EasyNavServiceProvider::class,
 
     ],
 
@@ -226,7 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Nav' => DevMarketer\EasyNav\EasyNavFacade::class,
     ],
 
 ];
