@@ -1426,6 +1426,10 @@ clone-response@1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
+clone@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+
 coa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -2058,19 +2062,6 @@ dotenv@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
 
-drag-event-service@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/drag-event-service/-/drag-event-service-0.0.6.tgz#9c3eba46e8be66d3652fc0301a51821e5fb43deb"
-  dependencies:
-    helper-js "^1.2.0"
-
-draggable-helper@^1.0.20:
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/draggable-helper/-/draggable-helper-1.0.20.tgz#ada182935b9c38d323f1da962089ce65935286fd"
-  dependencies:
-    drag-event-service "0.0.6"
-    helper-js "^1.3.7"
-
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
@@ -2223,6 +2214,10 @@ ev-emitter@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.1.1.tgz#8f18b0ce5c76a5d18017f71c0a795c65b9138f2a"
 
+eventemitter3@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-2.0.3.tgz#b5e1079b59fb5e1ba2771c0a993be060a58c99ba"
+
 eventemitter3@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
@@ -2322,6 +2317,10 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
+extend@^3.0.1, extend@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
+
 extglob@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/extglob/-/extglob-2.0.4.tgz#ad00fe4dc612a9232e8718711dc5cb5ab0285543"
@@ -2347,6 +2346,10 @@ extract-text-webpack-plugin@v4.0.0-beta.0:
 fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
+
+fast-diff@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.1.2.tgz#4b62c42b8e03de3f848460b639079920695d0154"
 
 fast-glob@^2.0.2:
   version "2.2.7"
@@ -2801,10 +2804,6 @@ hash.js@^1.0.0, hash.js@^1.0.3:
 he@1.2.x, he@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
-
-helper-js@^1.0.47, helper-js@^1.2.0, helper-js@^1.3.1, helper-js@^1.3.7:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/helper-js/-/helper-js-1.4.2.tgz#a088bf05c701a8092bb652cd9c5c3ed09a8e6975"
 
 hex-color-regex@^1.1.0:
   version "1.1.0"
@@ -3859,10 +3858,6 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -4289,6 +4284,10 @@ param-case@2.1.x:
   resolved "https://registry.yarnpkg.com/param-case/-/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
   dependencies:
     no-case "^2.2.0"
+
+parchment@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/parchment/-/parchment-1.1.4.tgz#aeded7ab938fe921d4c34bc339ce1168bc2ffde5"
 
 parse-asn1@^5.0.0:
   version "5.1.4"
@@ -4832,6 +4831,25 @@ querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
 
+quill-delta@^3.6.2:
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/quill-delta/-/quill-delta-3.6.3.tgz#b19fd2b89412301c60e1ff213d8d860eac0f1032"
+  dependencies:
+    deep-equal "^1.0.1"
+    extend "^3.0.2"
+    fast-diff "1.1.2"
+
+quill@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/quill/-/quill-1.3.6.tgz#99f4de1fee85925a0d7d4163b6d8328f23317a4d"
+  dependencies:
+    clone "^2.1.1"
+    deep-equal "^1.0.1"
+    eventemitter3 "^2.0.3"
+    extend "^3.0.1"
+    parchment "^1.1.4"
+    quill-delta "^3.6.2"
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -5351,7 +5369,7 @@ sort-keys@^2.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.4.2, sortablejs@^1.9.0:
+sortablejs@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.9.0.tgz#2d1e74ae6bac2cb4ad0622908f340848969eb88d"
 
@@ -5713,16 +5731,6 @@ toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
 
-tooltipster@^4.2.6:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/tooltipster/-/tooltipster-4.2.6.tgz#fbf7a3f5b40bd83e81574e28d9667cf82667bc79"
-
-tree-helper@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/tree-helper/-/tree-helper-1.0.5.tgz#0abdc741e906866ff35fa534cd2e75935c159dca"
-  dependencies:
-    helper-js "^1.0.47"
-
 trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
@@ -5917,22 +5925,6 @@ vm-browserify@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
 
-vue-draggable-nested-tree@^2.2.17:
-  version "2.2.17"
-  resolved "https://registry.yarnpkg.com/vue-draggable-nested-tree/-/vue-draggable-nested-tree-2.2.17.tgz#cb4db86d7a4dd14b7dec7f934ac1351a8c057ac8"
-  dependencies:
-    draggable-helper "^1.0.20"
-    helper-js "^1.3.7"
-    tree-helper "^1.0.5"
-    vue "^2.5.21"
-    vue-functions "^1.0.3"
-
-vue-functions@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/vue-functions/-/vue-functions-1.0.3.tgz#ebc8298acd8d7d32542e7510897b321130610adb"
-  dependencies:
-    helper-js "^1.3.1"
-
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
@@ -5953,16 +5945,6 @@ vue-resource@^1.5.1:
   dependencies:
     got "^8.0.3"
 
-vue-slicksort@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/vue-slicksort/-/vue-slicksort-1.1.3.tgz#f8e0a1623bfb8aa39db683e28ac7bea5d9a2d9dc"
-
-vue-sortable@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/vue-sortable/-/vue-sortable-0.1.3.tgz#37b889e2f2d54c6148d5d1b958806c6704221eb9"
-  dependencies:
-    sortablejs "^1.4.2"
-
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -5981,7 +5963,13 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
 
-vue@^2.5.17, vue@^2.5.21:
+vue2-editor@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/vue2-editor/-/vue2-editor-2.9.1.tgz#4aa724fcb36d70971eee8918a2a634fb0163ddf9"
+  dependencies:
+    quill "^1.3.6"
+
+vue@^2.5.17:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
 

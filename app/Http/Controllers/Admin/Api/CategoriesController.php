@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin\Api;
 
-use App\Factory\CategoryFactoryInterface;
 use App\Repository\CategoryRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -18,19 +17,12 @@ class CategoriesController
     private $categoryRepository;
 
     /**
-     * @var CategoryFactoryInterface
-     */
-    private $categoryFactory;
-
-    /**
      * CategoriesController constructor.
      * @param CategoryRepositoryInterface $categoryRepository
-     * @param CategoryFactoryInterface $categoryFactory
      */
-    public function __construct(CategoryRepositoryInterface $categoryRepository, CategoryFactoryInterface $categoryFactory)
+    public function __construct(CategoryRepositoryInterface $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
-        $this->categoryFactory = $categoryFactory;
     }
 
     /**
@@ -97,8 +89,7 @@ class CategoriesController
         ];
 
         $validator = Validator::make($dataCategory, [
-            'varName' => 'required|max:255',
-            'varLink' => 'required|unique:categories|max:255',
+            'varName' => 'required|unique:categories|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -109,7 +100,7 @@ class CategoriesController
             ]);
         }
 
-        $category = $this->categoryFactory->createFromArray($dataCategory);
+        $category = $this->categoryRepository->createFromArray($dataCategory);
 
         return new JsonResponse([
             'data' => [
@@ -162,8 +153,7 @@ class CategoriesController
         ];
 
         $validator = Validator::make($dataCategory, [
-            'varName' => 'required|max:255',
-            'varLink' => 'required|max:255|unique:categories,varLink,' . $category->intCatID . ',intCatID',
+            'varName' => 'required|max:255|unique:categories,varName,' . $category->intCatID . ',intCatID',
         ]);
 
         if ($validator->fails()) {

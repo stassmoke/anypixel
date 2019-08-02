@@ -40,4 +40,10 @@ interface CategoryRepositoryInterface
      * @return Category
      */
     public function update(Category $category, array $data): Category;
+
+    /**
+     * @param array $data
+     * @return Category
+     */
+    public function createFromArray(array $data): Category;
 }

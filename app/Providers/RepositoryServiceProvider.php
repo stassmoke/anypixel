@@ -14,13 +14,13 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \App\Repository\TagRepositoryInterface::class,
-            \App\Repository\TagRepository::class
+            \App\Repository\CategoryRepositoryInterface::class,
+            \App\Repository\CategoryRepository::class
         );
 
         $this->app->bind(
-            \App\Repository\CategoryRepositoryInterface::class,
-            \App\Repository\CategoryRepository::class
+            \App\Repository\HomepageReviewRepositoryInterface::class,
+            \App\Repository\HomepageReviewRepository::class
         );
     }
 }

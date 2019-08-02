@@ -75,4 +75,20 @@ class CategoryRepository implements CategoryRepositoryInterface
         return $category;
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function createFromArray(array $data): Category
+    {
+        $category = new Category();
+
+        $category->varName = $data['varName'];
+        $category->varLink = $data['varLink'];
+        $category->isEnabled = $data['isEnabled'];
+        $category->intOrder = $data['intOrder'];
+
+        $category->save();
+
+        return $category;
+    }
 }

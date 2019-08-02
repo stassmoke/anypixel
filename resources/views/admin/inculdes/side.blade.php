@@ -12,8 +12,14 @@
                 <ul class="metismenu" id="menu">
                     <li class="{{ Nav::hasSegment('categories',2) }}">
                         <a href="{{ route('admin.categories.index') }}">
-                            <i class="ti-map-alt"></i>
+                            <i class="ti-bookmark-alt"></i>
                             <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::hasSegment('homepage-reviews',2) }}">
+                        <a href="{{ route('admin.homepage-reviews.index') }}">
+                            <i class="ti-comment-alt"></i>
+                            <span>reviews on the main</span>
                         </a>
                     </li>
                 </ul>

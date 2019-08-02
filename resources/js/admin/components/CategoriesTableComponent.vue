@@ -60,8 +60,8 @@
 
                 this.categories = response.data.data.categories;
 
-            }, response => {
-               alert(response.toString());
+            }, () => {
+                alert( 'Something went wrong. Send a message in support.');
             });
         },
         methods: {
@@ -79,7 +79,7 @@
                 this.$dialogs.confirm(`Are you sure you want to delete the "${varName}" category?`, options)
                     .then(res => {
                         if (res.ok === true) {
-                            this.$http.delete(`/admin/categories/delete/${intCatID}`).then(response => {
+                            this.$http.delete(`/admin/categories/delete/${intCatID}`).then(() => {
                                 let index = this.categories.find(category => {
                                     return category.intCatID === intCatID;
                                 });
