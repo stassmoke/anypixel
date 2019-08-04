@@ -175,4 +175,16 @@ class CategoriesController
             ],
         ]);
     }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getForOptions(): JsonResponse
+    {
+        return new JsonResponse([
+            'data' => [
+                'categories' => $this->categoryRepository->getForOptions(),
+            ]
+        ]);
+    }
 }

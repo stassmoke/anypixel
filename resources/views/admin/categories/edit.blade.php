@@ -5,11 +5,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title">Edit Category</h4>
-                <div class="single-table">
-                    <div class="table-responsive">
-                        <edit-category :id="{{ $intCatID }}"></edit-category>
-                    </div>
-                </div>
+                <edit-category :id="{{ $intCatID }}"></edit-category>
             </div>
         </div>
     </div>

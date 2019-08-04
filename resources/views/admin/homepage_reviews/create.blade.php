@@ -5,11 +5,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title">Create Homepage Review</h4>
-                <div class="single-table">
-                    <div class="table-responsive">
-                        <create-homepage-review></create-homepage-review>
-                    </div>
-                </div>
+                <create-homepage-review></create-homepage-review>
             </div>
         </div>
     </div>

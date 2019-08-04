@@ -46,4 +46,9 @@ interface CategoryRepositoryInterface
      * @return Category
      */
     public function createFromArray(array $data): Category;
+
+    /**
+     * @return Collection
+     */
+    public function getForOptions(): Collection;
 }

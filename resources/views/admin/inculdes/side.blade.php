@@ -19,7 +19,13 @@
                     <li class="{{ Nav::hasSegment('homepage-reviews',2) }}">
                         <a href="{{ route('admin.homepage-reviews.index') }}">
                             <i class="ti-comment-alt"></i>
-                            <span>reviews on the main</span>
+                            <span>Reviews on the main</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::hasSegment('products',2) }}">
+                        <a href="{{ route('admin.products.index') }}">
+                            <i class="ti-comment-alt"></i>
+                            <span>Products</span>
                         </a>
                     </li>
                 </ul>

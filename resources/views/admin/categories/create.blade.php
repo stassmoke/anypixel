@@ -5,11 +5,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title">Create Category</h4>
-                <div class="single-table">
-                    <div class="table-responsive">
-                        <create-category></create-category>
-                    </div>
-                </div>
+                <create-category></create-category>
             </div>
         </div>
     </div>

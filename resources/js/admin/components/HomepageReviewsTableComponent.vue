@@ -60,7 +60,7 @@
 
                 this.reviews = response.data.data.reviews;
 
-            }, response => {
+            }, () => {
                 alert( 'Something went wrong. Send a message in support.');
             });
         },

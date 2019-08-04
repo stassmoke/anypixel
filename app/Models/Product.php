@@ -17,7 +17,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string varMainImage
  * @property string varThumbnailImage
  * @property string varDescription
- * @property string varPrice
+ * @property string varYoutubeCode
+ * @property float varPrice
  * @property string intRating
  * @property string isEnabled
  * @property string isNew

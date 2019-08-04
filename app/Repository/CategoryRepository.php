@@ -91,4 +91,16 @@ class CategoryRepository implements CategoryRepositoryInterface
 
         return $category;
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function getForOptions(): Collection
+    {
+        return Category::query()
+            ->orderBy('intOrder')
+            ->get(['varName','intCatID'])
+        ;
+    }
+
 }

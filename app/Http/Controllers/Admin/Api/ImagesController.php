@@ -26,6 +26,7 @@ class ImagesController
         return new JsonResponse([
             'data' => [
                 'url' => '/storage/images/' . $name,
+                'filename' => $name,
             ]
         ]);
     }

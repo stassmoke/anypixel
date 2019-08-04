@@ -44,23 +44,24 @@ Route::prefix('admin')
 
             Route::get('categories/list','Api\\CategoriesController@listOfCategories')->name('categories.list');
             Route::get('categories/find/{intCatID}','Api\\CategoriesController@find')->name('categories.find');
+            Route::get('categories/options','Api\\CategoriesController@getForOptions')->name('categories.options');
             Route::post('categories/save-sort','Api\\CategoriesController@saveSort')->name('categories.sort');
-            Route::delete('categories/delete/{intCatID}','Api\\CategoriesController@delete')->name('categories.delete');
             Route::post('categories/store','Api\\CategoriesController@store')->name('categories.store');
             Route::put('categories/update/{intCatID}','Api\\CategoriesController@update')->name('categories.update');
+            Route::delete('categories/delete/{intCatID}','Api\\CategoriesController@delete')->name('categories.delete');
 
             Route::get('homepage-reviews/list','Api\\HomepageReviewsController@listOfReviews')->name('homepage-reviews.list');
             Route::get('homepage-reviews/find/{intReviewID}','Api\\HomepageReviewsController@find')->name('homepage-reviews.find');
             Route::post('homepage-reviews/save-sort','Api\\HomepageReviewsController@saveSort')->name('homepage-reviews.sort');
-            Route::delete('homepage-reviews/delete/{intReviewID}','Api\\HomepageReviewsController@delete')->name('homepage-reviews.delete');
             Route::post('homepage-reviews/store','Api\\HomepageReviewsController@store')->name('homepage-reviews.store');
             Route::put('homepage-reviews/update/{intReviewID}','Api\\HomepageReviewsController@update')->name('homepage-reviews.update');
+            Route::delete('homepage-reviews/delete/{intReviewID}','Api\\HomepageReviewsController@delete')->name('homepage-reviews.delete');
 
-            Route::get('products/list','Api\\ProductsController@listOfReviews')->name('products.list');
+            Route::get('products/list','Api\\ProductsController@listOfProducts')->name('products.list');
             Route::get('products/find/{intProductID}','Api\\ProductsController@find')->name('products.find');
-            Route::delete('products/delete/{intProductID}','Api\\ProductsController@delete')->name('products.delete');
             Route::post('products/store','Api\\ProductsController@store')->name('products.store');
             Route::put('products/update/{intProductID}','Api\\ProductsController@update')->name('products.update');
+            Route::delete('products/delete/{intProductID}','Api\\ProductsController@delete')->name('products.delete');
 
             Route::post('images/upload','Api\\ImagesController@upload')->name('images.upload');
         });

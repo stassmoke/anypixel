@@ -4,10 +4,15 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import SlimDialog from 'v-slim-dialog';
 import Paginate from 'vuejs-paginate'
+import Multiselect from 'vue-multiselect'
+import VueSilentbox from 'vue-silentbox'
 
 Vue.use(VueResource);
 Vue.use(SlimDialog);
+Vue.use(VueSilentbox);
+
 Vue.component('paginate', Paginate);
+Vue.component('multiselect', Multiselect);
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
@@ -23,6 +28,7 @@ import HomepageReviewsTable from './components/HomepageReviewsTableComponent.vue
 import CreateHomepageReview from './components/CreateHomepageReviewComponent.vue'
 import EditHomepageReview from './components/EditHomepageReviewComponent.vue'
 import ProductsTable from './components/ProductsTableComponent.vue'
+import ProductItem from './components/ProductItem/ProductItemComponent.vue'
 
 new Vue({
     el: '#app',
@@ -33,6 +39,7 @@ new Vue({
         HomepageReviewsTable,
         CreateHomepageReview,
         EditHomepageReview,
-        ProductsTable
+        ProductsTable,
+        ProductItem,
     }
 });
