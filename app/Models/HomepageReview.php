@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Tag
+ * Class HomepageReview
  * @package App\Models
- * @property int intTagID
+ * @property int intReviewID
  * @property string varName
  * @property string varLink
+ * @property string varText
+ * @property string varPosition
  * @property int intOrder
  * @property int isEnabled
- * @property string created_at
- * @property string updated_at
  */
-class Tag extends Model
+class HomepageReview extends Model
 {
-    protected $primaryKey = 'intTagID';
+    protected $primaryKey = 'intReviewID';
 }

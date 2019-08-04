@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/app.css') }}">
     <script src="https://kit.fontawesome.com/efc7be1369.js"></script>
     <title>Anypixel - Admin</title>
 
@@ -38,7 +38,7 @@
 
         @include('admin.inculdes.header')
 
-        <div class="main-content-inner">
+        <div class="main-content-inner" id="app">
             @yield('body')
         </div>
     </div>
@@ -75,6 +75,7 @@
 <script src="{{ asset('/admin/assets/js/plugins.js') }}"></script>
 <script src="{{ asset('/admin/assets/js/scripts.js') }}"></script>
 <script src="{{ asset('/admin/assets/js/preloader.js') }}"></script>
+<script src="{{ asset('/admin/js/app.js') }}"></script>
 </body>
 </html>
 

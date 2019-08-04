@@ -1,0 +1,52 @@
+@import "~v-slim-dialog/dist/v-slim-dialog.css"
+@import "~vue-multiselect/dist/vue-multiselect.min.css"
+
+.space-b
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+input.has-error
+    border: 1px solid red
+
+.product-list-image-block img
+    width: 60px
+
+.product-edit-images
+    display: flex
+
+    > *
+        margin-right: 10px
+
+    div span
+        height: 150px
+        display: inline-block
+
+.product-review
+    border: 1px solid #dee2e6
+    padding: 4px 15px
+    border-radius: 5px
+    position: relative
+    margin-bottom: 10px
+
+    &:last-child
+        margin-bottom: 25px
+
+.product-reviews-stars svg
+    width: 30px
+    height: 30px
+
+.product-review-control
+    position: absolute
+    top: 10px
+    right: 0
+
+    img
+        width: 20px
+        display: inline-block
+        margin-right: 5px
+        cursor: pointer
+
+
+.hidden
+    display: none!important

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class CreateHomepageReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateTagsTable extends Migration
      */
     public function up(): void
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->bigIncrements('intTagID');
+        Schema::create('homepage_reviews', function (Blueprint $table) {
+            $table->bigIncrements('intReviewID');
             $table->string('varName',255);
             $table->string('varLink',255);
-            $table->unsignedInteger('intOrder')->default(0);
+            $table->string('varPosition',255);
+            $table->text('varText');
+            $table->integer('intOrder')->default(0);
             $table->boolean('isEnabled')->default(false);
             $table->timestamps();
-
-            $table->unique(['varLink']);
         });
     }
 
@@ -32,6 +32,6 @@ class CreateTagsTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('homepage_reviews');
     }
 }
