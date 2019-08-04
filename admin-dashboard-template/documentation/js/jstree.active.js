@@ -1,8 +1,8 @@
 
 (function ($) {
  "use strict";
-			
-	
+
+
 $('#jstree1').jstree({
             'core' : {
                 'check_callback' : true
@@ -97,7 +97,7 @@ $('#jstree1').jstree({
                                     'text': 'navbar.html', 'icon': 'none'
                                 },
                                 {
-                                    'text': 'footer.html', 'icon': 'none'
+                                    'text': 'footer.blade.php', 'icon': 'none'
                                 },
                                 {
                                     'text': 'sidebar.html', 'icon': 'none'
@@ -115,7 +115,7 @@ $('#jstree1').jstree({
                 'Templates',
             ]
         } });
-	
-	
-})(jQuery); 
+
+
+})(jQuery);
 

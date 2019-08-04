@@ -8,6 +8,7 @@
 @import 'variables'
 @import 'header'
 @import 'main'
+@import 'footer'
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800,900|Poppins:300,400,500,600,700,900&display=swap')
 
@@ -57,6 +58,9 @@ h2
     outline: none
     display: inline-flex
     width: auto
+    align-items: center
+    text-align: center
+    justify-content: center
     background: transparent
     transition: $transition
     padding: 12px 40px
@@ -66,8 +70,10 @@ h2
     line-height: 30px
 
     border: 2px solid transparent
+
     &:hover
         transition: $transition
+
 .btn-fill
     background-color: $color2
     color: #fff
@@ -79,6 +85,7 @@ h2
     border: 2px solid $color2
     font-size: 16px
     color: $color2
+
     &:hover
         background-color: $color2
         border: 2px solid transparent
@@ -93,6 +100,29 @@ h2
         background-color: $color2
         color: #fff
 
-
 section
     padding: 90px 0
+
+.btn-submit
+    box-shadow: none
+
+    &:hover
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2)
+
+
+.input-default
+    height: 60px
+    width: 100%
+    border-radius: 50px
+    border: 1px solid $color2
+    padding: 15px 30px
+    transition: $transition
+    color: $grey
+    &::placeholder
+        transition: $transition
+        font-family: 'Poppins', sans-serif
+    &:focus
+        &::placeholder
+            transition: $transition
+            color: rgba(153, 153, 153, 0.64)
+

@@ -1545,11 +1545,12 @@ textarea {
 .element-item {
   width: 80px;
   height: 80px;
-  box-shadow: 5px 5px 20px 0 rgba(117, 117, 117, 0.4);
+  transition: 0.3s all ease;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   margin: 0 15px 30px 15px;
+  border: 1px solid rgba(153, 153, 153, 0.4);
 }
 
 .element-item img {
@@ -1557,6 +1558,11 @@ textarea {
      object-fit: cover;
   width: 100%;
   height: auto;
+}
+
+.element-item:hover {
+  transition: 0.3s all ease;
+  box-shadow: 5px 5px 20px 0 rgba(117, 117, 117, 0.4);
 }
 
 .grid {
@@ -1703,6 +1709,69 @@ textarea {
   background-size: cover;
 }
 
+.site-footer ul {
+  width: 25%;
+}
+
+.site-footer ul li {
+  line-height: 32px;
+  padding: 0 20px;
+}
+
+.site-footer .btn-submit {
+  width: 100%;
+  text-align: center;
+}
+
+.site-footer .input-default {
+  margin-bottom: 20px;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0 -20px;
+  padding: 50px 0;
+  margin-bottom: 30px;
+}
+
+.footer-link {
+  color: #666;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.footer-subtitle {
+  font-size: 22px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  display: block;
+  color: #2e3d62;
+}
+
+.footer-text {
+  font-weight: 300;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.sales-counter {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.site-copyright {
+  background-color: #1d1c2a;
+  padding: 20px 0;
+  color: #c8c8cc;
+  text-align: center;
+  line-height: 1.5;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #666e82;
@@ -1757,6 +1826,9 @@ h2 {
   outline: none;
   display: inline-flex;
   width: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   background: transparent;
   transition: 0.3s all ease;
   padding: 12px 40px;
@@ -1804,5 +1876,73 @@ h2 {
 
 section {
   padding: 90px 0;
+}
+
+.btn-submit {
+  box-shadow: none;
+}
+
+.btn-submit:hover {
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input-default {
+  height: 60px;
+  width: 100%;
+  border-radius: 50px;
+  border: 1px solid #2BADE1;
+  padding: 15px 30px;
+  transition: 0.3s all ease;
+  color: #666e82;
+}
+
+.input-default::-webkit-input-placeholder {
+  transition: 0.3s all ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-default::-moz-placeholder {
+  transition: 0.3s all ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-default:-ms-input-placeholder {
+  transition: 0.3s all ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-default::-ms-input-placeholder {
+  transition: 0.3s all ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-default::placeholder {
+  transition: 0.3s all ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-default:focus::-webkit-input-placeholder {
+  transition: 0.3s all ease;
+  color: rgba(153, 153, 153, 0.64);
+}
+
+.input-default:focus::-moz-placeholder {
+  transition: 0.3s all ease;
+  color: rgba(153, 153, 153, 0.64);
+}
+
+.input-default:focus:-ms-input-placeholder {
+  transition: 0.3s all ease;
+  color: rgba(153, 153, 153, 0.64);
+}
+
+.input-default:focus::-ms-input-placeholder {
+  transition: 0.3s all ease;
+  color: rgba(153, 153, 153, 0.64);
+}
+
+.input-default:focus::placeholder {
+  transition: 0.3s all ease;
+  color: rgba(153, 153, 153, 0.64);
 }
 
