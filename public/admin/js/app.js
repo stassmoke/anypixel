@@ -879,7 +879,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       product: {
-        intProductID: null,
+        intProductID: 0,
         intCatID: null,
         varName: '',
         varSubtitle: '',
@@ -914,6 +914,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -988,11 +996,22 @@ __webpack_require__.r(__webpack_exports__);
       this.activeReview = Object.assign({}, this.reviews[key]);
     },
     remove: function remove(key) {
+      var _this = this;
+
       if (this.activeReviewKey === key) {
         this.activeReviewKey = null;
       }
 
-      this.reviews.splice(key, 1);
+      if (key in this.reviews) {
+        this.$http["delete"]("/admin/product-reviews/delete/".concat(this.reviews[key].intReviewID)).then(function () {
+          _this.reviews.splice(key, 1);
+        }, function () {
+          alert('Something went wrong. Send a message in support.');
+        });
+      } else {
+        this.reviews.splice(key, 1);
+      }
+
       this.clearActive();
     },
     clearActive: function clearActive() {
@@ -1006,10 +1025,10 @@ __webpack_require__.r(__webpack_exports__);
       this.activeReviewKey = null;
     },
     isAvailableClear: function isAvailableClear() {
-      var _this = this;
+      var _this2 = this;
 
       return Object.keys(this.activeReview).filter(function (key) {
-        return _this.activeReview[key] !== null;
+        return _this2.activeReview[key] !== null;
       }).length > 0;
     },
     saveUpdate: function saveUpdate() {
@@ -1028,19 +1047,19 @@ __webpack_require__.r(__webpack_exports__);
       this.clearActiveAction();
     },
     createAction: function createAction(params) {
-      var _this2 = this;
+      var _this3 = this;
 
       this.$http.post('/admin/product-reviews/store', params).then(function (response) {
-        _this2.reviews.push(response.data.data.review);
+        _this3.reviews.push(response.data.data.review);
       }, function () {
         alert('Something went wrong. Send a message in support.');
       });
     },
     updateAction: function updateAction(params) {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$http.put("/admin/product-reviews/update/".concat(params.review.intReviewID), params).then(function () {
-        _this3.reviews[_this3.activeReviewKey] = params.review;
+        _this4.reviews[_this4.activeReviewKey] = params.review;
       }, function () {
         alert('Something went wrong. Send a message in support.');
       });
@@ -29883,7 +29902,8 @@ var render = function() {
               class: {
                 active: _vm.activeTab === "reviews",
                 show: _vm.activeTab === "reviews"
-              }
+              },
+              attrs: { product_id: _vm.product.intProductID }
             })
           ],
           1
@@ -30031,6 +30051,30 @@ var render = function() {
                 _vm.$set(_vm.activeReview, "intRating", $$v)
               },
               expression: "activeReview.intRating"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            { staticClass: "col-form-label", attrs: { for: "varComment" } },
+            [_vm._v("Comment")]
+          ),
+          _vm._v(" "),
+          _c("vue-editor", {
+            attrs: { id: "varComment" },
+            model: {
+              value: _vm.activeReview.varComment,
+              callback: function($$v) {
+                _vm.$set(_vm.activeReview, "varComment", $$v)
+              },
+              expression: "activeReview.varComment"
             }
           })
         ],

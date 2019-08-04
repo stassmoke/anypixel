@@ -12,7 +12,7 @@
                 </ul>
                 <div class="tab-content mt-3" id="myTabContent">
                     <general class="tab-pane fade" :class="{'active': activeTab === 'general','show': activeTab === 'general'}" :product_item="product" :errors="errors"></general>
-                    <reviews class="tab-pane fade" :class="{'active': activeTab === 'reviews','show': activeTab === 'reviews'}"></reviews>
+                    <reviews class="tab-pane fade" :class="{'active': activeTab === 'reviews','show': activeTab === 'reviews'}" :product_id="product.intProductID"></reviews>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         data() {
             return {
                 product: {
-                    intProductID: null,
+                    intProductID: 0,
                     intCatID: null,
                     varName: '',
                     varSubtitle: '',

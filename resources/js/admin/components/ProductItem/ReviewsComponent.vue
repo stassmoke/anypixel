@@ -15,13 +15,21 @@
         <div class="product-add-review">
             <p v-if="activeReviewKey === null">Add new Review</p>
             <p v-else>Edit Review {{ reviews[activeReviewKey].varName }}</p>
+
             <div class="form-group">
                 <label for="varName" class="col-form-label">Name</label>
                 <input class="form-control" type="text" v-model="activeReview.varName" id="varName">
             </div>
+
             <div class="form-group">
                 <star-rating class="product-reviews-stars" :show-rating="false" v-model="activeReview.intRating"></star-rating>
             </div>
+
+            <div class="form-group">
+                <label for="varComment" class="col-form-label">Comment</label>
+                <vue-editor id="varComment" v-model="activeReview.varComment"></vue-editor>
+            </div>
+
             <button class="btn btn-primary btn-xs mt-1" @click="saveUpdate()" type="button">{{ activeReviewKey === null ? 'Save' : 'Update'}} review</button>
             <button class="btn btn-primary btn-xs mt-1" :class="{'hidden':isAvailableClear() === false}" @click="clearActiveAction()" type="button">Clear review</button>
         </div>
@@ -85,7 +93,15 @@
                     this.activeReviewKey = null;
                 }
 
-                this.reviews.splice(key, 1);
+                if (key in this.reviews) {
+                    this.$http.delete(`/admin/product-reviews/delete/${this.reviews[key].intReviewID}`).then(() => {
+                        this.reviews.splice(key, 1);
+                    }, () => {
+                        alert( 'Something went wrong. Send a message in support.');
+                    });
+                } else {
+                    this.reviews.splice(key, 1);
+                }
 
                 this.clearActive();
             },

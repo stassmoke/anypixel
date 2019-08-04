@@ -63,7 +63,9 @@ Route::prefix('admin')
             Route::put('products/update/{intProductID}','Api\\ProductsController@update')->name('products.update');
             Route::delete('products/delete/{intProductID}','Api\\ProductsController@delete')->name('products.delete');
 
-            Route::put('product-reviews/update/{intProductID}','Api\\ProductReviewsController@update')->name('product.reviews.update');
+            Route::post('product-reviews/store','Api\\ProductReviewsController@store')->name('product.reviews.store');
+            Route::put('product-reviews/update/{intReviewID}','Api\\ProductReviewsController@update')->name('product.reviews.update');
+            Route::delete('product-reviews/delete/{intReviewID}','Api\\ProductReviewsController@delete')->name('product.reviews.delete');
 
             Route::post('images/upload','Api\\ImagesController@upload')->name('images.upload');
         });
