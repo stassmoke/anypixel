@@ -38,6 +38,10 @@ Route::prefix('admin')
             Route::get('homepage-reviews/create', 'HomepageReviewsController@create')->name('homepage-reviews.create');
             Route::get('homepage-reviews/edit/{intReviewID}', 'HomepageReviewsController@edit')->name('homepage-reviews.edit');
 
+            Route::get('products', 'ProductController@index')->name('products.index');
+            Route::get('products/create', 'ProductController@create')->name('products.create');
+            Route::get('products/edit/{intProductID}', 'ProductController@edit')->name('products.edit');
+
             Route::get('categories/list','Api\\CategoriesController@listOfCategories')->name('categories.list');
             Route::get('categories/find/{intCatID}','Api\\CategoriesController@find')->name('categories.find');
             Route::post('categories/save-sort','Api\\CategoriesController@saveSort')->name('categories.sort');
@@ -51,6 +55,12 @@ Route::prefix('admin')
             Route::delete('homepage-reviews/delete/{intReviewID}','Api\\HomepageReviewsController@delete')->name('homepage-reviews.delete');
             Route::post('homepage-reviews/store','Api\\HomepageReviewsController@store')->name('homepage-reviews.store');
             Route::put('homepage-reviews/update/{intReviewID}','Api\\HomepageReviewsController@update')->name('homepage-reviews.update');
+
+            Route::get('products/list','Api\\ProductsController@listOfReviews')->name('products.list');
+            Route::get('products/find/{intProductID}','Api\\ProductsController@find')->name('products.find');
+            Route::delete('products/delete/{intProductID}','Api\\ProductsController@delete')->name('products.delete');
+            Route::post('products/store','Api\\ProductsController@store')->name('products.store');
+            Route::put('products/update/{intProductID}','Api\\ProductsController@update')->name('products.update');
 
             Route::post('images/upload','Api\\ImagesController@upload')->name('images.upload');
         });

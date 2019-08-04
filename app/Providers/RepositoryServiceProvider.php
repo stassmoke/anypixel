@@ -22,5 +22,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repository\HomepageReviewRepositoryInterface::class,
             \App\Repository\HomepageReviewRepository::class
         );
+
+        $this->app->bind(
+            \App\Repository\ProductRepositoryInterface::class,
+            \App\Repository\ProductRepository::class
+        );
     }
 }

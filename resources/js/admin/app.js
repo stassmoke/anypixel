@@ -3,9 +3,11 @@ window.$ = window.jQuery = require('jquery');
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import SlimDialog from 'v-slim-dialog';
+import Paginate from 'vuejs-paginate'
 
 Vue.use(VueResource);
 Vue.use(SlimDialog);
+Vue.component('paginate', Paginate);
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
@@ -20,6 +22,7 @@ import EditCategory from './components/EditCategoryComponent.vue'
 import HomepageReviewsTable from './components/HomepageReviewsTableComponent.vue'
 import CreateHomepageReview from './components/CreateHomepageReviewComponent.vue'
 import EditHomepageReview from './components/EditHomepageReviewComponent.vue'
+import ProductsTable from './components/ProductsTableComponent.vue'
 
 new Vue({
     el: '#app',
@@ -29,6 +32,7 @@ new Vue({
         EditCategory,
         HomepageReviewsTable,
         CreateHomepageReview,
-        EditHomepageReview
+        EditHomepageReview,
+        ProductsTable
     }
 });
