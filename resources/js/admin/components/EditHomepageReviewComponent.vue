@@ -31,12 +31,7 @@
 
 <script>
 
-    import { VueEditor } from "vue2-editor";
-
     export default {
-        components: {
-            VueEditor
-        },
         props: ['id'],
         data() {
             return {

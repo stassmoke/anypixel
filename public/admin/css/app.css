@@ -25,3 +25,42 @@ input.has-error {
   display: inline-block;
 }
 
+.product-reviews {
+  margin-bottom: 15px;
+}
+
+.product-review {
+  border: 1px solid #dee2e6;
+  padding: 4px 15px;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.product-reviews-stars svg {
+  width: 30px;
+  height: 30px;
+}
+
+.product-add-review {
+  border-top: 1px solid #dee2e6;
+  padding-top: 10px;
+}
+
+.product-review-control {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.product-review-control img {
+  width: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+

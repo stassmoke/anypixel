@@ -65,13 +65,11 @@
 </template>
 
 <script>
-    import { VueEditor } from "vue2-editor";
     import ImageComponent from "./ImageComponent";
 
     export default {
         components: {
             ImageComponent,
-            VueEditor,
         },
         name: "General",
         props: ['product_item','errors'],

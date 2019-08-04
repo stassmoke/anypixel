@@ -6,6 +6,8 @@ import SlimDialog from 'v-slim-dialog';
 import Paginate from 'vuejs-paginate'
 import Multiselect from 'vue-multiselect'
 import VueSilentbox from 'vue-silentbox'
+import StarRating from 'vue-star-rating'
+import { VueEditor } from "vue2-editor";
 
 Vue.use(VueResource);
 Vue.use(SlimDialog);
@@ -13,6 +15,8 @@ Vue.use(VueSilentbox);
 
 Vue.component('paginate', Paginate);
 Vue.component('multiselect', Multiselect);
+Vue.component('star-rating', StarRating);
+Vue.component('vue-editor', VueEditor);
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 

@@ -27,5 +27,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repository\ProductRepositoryInterface::class,
             \App\Repository\ProductRepository::class
         );
+
+        $this->app->bind(
+            \App\Repository\ProductReviewRepositoryInterface::class,
+            \App\Repository\ProductReviewRepository::class
+        );
     }
 }
