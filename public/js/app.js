@@ -21184,7 +21184,7 @@ $(document).ready(function () {
   });
 });
 var $grid = $('.grid').isotope({
-  itemSelector: '.element-item',
+  itemSelector: '.element-item, .shop-item',
   layoutMode: 'fitRows',
   getSortData: {
     name: '.name',

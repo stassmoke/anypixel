@@ -9,6 +9,7 @@
 @import 'header'
 @import 'main'
 @import 'footer'
+@import 'page-shop'
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800,900|Poppins:300,400,500,600,700,900&display=swap')
 
@@ -125,4 +126,27 @@ section
         &::placeholder
             transition: $transition
             color: rgba(153, 153, 153, 0.64)
+
+.row-breadcrumb
+    width: 100%
+    text-align: center
+
+.breadcrumb
+    .breadcrumb-list
+        display: inline-block
+        margin-right: 25px
+        position: relative
+        &:before
+            content: '»'
+            position: absolute
+            top: -2px
+            right: -15px
+            font-size: 18px
+            font-style: italic
+        &:last-of-type
+            margin-right: 0
+            &:before
+                content: none
+        .breadcrumb-link
+            color: #2e3d62
 

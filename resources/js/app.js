@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 
 let $grid = $('.grid').isotope({
-    itemSelector: '.element-item',
+    itemSelector: '.element-item, .shop-item',
     layoutMode: 'fitRows',
     getSortData: {
         name: '.name',

@@ -7,7 +7,7 @@
             <nav class="desktop-menu">
                 <ul class="navigation">
                     <li class="menu-item">
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li class="menu-item">
                         <a href="#">About Us</a>
@@ -19,7 +19,7 @@
                         <a href="#">Blog</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#">Shop</a>
+                        <a href="page_shop">Shop</a>
                     </li>
                     <li class="menu-item">
                         <a href="#">Pages</a>
