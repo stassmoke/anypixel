@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('varYoutubeCode',255)->nullable();
             $table->string('varMainImage',255)->nullable();
             $table->string('varThumbnailImage',255)->nullable();
-            $table->text('varDescription');
+            $table->text('varDescription')->nullable();
             $table->decimal('varPrice',10,2);
             $table->integer('intRating')->default(0);
             $table->boolean('isEnabled')->default(false);
@@ -32,7 +32,6 @@ class CreateProductsTable extends Migration
             $table->boolean('isBestSelling')->default(false);
             $table->timestamps();
 
-            $table->unique(['varSlug']);
             $table->index(['intCatID','isEnabled','isNew','isCheapest','isBestSelling']);
         });
     }

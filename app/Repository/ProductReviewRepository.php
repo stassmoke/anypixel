@@ -52,4 +52,22 @@ class ProductReviewRepository implements ProductReviewRepositoryInterface
         ;
     }
 
+    /**
+     * @param array $reviewsIds
+     * @param int $intProductID
+     */
+    public function setProductID(array $reviewsIds, int $intProductID): void
+    {
+        if (\count($reviewsIds) === 0) {
+            return;
+        }
+
+        ProductReview::query()
+            ->whereIn('intReviewID', $reviewsIds)
+            ->update([
+                'intProductID' => $intProductID,
+            ])
+        ;
+    }
+
 }

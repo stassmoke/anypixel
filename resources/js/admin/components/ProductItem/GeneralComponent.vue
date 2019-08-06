@@ -2,38 +2,43 @@
     <div>
         <div class="form-group">
             <label for="varName" class="col-form-label">Name</label>
-            <input class="form-control" type="text" v-model="product.varName" id="varName">
+            <input :class="{'has-error':hasError('varName')}" class="form-control" type="text" v-model="product.varName" id="varName">
         </div>
 
         <div class="form-group">
             <label for="varSubtitle" class="col-form-label">Subtitle</label>
-            <input class="form-control" type="text" v-model="product.varSubtitle" id="varSubtitle">
+            <input :class="{'has-error':hasError('varSubtitle')}" class="form-control" type="text" v-model="product.varSubtitle" id="varSubtitle">
         </div>
 
         <div class="form-group">
             <label for="intCatID" class="col-form-label">Category</label>
-            <multiselect id="intCatID" v-model="product.intCatID" track-by="varName" label="varName" placeholder="Select category" :options="categories" :searchable="true">
+            <multiselect :class="{'has-error':hasError('intCatID')}" id="intCatID" @input="$emit('setParams','intCatID', selectedCategory.intCatID)" v-model="selectedCategory" track-by="intCatID" label="varName" placeholder="Select category" :options="categories" :searchable="true">
                 <template slot="singleLabel" slot-scope="{ option }">{{ option.varName }}</template>
             </multiselect>
         </div>
         <div class="form-group">
             <label for="varLink" class="col-form-label">Forwarding link</label>
-            <input class="form-control" type="text" v-model="product.varLink" id="varLink">
+            <input :class="{'has-error':hasError('varLink')}" class="form-control" type="text" v-model="product.varLink" id="varLink">
         </div>
 
         <div class="form-group">
             <label for="varPrice" class="col-form-label">Price</label>
-            <input class="form-control" type="number" v-model="product.varPrice" id="varPrice">
+            <input :class="{'has-error':hasError('varPrice')}" class="form-control" type="number" v-model="product.varPrice" id="varPrice">
         </div>
 
         <div class="form-group">
             <label for="varYoutubeCode" class="col-form-label">Youtube code</label>
-            <input class="form-control" type="text" placeholder="Example: GtlCa6xZYPY" v-model="product.varYoutubeCode" id="varYoutubeCode">
+            <input :class="{'has-error':hasError('varYoutubeCode')}" class="form-control" type="text" placeholder="Example: GtlCa6xZYPY" v-model="product.varYoutubeCode" id="varYoutubeCode">
         </div>
 
         <div class="form-group mt-3">
             <label for="varText" class="col-form-label">Description</label>
-            <vue-editor id="varText" v-model="product.varDescription" useCustomImageHandler @imageAdded="handleImageAdded"></vue-editor>
+            <vue-editor :class="{'has-error':hasError('varDescription')}" id="varText" v-model="product.varDescription" useCustomImageHandler @imageAdded="handleImageAdded"></vue-editor>
+        </div>
+
+        <div class="form-group">
+            <label for="intRating" class="col-form-label">Rating</label>
+            <star-rating id="intRating" class="product-reviews-stars" :show-rating="false" v-model="product.intRating"></star-rating>
         </div>
 
         <div class="custom-control custom-checkbox mt-2">
@@ -72,15 +77,14 @@
             ImageComponent,
         },
         name: "General",
-        props: ['product_item','errors'],
+        props: ['product','errors'],
         data() {
             return {
                 categories: [],
-                product: {},
+                selectedCategory: null,
             }
         },
-        created() {
-            this.product = this.product_item;
+        mounted() {
             this.$http.get('/admin/categories/options').then(response => {
                 this.categories = response.data.data.categories;
             }, () => {
@@ -109,7 +113,7 @@
                 formData.append('image', file);
 
                 this.uploadImage(formData, response => {
-                    this.product.varMainImage = response.data.data.filename;
+                    this.$emit('setParams','varMainImage',response.data.data.filename);
                 });
 
             },
@@ -120,7 +124,7 @@
                 formData.append('image', file);
 
                 this.uploadImage(formData, response => {
-                    this.product.varThumbnailImage = response.data.data.filename;
+                    this.$emit('setParams','varThumbnailImage',response.data.data.filename);
                 });
 
             },
@@ -128,10 +132,10 @@
                 this.$http.post('/admin/images/upload', formData).then(callback);
             },
             deleteMainImage() {
-                this.product.varMainImage = null;
+                this.$emit('setParams','varMainImage', null);
             },
             deleteThumbnail() {
-                this.product.varThumbnailImage = null;
+                this.$emit('setParams','varThumbnailImage', null);
             }
         }
     }

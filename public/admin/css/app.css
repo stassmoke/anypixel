@@ -4,7 +4,8 @@
   align-items: center;
 }
 
-input.has-error {
+input.has-error,
+.has-error .multiselect__tags {
   border: 1px solid red;
 }
 
