@@ -96,10 +96,12 @@ h2
 .btn-filters
     padding: 0 20px
     color: #666e82
-
     &.is-checked
         background-color: $color2
         color: #fff
+    &._sort
+        border: 1px solid $color2
+
 
 section
     padding: 90px 0
@@ -150,3 +152,44 @@ section
         .breadcrumb-link
             color: #2e3d62
 
+.row-pagination
+    width: 100%
+    text-align: center
+    display: flex
+    justify-content: center
+
+.pagination
+    display: flex
+
+.page-numbers
+    height: 33px
+    width: auto
+    display: flex
+    align-items: center
+    border-radius: 20px
+    margin: 0 5px
+    padding: 0 15px
+    border: 1px solid $color2
+    background-color: #fff
+    color: #000
+    transition: $transition
+    font-size: 18px
+    box-shadow: 0 8px 15px 0 rgba(150, 150, 150, 0.31)
+    &:hover
+        background-color: $color2
+        border-color: transparent
+        color: #fff
+
+    &._active
+        background-color: $color2
+        border-color: transparent
+        color: #fff
+        pointer-events: none
+        cursor: not-allowed
+
+
+.prev,
+.next
+    background-color: $color2
+    color: #fff
+    padding: 3px 25px

@@ -3,11 +3,12 @@
     .breadcrumb-content
         background-color: #f5f5f5
         padding: 80px 0
+
     h2
         font-weight: 600
 
     .shop-item
-        width: 33.33333%
+        width: 29.1%
         border: 1px solid #ebebeb
         border-radius: 10px
         margin: 0 15px
@@ -15,7 +16,8 @@
         margin-bottom: 30px
 
     .grid-shop
-        margin: 0 -15px -30px -15px
+        margin: 0 0 0 auto
+        width: 80%
 
     .section-shop
         max-width: 1370px
@@ -27,6 +29,7 @@
         height: auto
         border-bottom: 1px solid #ebebeb
         position: relative
+
         .image
             max-width: 100%
             height: auto
@@ -36,6 +39,7 @@
     .shop-item__content
         padding: 20px
         position: relative
+
         .name
             font-weight: bold
             color: #2e3d62
@@ -57,6 +61,77 @@
         display: inline-flex
         justify-content: space-between
         width: 100%
+
         .price
             font-weight: bold
             font-size: 16px
+
+    .wrap-grid__nav
+        display: flex
+        align-items: flex-start
+
+    .filters-buttons#sorts
+        display: flex
+        flex-direction: column
+        width: 18%
+
+        .btn-filters
+            width: 100%
+            margin-bottom: 15px
+            height: 50px
+            &:last-of-type
+                margin-bottom: 0
+
+    .additional-functions
+        position: absolute
+        bottom: 0
+        transform: translateY(66px)
+        left: 0
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        text-align: center
+        width: 100%
+        border-top: 1px solid #ccc
+        height: 57px
+        background-color: #fff
+        transition: .2s all ease
+        .additional-functions__btn
+            padding: 5px 8px
+            font-size: 14px
+            border-radius: 20px
+            border: 1px solid $color2
+            height: 33px
+            margin-right: 15px
+            transition: .2s all ease
+            i
+                margin-right: 5px
+            &:last-of-type
+                margin-right: 0
+            &:hover
+                transition: .2s all ease
+                border: 1px solid transparent
+                color: #fff
+                background-color: $color2
+
+
+    .shop-item
+        position: relative
+        overflow: hidden
+        transition: .2s all ease
+        &:hover
+            transition: .2s all ease
+            .additional-functions
+                transform: translateY(-4px)
+
+    .rating
+        position: relative
+        &:before
+            content: ''
+            position: absolute
+            width: var(--rating-view)
+            height: 22px
+            background: url('img/icons/rating-view__selected.svg') top left no-repeat
+            -webkit-background-size: 100%
+            background-size: 100px

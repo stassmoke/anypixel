@@ -25,61 +25,288 @@
                 <button class="btn btn-filters" data-filter=".after-effect">After Effects</button>
                 <button class="btn btn-filters" data-filter=".premiere-pro">Premiere Pro</button>
             </div>
-            <div id="sorts" class="filters-buttons">
-                <button class="btn btn-filters is-checked" data-sort-by="name">name</button>
-                <button class="btn btn-filters" data-sort-by="symbol">symbol</button>
-                <button class="btn btn-filters" data-sort-by="category">category</button>
-            </div>
-            <div class="grid grid-shop">
-                <div class="shop-item after-effect" data-category="after-effect">
-                    <div class="img-holder">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1" class="image">
+
+            <div class="wrap-grid__nav">
+                <div id="sorts" class="filters-buttons">
+                    <button class="btn btn-filters is-checked _sort" data-sort-by="name">name</button>
+                    <button class="btn btn-filters _sort" data-sort-by="symbol">symbol</button>
+                    <button class="btn btn-filters _sort" data-sort-by="category">category</button>
+                </div>
+                <div class="grid grid-shop">
+                    <div class="shop-item after-effect" data-category="after-effect">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="shop-item__content">
-                        <a href="#" class="name">Creative Slideshow</a>
-                        <div class="symbol">Some filter</div>
-                        <div class="price-inline">
-                            <div class="price">$59.00</div>
-                            <div class="rating">X X X X X</div>
+                    <div class="shop-item premiere-pro" data-category="premiere-pro">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item after-effect" data-category="after-effect">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item premiere-pro" data-category="premiere-pro">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item after-effect" data-category="after-effect">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item premiere-pro" data-category="premiere-pro">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item after-effect" data-category="after-effect">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item premiere-pro" data-category="premiere-pro">
+                        <a href="#">
+                            <div class="img-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/demo-7.jpg" alt="1"
+                                     class="image">
+                            </div>
+                        </a>
+                        <div class="shop-item__content">
+                            <a href="#" class="name">Creative Slideshow</a>
+                            <div class="symbol">Some filter</div>
+                            <div class="price-inline">
+                                <div class="price">$59.00</div>
+                                {{--variable (rating-view) adjusts the stars--}}
+                                <div class="rating" style="--rating-view: 63%;">
+                                    <img src="img/icons/rating-view.svg" alt="" class="rating-star">
+                                </div>
+                            </div>
+                            <div class="additional-functions">
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Details</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="far fa-eye"></i>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="btn additional-functions__btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="shop-item premiere-pro" data-category="premiere-pro">
-
-                    <p class="name">z</p>
-                    <p class="symbol">Some filter</p>
+            </div>
+            <div class="row-pagination">
+                <div class="pagination">
+                    <a href="#" class="prev page-numbers">←</a>
+                    <a href="" class="page-numbers _active">1</a>
+                    <a href="" class="page-numbers">2</a>
+                    <a href="" class="page-numbers">3</a>
+                    <a href="#" class="next page-numbers">→</a>
                 </div>
-                <div class="shop-item after-effect" data-category="after-effect">
-
-                    <p class="name">a</p>
-                    <p class="symbol">Some filter</p>
-                </div>
-                <div class="shop-item premiere-pro" data-category="premiere-pro">
-
-                    <p class="name">z</p>
-                    <p class="symbol">5</p>
-                </div>
-                <div class="shop-item after-effect" data-category="after-effect">
-
-                    <p class="name">a</p>
-                    <p class="symbol">6</p>
-                </div>
-                <div class="shop-item premiere-pro" data-category="premiere-pro">
-
-                    <p class="name">z</p>
-                    <p class="symbol">7</p>
-                </div>
-                <div class="shop-item after-effect" data-category="after-effect">
-
-                    <p class="name">a</p>
-                    <p class="symbol">8</p>
-                </div>
-                <div class="shop-item premiere-pro" data-category="premiere-pro">
-
-                    <p class="name">z</p>
-                    <p class="symbol">9</p>
-                </div>
-
             </div>
         </section>
     </div>
