@@ -242,15 +242,6 @@ __webpack_require__.r(__webpack_exports__);
         window.location.href = response.data.data.link;
       }, function (response) {
         _this.errors = response.data.errors;
-        var options = {
-          title: 'Info',
-          size: 'sm'
-        };
-        var messages = Object.values(_this.errors).map(function (error) {
-          return error[0];
-        }).join(' ');
-
-        _this.$dialogs.alert(messages, options);
       });
     },
     hasError: function hasError(key) {
@@ -324,15 +315,6 @@ __webpack_require__.r(__webpack_exports__);
         window.location.href = response.data.data.link;
       }, function (response) {
         _this.errors = response.data.errors;
-        var options = {
-          title: 'Info',
-          size: 'sm'
-        };
-        var messages = Object.values(_this.errors).map(function (error) {
-          return error[0];
-        }).join(' ');
-
-        _this.$dialogs.alert(messages, options);
       });
     },
     hasError: function hasError(key) {
@@ -414,15 +396,6 @@ __webpack_require__.r(__webpack_exports__);
         _this2.errors = {};
       }, function (response) {
         _this2.errors = response.data.errors;
-        var options = {
-          title: 'Info',
-          size: 'sm'
-        };
-        var messages = Object.values(_this2.errors).map(function (error) {
-          return error[0];
-        }).join(' ');
-
-        _this2.$dialogs.alert(messages, options);
       });
     },
     hasError: function hasError(key) {
@@ -513,15 +486,6 @@ __webpack_require__.r(__webpack_exports__);
         _this2.errors = {};
       }, function (response) {
         _this2.errors = response.data.errors;
-        var options = {
-          title: 'Info',
-          size: 'sm'
-        };
-        var messages = Object.values(_this2.errors).map(function (error) {
-          return error[0];
-        }).join(' ');
-
-        _this2.$dialogs.alert(messages, options);
       });
     },
     hasError: function hasError(key) {
@@ -728,23 +692,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     ImageComponent: _ImageComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   name: "General",
-  props: ['product_item', 'errors'],
+  props: ['product', 'errors'],
   data: function data() {
     return {
       categories: [],
-      product: {}
+      selectedCategory: null
     };
   },
-  created: function created() {
+  mounted: function mounted() {
     var _this = this;
 
-    this.product = this.product_item;
     this.$http.get('/admin/categories/options').then(function (response) {
       _this.categories = response.data.data.categories;
     }, function () {
@@ -771,7 +739,7 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
       formData.append('image', file);
       this.uploadImage(formData, function (response) {
-        _this2.product.varMainImage = response.data.data.filename;
+        _this2.$emit('setParams', 'varMainImage', response.data.data.filename);
       });
     },
     onImageThumbnailChanged: function onImageThumbnailChanged(event) {
@@ -781,17 +749,17 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
       formData.append('image', file);
       this.uploadImage(formData, function (response) {
-        _this3.product.varThumbnailImage = response.data.data.filename;
+        _this3.$emit('setParams', 'varThumbnailImage', response.data.data.filename);
       });
     },
     uploadImage: function uploadImage(formData, callback) {
       this.$http.post('/admin/images/upload', formData).then(callback);
     },
     deleteMainImage: function deleteMainImage() {
-      this.product.varMainImage = null;
+      this.$emit('setParams', 'varMainImage', null);
     },
     deleteThumbnail: function deleteThumbnail() {
-      this.product.varThumbnailImage = null;
+      this.$emit('setParams', 'varThumbnailImage', null);
     }
   }
 });
@@ -868,10 +836,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['id'],
   components: {
     Reviews: _ReviewsComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
     General: _GeneralComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -881,26 +849,89 @@ __webpack_require__.r(__webpack_exports__);
       product: {
         intProductID: 0,
         intCatID: null,
-        varName: '',
-        varSubtitle: '',
-        varYoutubeCode: '',
-        varSlug: '',
-        varLink: '',
+        varName: null,
+        varSubtitle: null,
+        varYoutubeCode: null,
+        varSlug: null,
         varMainImage: null,
         varThumbnailImage: null,
-        varDescription: '',
-        varPrice: '',
-        intRating: '',
+        varDescription: null,
+        varPrice: 0,
+        intRating: 0,
         isEnabled: false,
         isNew: false,
         isCheapest: false,
         isBestSelling: false
       },
+      reviews: [],
       errors: {},
       activeTab: 'general'
     };
   },
-  methods: {}
+  mounted: function mounted() {
+    if (this.id) {
+      this.loadProduct();
+    }
+  },
+  methods: {
+    loadProduct: function loadProduct() {
+      var _this = this;
+
+      this.$http.get("/admin/products/find/".concat(this.id)).then(function (response) {
+        _this.product = response.data.data.product;
+      }, function () {
+        alert('Something went wrong. Send a message in support.');
+      });
+    },
+    save: function save() {
+      this.errors = {};
+
+      if (this.product.intProductID === 0) {
+        this.store();
+      } else {
+        this.update();
+      }
+    },
+    store: function store() {
+      var _this2 = this;
+
+      this.$http.post('/admin/products/store', this.compactParams()).then(function (response) {
+        window.location.href = response.data.data.link;
+      }, function (response) {
+        return _this2.showErrors(response.data.errors);
+      });
+    },
+    update: function update() {
+      var _this3 = this;
+
+      this.$http.put("/admin/products/update/".concat(this.product.intProductID), this.compactParams()).then(function () {
+        _this3.$dialogs.alert('Updated', {
+          title: 'Info',
+          size: 'sm'
+        });
+      }, function (response) {
+        return _this3.showErrors(response.data.errors);
+      });
+    },
+    showErrors: function showErrors(errors) {
+      this.errors = errors;
+    },
+    compactParams: function compactParams() {
+      var reviewsIds = this.reviews.map(function (review) {
+        return review.intReviewID;
+      });
+      return {
+        product: this.product,
+        reviewsIds: reviewsIds
+      };
+    },
+    hasError: function hasError(key) {
+      return this.errors.hasOwnProperty(key);
+    },
+    setParams: function setParams(key, value) {
+      this.product[key] = value;
+    }
+  }
 });
 
 /***/ }),
@@ -957,27 +988,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['reviews_list', 'product_id'],
   data: function data() {
     return {
-      reviews: [{
-        intReviewID: 1,
-        varName: 'Farhan Khan',
-        intRating: 5,
-        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.'
-      }, {
-        intReviewID: 1,
-        varName: 'Farhan Khan',
-        intRating: 5,
-        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.'
-      }, {
-        intReviewID: 1,
-        varName: 'Farhan Khan',
-        intRating: 5,
-        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.'
-      }, {
-        intReviewID: 1,
-        varName: 'Farhan Khan',
-        intRating: 5,
-        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.'
-      }],
+      reviews: [],
       activeReview: {
         intReviewID: null,
         varName: null,
@@ -987,7 +998,8 @@ __webpack_require__.r(__webpack_exports__);
       activeReviewKey: null
     };
   },
-  created: function created() {// this.reviews = this.reviews_list;
+  created: function created() {
+    this.reviews = this.reviews_list;
   },
   methods: {
     add: function add() {},
@@ -29318,6 +29330,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
+        class: { "has-error": _vm.hasError("varName") },
         attrs: { type: "text", id: "varName" },
         domProps: { value: _vm.product.varName },
         on: {
@@ -29348,6 +29361,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
+        class: { "has-error": _vm.hasError("varSubtitle") },
         attrs: { type: "text", id: "varSubtitle" },
         domProps: { value: _vm.product.varSubtitle },
         on: {
@@ -29372,13 +29386,23 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("multiselect", {
+          class: { "has-error": _vm.hasError("intCatID") },
           attrs: {
             id: "intCatID",
-            "track-by": "varName",
+            "track-by": "intCatID",
             label: "varName",
             placeholder: "Select category",
             options: _vm.categories,
             searchable: true
+          },
+          on: {
+            input: function($event) {
+              return _vm.$emit(
+                "setParams",
+                "intCatID",
+                _vm.selectedCategory.intCatID
+              )
+            }
           },
           scopedSlots: _vm._u([
             {
@@ -29390,11 +29414,11 @@ var render = function() {
             }
           ]),
           model: {
-            value: _vm.product.intCatID,
+            value: _vm.selectedCategory,
             callback: function($$v) {
-              _vm.$set(_vm.product, "intCatID", $$v)
+              _vm.selectedCategory = $$v
             },
-            expression: "product.intCatID"
+            expression: "selectedCategory"
           }
         })
       ],
@@ -29418,6 +29442,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
+        class: { "has-error": _vm.hasError("varLink") },
         attrs: { type: "text", id: "varLink" },
         domProps: { value: _vm.product.varLink },
         on: {
@@ -29448,6 +29473,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
+        class: { "has-error": _vm.hasError("varPrice") },
         attrs: { type: "number", id: "varPrice" },
         domProps: { value: _vm.product.varPrice },
         on: {
@@ -29478,6 +29504,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
+        class: { "has-error": _vm.hasError("varYoutubeCode") },
         attrs: {
           type: "text",
           placeholder: "Example: GtlCa6xZYPY",
@@ -29506,6 +29533,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("vue-editor", {
+          class: { "has-error": _vm.hasError("varDescription") },
           attrs: { id: "varText", useCustomImageHandler: "" },
           on: { imageAdded: _vm.handleImageAdded },
           model: {
@@ -29514,6 +29542,31 @@ var render = function() {
               _vm.$set(_vm.product, "varDescription", $$v)
             },
             expression: "product.varDescription"
+          }
+        })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c(
+          "label",
+          { staticClass: "col-form-label", attrs: { for: "intRating" } },
+          [_vm._v("Rating")]
+        ),
+        _vm._v(" "),
+        _c("star-rating", {
+          staticClass: "product-reviews-stars",
+          attrs: { id: "intRating", "show-rating": false },
+          model: {
+            value: _vm.product.intRating,
+            callback: function($$v) {
+              _vm.$set(_vm.product, "intRating", $$v)
+            },
+            expression: "product.intRating"
           }
         })
       ],
@@ -29894,7 +29947,8 @@ var render = function() {
                 active: _vm.activeTab === "general",
                 show: _vm.activeTab === "general"
               },
-              attrs: { product_item: _vm.product, errors: _vm.errors }
+              attrs: { product: _vm.product, errors: _vm.errors },
+              on: { setParams: _vm.setParams }
             }),
             _vm._v(" "),
             _c("reviews", {
@@ -29903,7 +29957,10 @@ var render = function() {
                 active: _vm.activeTab === "reviews",
                 show: _vm.activeTab === "reviews"
               },
-              attrs: { product_id: _vm.product.intProductID }
+              attrs: {
+                reviews_list: _vm.reviews,
+                product_id: _vm.product.intProductID
+              }
             })
           ],
           1
@@ -29918,11 +29975,16 @@ var render = function() {
         attrs: { type: "button" },
         on: {
           click: function($event) {
-            return _vm.createCategory()
+            return _vm.save()
           }
         }
       },
-      [_vm._v("Create Product")]
+      [
+        _vm._v(
+          _vm._s(_vm.product.intProductID === 0 ? "Create" : "Update") +
+            " Product"
+        )
+      ]
     )
   ])
 }
@@ -50052,7 +50114,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/video-service/resources/js/admin/app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/admin/app.js */"./resources/js/admin/app.js");
 
 
 /***/ }),

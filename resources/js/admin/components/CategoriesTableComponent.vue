@@ -57,9 +57,7 @@
         },
         mounted() {
             this.$http.get('/admin/categories/list').then(response => {
-
                 this.categories = response.data.data.categories;
-
             }, () => {
                 alert( 'Something went wrong. Send a message in support.');
             });

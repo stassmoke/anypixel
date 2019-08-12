@@ -65,15 +65,6 @@
                     this.errors = {};
                 }, response => {
                     this.errors = response.data.errors;
-
-                    const options = {
-                        title: 'Info',
-                        size: 'sm'
-                    };
-
-                    let messages = Object.values(this.errors).map(error => error[0]).join(' ');
-
-                    this.$dialogs.alert(messages, options);
                 });
             },
             hasError(key) {

@@ -19,4 +19,49 @@ class ProductRepository implements ProductRepositoryInterface
         ;
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function create(array $data): Product
+    {
+        $product = new Product();
+
+        return $this->update($product, $data);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function update(Product $product, array $data): Product
+    {
+        $product->intCatID = $data['intCatID'];
+        $product->varName = $data['varName'];
+        $product->varSubtitle = $data['varSubtitle'];
+        $product->varSlug = $data['varSlug'];
+        $product->varLink = $data['varLink'];
+        $product->varMainImage = $data['varMainImage'];
+        $product->varThumbnailImage = $data['varThumbnailImage'];
+        $product->varDescription = $data['varDescription'];
+        $product->varYoutubeCode = $data['varYoutubeCode'];
+        $product->varPrice = $data['varPrice'];
+        $product->intRating = $data['intRating'];
+        $product->isEnabled = $data['isEnabled'];
+        $product->isNew = $data['isNew'];
+        $product->isCheapest = $data['isCheapest'];
+        $product->isBestSelling = $data['isBestSelling'];
+
+        $product->save();
+
+        return $product;
+    }
+
+    /**
+     * @param int $intProductID
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null|Product
+     */
+    public function find(int $intProductID): ?Product
+    {
+        return Product::query()->find($intProductID);
+    }
+
 }

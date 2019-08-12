@@ -42,32 +42,7 @@
         props: ['reviews_list','product_id'],
         data() {
             return {
-                reviews: [
-                    {
-                        intReviewID: 1,
-                        varName: 'Farhan Khan',
-                        intRating: 5,
-                        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.',
-                    },
-                    {
-                        intReviewID: 1,
-                        varName: 'Farhan Khan',
-                        intRating: 5,
-                        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.',
-                    },
-                    {
-                        intReviewID: 1,
-                        varName: 'Farhan Khan',
-                        intRating: 5,
-                        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.',
-                    },
-                    {
-                        intReviewID: 1,
-                        varName: 'Farhan Khan',
-                        intRating: 5,
-                        varComment: 'Various versions have evolved over the years, sometimes by accident, sometimes on purpose.',
-                    }
-                ],
+                reviews: [],
                 activeReview: {
                     intReviewID: null,
                     varName: null,
@@ -78,7 +53,7 @@
             };
         },
         created() {
-            // this.reviews = this.reviews_list;
+            this.reviews = this.reviews_list;
         },
         methods: {
             add() {

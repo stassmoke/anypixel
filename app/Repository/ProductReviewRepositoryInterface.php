@@ -29,4 +29,10 @@ interface ProductReviewRepositoryInterface
      * @param int $intReviewID
      */
     public function delete(int $intReviewID): void;
+
+    /**
+     * @param array $reviewsIds
+     * @param int $intProductID
+     */
+    public function setProductID(array $reviewsIds, int $intProductID): void;
 }
