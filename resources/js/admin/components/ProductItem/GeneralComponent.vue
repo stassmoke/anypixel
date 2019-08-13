@@ -27,6 +27,11 @@
         </div>
 
         <div class="form-group">
+            <label for="varAuthor" class="col-form-label">Author</label>
+            <input :class="{'has-error':hasError('varAuthor')}" class="form-control" type="text" v-model="product.varAuthor" id="varAuthor">
+        </div>
+
+        <div class="form-group">
             <label for="varYoutubeCode" class="col-form-label">Youtube code</label>
             <input :class="{'has-error':hasError('varYoutubeCode')}" class="form-control" type="text" placeholder="Example: GtlCa6xZYPY" v-model="product.varYoutubeCode" id="varYoutubeCode">
         </div>
@@ -59,6 +64,11 @@
         <div class="custom-control custom-checkbox mt-2">
             <input type="checkbox" v-model="product.isBestSelling" class="custom-control-input" id="isBestSelling">
             <label class="custom-control-label" for="isBestSelling">BestSelling: {{ product.isBestSelling ? 'Yes' : 'No' }}</label>
+        </div>
+
+        <div class="custom-control custom-checkbox mt-2">
+            <input type="checkbox" v-model="product.isLatest" class="custom-control-input" id="isLatest">
+            <label class="custom-control-label" for="isLatest">Latest on homepage: {{ product.isLatest ? 'Yes' : 'No' }}</label>
         </div>
 
         <div class="product-edit-images">

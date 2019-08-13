@@ -51,4 +51,9 @@ interface CategoryRepositoryInterface
      * @return Collection
      */
     public function getForOptions(): Collection;
+
+    /**
+     * @return Collection
+     */
+    public function getEnabledSorted(): Collection;
 }

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\DTO\PaginationDTO;
 use App\Models\Product;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 
 class ProductRepository implements ProductRepositoryInterface
 {
@@ -39,6 +40,7 @@ class ProductRepository implements ProductRepositoryInterface
         $product->varSubtitle = $data['varSubtitle'];
         $product->varSlug = $data['varSlug'];
         $product->varLink = $data['varLink'];
+        $product->varAuthor = $data['varAuthor'];
         $product->varMainImage = $data['varMainImage'];
         $product->varThumbnailImage = $data['varThumbnailImage'];
         $product->varDescription = $data['varDescription'];
@@ -49,6 +51,7 @@ class ProductRepository implements ProductRepositoryInterface
         $product->isNew = $data['isNew'];
         $product->isCheapest = $data['isCheapest'];
         $product->isBestSelling = $data['isBestSelling'];
+        $product->isLatest = $data['isLatest'];
 
         $product->save();
 
@@ -64,4 +67,15 @@ class ProductRepository implements ProductRepositoryInterface
         return Product::query()->find($intProductID);
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function getLatest(): Collection
+    {
+        return Product::query()
+            ->where('isEnabled','=',true)
+            ->where('isLatest','=', true)
+            ->get()
+        ;
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\DTO\PaginationDTO;
 use App\Models\Product;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 
 interface ProductRepositoryInterface
 {
@@ -32,4 +33,9 @@ interface ProductRepositoryInterface
      * @return Product|null
      */
     public function find(int $intProductID): ?Product;
+
+    /**
+     * @return Collection
+     */
+    public function getLatest(): Collection;
 }

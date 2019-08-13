@@ -697,6 +697,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -860,6 +870,7 @@ __webpack_require__.r(__webpack_exports__);
         intCatID: null,
         varName: null,
         varSubtitle: null,
+        varAuthor: null,
         varYoutubeCode: null,
         varSlug: null,
         varMainImage: null,
@@ -870,7 +881,8 @@ __webpack_require__.r(__webpack_exports__);
         isEnabled: false,
         isNew: false,
         isCheapest: false,
-        isBestSelling: false
+        isBestSelling: false,
+        isLatest: false
       },
       reviews: [],
       errors: {},
@@ -29542,6 +29554,37 @@ var render = function() {
     _c("div", { staticClass: "form-group" }, [
       _c(
         "label",
+        { staticClass: "col-form-label", attrs: { for: "varAuthor" } },
+        [_vm._v("Author")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.product.varAuthor,
+            expression: "product.varAuthor"
+          }
+        ],
+        staticClass: "form-control",
+        class: { "has-error": _vm.hasError("varAuthor") },
+        attrs: { type: "text", id: "varAuthor" },
+        domProps: { value: _vm.product.varAuthor },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.product, "varAuthor", $event.target.value)
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c(
+        "label",
         { staticClass: "col-form-label", attrs: { for: "varYoutubeCode" } },
         [_vm._v("Youtube code")]
       ),
@@ -29825,6 +29868,59 @@ var render = function() {
         [
           _vm._v(
             "BestSelling: " + _vm._s(_vm.product.isBestSelling ? "Yes" : "No")
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "custom-control custom-checkbox mt-2" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.product.isLatest,
+            expression: "product.isLatest"
+          }
+        ],
+        staticClass: "custom-control-input",
+        attrs: { type: "checkbox", id: "isLatest" },
+        domProps: {
+          checked: Array.isArray(_vm.product.isLatest)
+            ? _vm._i(_vm.product.isLatest, null) > -1
+            : _vm.product.isLatest
+        },
+        on: {
+          change: function($event) {
+            var $$a = _vm.product.isLatest,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && _vm.$set(_vm.product, "isLatest", $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  _vm.$set(
+                    _vm.product,
+                    "isLatest",
+                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                  )
+              }
+            } else {
+              _vm.$set(_vm.product, "isLatest", $$c)
+            }
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "label",
+        { staticClass: "custom-control-label", attrs: { for: "isLatest" } },
+        [
+          _vm._v(
+            "Latest on homepage: " + _vm._s(_vm.product.isLatest ? "Yes" : "No")
           )
         ]
       )

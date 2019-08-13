@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string varSubtitle
  * @property string varSlug
  * @property string varLink
+ * @property string varAuthor
  * @property string varMainImage
  * @property string varThumbnailImage
  * @property string varDescription
@@ -25,12 +26,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string isNew
  * @property string isCheapest
  * @property string isBestSelling
+ * @property string isLatest
  * @property string created_at
  * @property string updated_at
  */
 class Product extends Model
 {
-    protected $primaryKey = 'intProductID';
+    public $primaryKey = 'intProductID';
 
     /**
      * @return BelongsTo
@@ -46,5 +48,21 @@ class Product extends Model
     public function reviews(): HasMany
     {
         return $this->hasMany(ProductReview::class,'intProductID','intProductID');
+    }
+
+    /**
+     * @return string
+     */
+    public function getThumbnailImage(): string
+    {
+        return '/storage/images/' . $this->varThumbnailImage;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMainImage(): string
+    {
+        return '/storage/images/' . $this->varMainImage;
     }
 }

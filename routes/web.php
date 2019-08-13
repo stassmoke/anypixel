@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/product/{varAlias}', 'ProductController@index')->name('product');
 
 Route::prefix('admin')
     ->name('admin.')

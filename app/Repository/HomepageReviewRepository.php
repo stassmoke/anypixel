@@ -86,4 +86,16 @@ class HomepageReviewRepository implements HomepageReviewRepositoryInterface
 
         return $this->update($homepageReview, $data);
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function getEnabledSorted(): Collection
+    {
+        return HomepageReview::query()
+            ->where('isEnabled','=', true)
+            ->orderBy('intOrder')
+            ->get()
+        ;
+    }
 }

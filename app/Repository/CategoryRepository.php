@@ -103,4 +103,16 @@ class CategoryRepository implements CategoryRepositoryInterface
         ;
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function getEnabledSorted(): Collection
+    {
+        return Category::query()
+            ->where('isEnabled','=',true)
+            ->orderBy('intOrder')
+            ->get()
+        ;
+    }
+
 }

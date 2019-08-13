@@ -17,12 +17,13 @@
                             <div class="search-form__filter">
                                 <select class="wide select-filter">
                                     <option data-display="All Categories">All Categories</option>
-                                    <option value="1">After Effects</option>
-                                    <option value="2">Premiere Pro</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->varLink }}">{{ $category->varName }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="search-form__input">
-                                <input name="search" value="" type="text" placeholder="Search Template">
+                                <input name="search" type="text" placeholder="Search Template">
                                 <div class="search-icon">
                                     <input type="submit">
                                     <div class="icon">
@@ -45,328 +46,79 @@
             </div>
         </div>
     </section>
-    <section class="section-filter__product">
-        <div class="container">
-            <h2>
-                Latest Products
-            </h2>
-            <div id="filters" class="filters-buttons">
-                <button class="btn btn-filters is-checked" data-filter="*">All Items</button>
-                <button class="btn btn-filters" data-filter=".after-effect">After Effects</button>
-                <button class="btn btn-filters" data-filter=".premiere-pro">Premiere Pro</button>
-            </div>
-            <div class="grid">
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="img/Dynamic Intro Thumbnail.jpg" alt="image"
-                             class="image"/>
-                    </a>
+    @if (\count($latestProducts) > 0)
+        <section class="section-filter__product">
+            <div class="container">
+                <h2>
+                    Latest Products
+                </h2>
+                <div id="filters" class="filters-buttons">
+                    <button class="btn btn-filters is-checked" data-filter="*">All Items</button>
+                    @foreach($categories as $category)
+                        <button class="btn btn-filters" data-filter=".{{ $category->varLink }}">{{ $category->varName }}</button>
+                    @endforeach
                 </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item premiere-pro tooltip" data-category="premiere-pro"
-                     data-tooltip-content="#tooltip_content1">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-                <div class="element-item after-effect tooltip" data-category="after-effect"
-                     data-tooltip-content="#tooltip_content">
-                    <a class="element-item__link" href="#">
-                        <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb-1-3.jpg" alt="image"
-                             class="image"/>
-                    </a>
-                </div>
-            </div>
-            <div class="tooltip_templates">
-                <div id="tooltip_content" class="custom-tooltip">
-                    <img src="img/Dynamic Intro Preview Image.jpg" alt=""/>
-                    <div class="body-tooltip__item">
-                        <div class="tooltip-name">
-                            Nick After Effects Project
+                <div class="grid">
+                    @foreach($latestProducts as $product)
+                        <div class="element-item after-effect tooltip" data-category="{{ optional($categories[$product->intCatID])->varLink ?? '*' }}"
+                             data-tooltip-content="#tooltip_product_{{ $product->intProductID }}">
+                            <a class="element-item__link" href="{{ route('product',['varAlias' => $product->varAlias]) }}">
+                                <img src="{{ $product->getThumbnailImage() }}" alt="{{ $product->varName }}" class="image"/>
+                            </a>
                         </div>
-                        <div class="create-item">
-                            Nick Chvalun
-                        </div>
-                        <div class="tag-item">
-                            After Effect
-                        </div>
-                        <div class="price-item">
-                            52.00
-                        </div>
-                    </div>
-                </div>
-                <div id="tooltip_content1" class="custom-tooltip">
-                    <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/thumb.jpg" alt=""/>
-                    <div class="body-tooltip__item">
-                        <div class="tooltip-name">
-                            Nick Premiere Pro Project
-                        </div>
-                        <div class="create-item">
-                            Nick Chvalun
-                        </div>
-                        <div class="tag-item">
-                            Premiere Pro
-                        </div>
-                        <div class="price-item">
-                            28.00
-                        </div>
+                    @endforeach
+                    <div class="tooltip_templates">
+                        @foreach($latestProducts as $product)
+                            <div id="tooltip_product_{{ $product->intProductID }}" class="custom-tooltip">
+                                <img src="{{ $product->getMainImage() }}" alt="{{ $product->varName }}"/>
+                                <div class="body-tooltip__item">
+                                    <div class="tooltip-name">
+                                        {{ $product->varName }}
+                                    </div>
+                                    @if(!empty($product->varAuthor))
+                                        <div class="create-item">
+                                            {{ $product->varAuthor }}
+                                        </div>
+                                    @endif
+                                    @isset($categories[$product->intCatID])
+                                        <div class="tag-item">
+                                            {{ $categories[$product->intCatID]->varName }}
+                                        </div>
+                                    @endisset
+                                    <div class="price-item">
+                                        {{ number_format($product->varPrice, 2) }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="section-reviews"
-             style="background: url('http://themeplace.codecorns.com/wp-content/uploads/2019/07/testimonial.jpg') center no-repeat">
+        </section>
+    @endif
+    <section class="section-reviews" style="background: url('http://themeplace.codecorns.com/wp-content/uploads/2019/07/testimonial.jpg') center no-repeat">
         <div class="container">
             <div class="swiper-container slider-reviews">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slide-reviews">
-                        <div class="reviews-holder">
-                            <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-2.jpg" alt="" class="image">
-                        </div>
-                        <div class="wrap-content__slide">
-                            <p class="slide-text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                galley of type and scrambled.
-                            </p>
-                            <div class="reviews-name">
-                                Jhon Doe
+                    @foreach($reviews as $review)
+                        <div class="swiper-slide slide-reviews">
+                            <div class="reviews-holder">
+                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-2.jpg" alt="" class="image">
                             </div>
-                            <div class="reviews-position">
-                                Java Developer
+                            <div class="wrap-content__slide">
+                                <div class="slide-text">
+                                    {!! $review->varText !!}
+                                </div>
+                                <div class="reviews-name">
+                                    {{ $review->varName }}
+                                </div>
+                                <div class="reviews-position">
+                                    {{ $review->varPosition }}
+                                </div>
                             </div>
                         </div>
+                    @endforeach
 
-                    </div>
-                    <div class="swiper-slide slide-reviews">
-                        <div class="reviews-holder">
-                            <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-3.jpg" alt="" class="image">
-                        </div>
-                        <div class="wrap-content__slide">
-                            <p class="slide-text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                galley of type and scrambled.
-                            </p>
-                            <div class="reviews-name">
-                                Jhon Doe
-                            </div>
-                            <div class="reviews-position">
-                                Java Developer
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="swiper-slide slide-reviews">
-                        <div class="reviews-holder">
-                            <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-1.jpg" alt="" class="image">
-                        </div>
-                        <div class="wrap-content__slide">
-                            <p class="slide-text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                galley of type and scrambled.
-                            </p>
-                            <div class="reviews-name">
-                                Jhon Doe
-                            </div>
-                            <div class="reviews-position">
-                                Java Developer
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>

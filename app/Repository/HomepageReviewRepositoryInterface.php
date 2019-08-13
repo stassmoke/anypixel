@@ -46,4 +46,9 @@ interface HomepageReviewRepositoryInterface
      * @return HomepageReview
      */
     public function createFromArray(array $data): HomepageReview;
+
+    /**
+     * @return Collection
+     */
+    public function getEnabledSorted(): Collection;
 }
