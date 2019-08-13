@@ -18,7 +18,7 @@ class CreateProductReviewsTable extends Migration
             $table->integer('intProductID');
             $table->string('varName',255);
             $table->integer('intRating')->default(0);
-            $table->text('varComment');
+            $table->text('varComment')->nullable();
 
             $table->timestamps();
 

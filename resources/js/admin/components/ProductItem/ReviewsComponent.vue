@@ -18,16 +18,16 @@
 
             <div class="form-group">
                 <label for="varName" class="col-form-label">Name</label>
-                <input class="form-control" type="text" v-model="activeReview.varName" id="varName">
+                <input :class="{'has-error':errors.includes('varName') }" class="form-control" type="text" v-model="activeReview.varName" id="varName">
             </div>
 
             <div class="form-group">
-                <star-rating class="product-reviews-stars" :show-rating="false" v-model="activeReview.intRating"></star-rating>
+                <star-rating :class="{'has-error':errors.includes('intRating') }" class="product-reviews-stars" :show-rating="false" v-model="activeReview.intRating"></star-rating>
             </div>
 
             <div class="form-group">
                 <label for="varComment" class="col-form-label">Comment</label>
-                <vue-editor id="varComment" v-model="activeReview.varComment"></vue-editor>
+                <vue-editor :class="{'has-error':errors.includes('varComment') }" id="varComment" v-model="activeReview.varComment"></vue-editor>
             </div>
 
             <button class="btn btn-primary btn-xs mt-1" @click="saveUpdate()" type="button">{{ activeReviewKey === null ? 'Save' : 'Update'}} review</button>
@@ -42,6 +42,7 @@
         props: ['reviews_list','product_id'],
         data() {
             return {
+                errors: [],
                 reviews: [],
                 activeReview: {
                     intReviewID: null,
@@ -52,13 +53,10 @@
                 activeReviewKey: null,
             };
         },
-        created() {
+        mounted() {
             this.reviews = this.reviews_list;
         },
         methods: {
-            add() {
-
-            },
             edit(key) {
                 this.activeReviewKey = key;
                 this.activeReview = Object.assign({}, this.reviews[key]);
@@ -95,6 +93,12 @@
                 }).length > 0;
             },
             saveUpdate() {
+                this.validate();
+
+                if (this.errors.length > 0) {
+                    return;
+                }
+
                 let copy = Object.assign({}, this.activeReview);
 
                 let params = {
@@ -109,6 +113,17 @@
                 }
 
                 this.clearActiveAction();
+            },
+            validate() {
+                this.errors = [];
+
+                if (this.activeReview.varName === null || this.activeReview.varName.length === 0) {
+                    this.errors.push('varName');
+                }
+
+                if (this.activeReview.intRating === null || this.activeReview.intRating === 0) {
+                    this.errors.push('intRating');
+                }
             },
             createAction(params) {
                 this.$http.post('/admin/product-reviews/store', params).then(response => {

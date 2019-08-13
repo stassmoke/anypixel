@@ -87,6 +87,10 @@
         mounted() {
             this.$http.get('/admin/categories/options').then(response => {
                 this.categories = response.data.data.categories;
+
+                if (this.product.intCatID) {
+                    this.setCategory(this.product.intCatID);
+                }
             }, () => {
                 alert( 'Something went wrong. Send a message in support.');
             });
@@ -136,6 +140,11 @@
             },
             deleteThumbnail() {
                 this.$emit('setParams','varThumbnailImage', null);
+            },
+            setCategory(intCatID) {
+                this.selectedCategory = this.categories.find(category => {
+                    return category.intCatID === intCatID;
+                });
             }
         }
     }

@@ -11,7 +11,7 @@
                     </li>
                 </ul>
                 <div class="tab-content mt-3" id="myTabContent">
-                    <general class="tab-pane fade" @setParams="setParams" :class="{'active': activeTab === 'general','show': activeTab === 'general'}" :product="product" :errors="errors"></general>
+                    <general ref="general" class="tab-pane fade" @setParams="setParams" :class="{'active': activeTab === 'general','show': activeTab === 'general'}" :product="product" :errors="errors"></general>
                     <reviews class="tab-pane fade" :reviews_list="reviews" :class="{'active': activeTab === 'reviews','show': activeTab === 'reviews'}" :product_id="product.intProductID"></reviews>
                 </div>
             </div>
@@ -64,6 +64,12 @@
             loadProduct() {
                 this.$http.get(`/admin/products/find/${this.id}`).then(response => {
                     this.product = response.data.data.product;
+
+                    for (let review of response.data.data.product.reviews) {
+                        this.reviews.push(review);
+                    }
+
+                    this.$refs.general.setCategory(this.product.intCatID);
                 }, () => {
                     alert( 'Something went wrong. Send a message in support.');
                 });

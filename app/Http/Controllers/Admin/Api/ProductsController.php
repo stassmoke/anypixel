@@ -161,6 +161,10 @@ class ProductsController
     {
         $product = $this->productRepository->find($intProductID);
 
+        if ($product) {
+            $product->load('reviews');
+        }
+
         return new JsonResponse([
             'data' => [
                 'product' => $product,

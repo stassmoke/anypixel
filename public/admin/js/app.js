@@ -715,6 +715,10 @@ __webpack_require__.r(__webpack_exports__);
 
     this.$http.get('/admin/categories/options').then(function (response) {
       _this.categories = response.data.data.categories;
+
+      if (_this.product.intCatID) {
+        _this.setCategory(_this.product.intCatID);
+      }
     }, function () {
       alert('Something went wrong. Send a message in support.');
     });
@@ -760,6 +764,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     deleteThumbnail: function deleteThumbnail() {
       this.$emit('setParams', 'varThumbnailImage', null);
+    },
+    setCategory: function setCategory(intCatID) {
+      this.selectedCategory = this.categories.find(function (category) {
+        return category.intCatID === intCatID;
+      });
     }
   }
 });
@@ -879,6 +888,32 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$http.get("/admin/products/find/".concat(this.id)).then(function (response) {
         _this.product = response.data.data.product;
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = response.data.data.product.reviews[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var review = _step.value;
+
+            _this.reviews.push(review);
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+
+        _this.$refs.general.setCategory(_this.product.intCatID);
       }, function () {
         alert('Something went wrong. Send a message in support.');
       });
@@ -988,6 +1023,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['reviews_list', 'product_id'],
   data: function data() {
     return {
+      errors: [],
       reviews: [],
       activeReview: {
         intReviewID: null,
@@ -998,11 +1034,10 @@ __webpack_require__.r(__webpack_exports__);
       activeReviewKey: null
     };
   },
-  created: function created() {
+  mounted: function mounted() {
     this.reviews = this.reviews_list;
   },
   methods: {
-    add: function add() {},
     edit: function edit(key) {
       this.activeReviewKey = key;
       this.activeReview = Object.assign({}, this.reviews[key]);
@@ -1044,6 +1079,12 @@ __webpack_require__.r(__webpack_exports__);
       }).length > 0;
     },
     saveUpdate: function saveUpdate() {
+      this.validate();
+
+      if (this.errors.length > 0) {
+        return;
+      }
+
       var copy = Object.assign({}, this.activeReview);
       var params = {
         intProductID: this.product_id,
@@ -1057,6 +1098,17 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.clearActiveAction();
+    },
+    validate: function validate() {
+      this.errors = [];
+
+      if (this.activeReview.varName === null || this.activeReview.varName.length === 0) {
+        this.errors.push('varName');
+      }
+
+      if (this.activeReview.intRating === null || this.activeReview.intRating === 0) {
+        this.errors.push('intRating');
+      }
     },
     createAction: function createAction(params) {
       var _this3 = this;
@@ -29836,7 +29888,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm.imageUrl === null
+      !_vm.imageUrl
         ? _c("div", [
             _c("input", {
               attrs: { id: "varMainImage", type: "file" },
@@ -29848,7 +29900,7 @@ var render = function() {
           }),
       _vm._v(" "),
       _c("div", { staticClass: "mt-2 text-center" }, [
-        _vm.imageUrl !== null
+        _vm.imageUrl
           ? _c(
               "button",
               {
@@ -29942,6 +29994,7 @@ var render = function() {
           { staticClass: "tab-content mt-3", attrs: { id: "myTabContent" } },
           [
             _c("general", {
+              ref: "general",
               staticClass: "tab-pane fade",
               class: {
                 active: _vm.activeTab === "general",
@@ -30087,6 +30140,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
+          class: { "has-error": _vm.errors.includes("varName") },
           attrs: { type: "text", id: "varName" },
           domProps: { value: _vm.activeReview.varName },
           on: {
@@ -30106,6 +30160,7 @@ var render = function() {
         [
           _c("star-rating", {
             staticClass: "product-reviews-stars",
+            class: { "has-error": _vm.errors.includes("intRating") },
             attrs: { "show-rating": false },
             model: {
               value: _vm.activeReview.intRating,
@@ -30130,6 +30185,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("vue-editor", {
+            class: { "has-error": _vm.errors.includes("varComment") },
             attrs: { id: "varComment" },
             model: {
               value: _vm.activeReview.varComment,
@@ -50114,7 +50170,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/video-service/resources/js/admin/app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/admin/app.js */"./resources/js/admin/app.js");
 
 
 /***/ }),
