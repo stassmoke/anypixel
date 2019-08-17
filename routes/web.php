@@ -20,7 +20,7 @@ Route::prefix('admin')
     ->namespace('Admin')
     ->group(function () {
 
-        Route::get('/', function () {
+        Route::get('', function () {
             return redirect()->route('admin.dashboard');
         });
 
