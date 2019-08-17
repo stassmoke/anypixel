@@ -34,7 +34,11 @@ class CreateProductsTable extends Migration
             $table->boolean('isLatest')->default(false);
             $table->timestamps();
 
-            $table->index(['intCatID','isEnabled','isNew','isCheapest','isBestSelling']);
+            $table->index(['intCatID']);
+            $table->index(['isEnabled']);
+            $table->index(['isNew']);
+            $table->index(['isCheapest']);
+            $table->index(['isBestSelling']);
         });
     }
 
