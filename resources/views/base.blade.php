@@ -10,13 +10,12 @@
 </head>
 <body>
 
-@include('header')
+@include('includes.header')
 
 @yield('body')
 
 <script src="{{ asset('js/app.js') }}?v={{ time() }}"></script>
 
-
-@include('footer')
+@include('includes.footer')
 </body>
 </html>

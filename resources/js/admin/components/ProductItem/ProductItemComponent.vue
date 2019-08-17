@@ -99,6 +99,7 @@
                 }, response => this.showErrors(response.data.errors));
             },
             showErrors(errors) {
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
                 this.errors = errors;
             },
             compactParams() {

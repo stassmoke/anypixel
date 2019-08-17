@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/product/{varAlias}', 'ProductController@index')->name('product');
+Route::get('/product/{varSlug}', 'ProductController@index')->name('product');
+Route::get('/catalog/', 'CatalogController@index')->name('catalog');
 
 Route::prefix('admin')
     ->name('admin.')

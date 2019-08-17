@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\DTO\PaginationDTO;
 use App\Models\Product;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
 class ProductRepository implements ProductRepositoryInterface
@@ -76,6 +77,19 @@ class ProductRepository implements ProductRepositoryInterface
             ->where('isEnabled','=',true)
             ->where('isLatest','=', true)
             ->get()
+        ;
+    }
+
+    /**
+     * @param Builder $builder
+     * @param PaginationDTO $paginationDTO
+     * @return LengthAwarePaginator
+     */
+    public function paginateEnabledQuery(Builder $builder, PaginationDTO $paginationDTO): LengthAwarePaginator
+    {
+        return $builder
+            ->where('isEnabled','=',true)
+            ->paginate($paginationDTO->getPerPage(), ['*'],'page', $paginationDTO->getPage())
         ;
     }
 }

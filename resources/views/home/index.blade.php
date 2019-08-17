@@ -12,18 +12,18 @@
                     DigitalMarket is a powerful Digital Marketplace theme to Buy and Sell
                 </p>
                 <div class="search-form">
-                    <form>
+                    <form action="{{ route('catalog') }}" method="get">
                         <div class="search-form__flex">
                             <div class="search-form__filter">
-                                <select class="wide select-filter">
-                                    <option data-display="All Categories">All Categories</option>
+                                <select name="intCatID" class="wide select-filter">
+                                    <option value="" data-display="All Categories">All Categories</option>
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->varLink }}">{{ $category->varName }}</option>
+                                        <option value="{{ $category->intCatID }}">{{ $category->varName }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="search-form__input">
-                                <input name="search" type="text" placeholder="Search Template">
+                                <input name="term" type="text" placeholder="Search Template">
                                 <div class="search-icon">
                                     <input type="submit">
                                     <div class="icon">
@@ -40,12 +40,13 @@
                     </form>
                 </div>
                 <div class="row">
-                    <a href="#" class="btn btn-fill">shop now</a>
+                    <a href="{{ route('catalog') }}" class="btn btn-fill">shop now</a>
                     <a href="#" class="btn btn-border">learn more</a>
                 </div>
             </div>
         </div>
     </section>
+
     @if (\count($latestProducts) > 0)
         <section class="section-filter__product">
             <div class="container">
@@ -62,7 +63,7 @@
                     @foreach($latestProducts as $product)
                         <div class="element-item after-effect tooltip" data-category="{{ optional($categories[$product->intCatID])->varLink ?? '*' }}"
                              data-tooltip-content="#tooltip_product_{{ $product->intProductID }}">
-                            <a class="element-item__link" href="{{ route('product',['varAlias' => $product->varAlias]) }}">
+                            <a class="element-item__link" href="{{ route('product',['varSlug' => $product->varSlug]) }}">
                                 <img src="{{ $product->getThumbnailImage() }}" alt="{{ $product->varName }}" class="image"/>
                             </a>
                         </div>
@@ -96,7 +97,8 @@
             </div>
         </section>
     @endif
-    <section class="section-reviews" style="background: url('http://themeplace.codecorns.com/wp-content/uploads/2019/07/testimonial.jpg') center no-repeat">
+
+    <section class="section-reviews" style="background: url('{{ asset('img/background/testimonial.jpg') }}') center no-repeat">
         <div class="container">
             <div class="swiper-container slider-reviews">
                 <div class="swiper-wrapper">
