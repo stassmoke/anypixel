@@ -61,7 +61,7 @@
                 </div>
                 <div class="grid">
                     @foreach($latestProducts as $product)
-                        <div class="element-item after-effect tooltip" data-category="{{ optional($categories[$product->intCatID])->varLink ?? '*' }}"
+                        <div class="element-item {{ optional($categories[$product->intCatID])->varLink ?? '' }} tooltip" data-category="{{ optional($categories[$product->intCatID])->varLink ?? '*' }}"
                              data-tooltip-content="#tooltip_product_{{ $product->intProductID }}">
                             <a class="element-item__link" href="{{ route('product',['varSlug' => $product->varSlug]) }}">
                                 <img src="{{ $product->getThumbnailImage() }}" alt="{{ $product->varName }}" class="image"/>
