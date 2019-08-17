@@ -6,7 +6,7 @@
                     <ul>
                         <li>
                             <a class="footer-subtitle" href="#">
-                                <img class="navbar-logo__img" src="img/anypixel-logo__nav.png" alt="anypixel">
+                                <img class="navbar-logo__img" src="{{ asset('img/anypixel-logo__nav.png') }}" alt="anypixel">
                             </a>
                         </li>
                         <li>

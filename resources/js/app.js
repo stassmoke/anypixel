@@ -98,12 +98,12 @@ $(document).ready(function() {
 
 
 
-
-//youtube script
+if (document.getElementsByClassName('start-video').length > 0) {
     let tag = document.createElement('script');
-        tag.src = "//www.youtube.com/iframe_api";
+    tag.src = "//www.youtube.com/iframe_api";
+
     let firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     let player;
 
@@ -125,14 +125,14 @@ $(document).ready(function() {
         });
     };
 
-    var p = document.getElementById ("player");
+    let p = document.getElementById ('player');
     $(p).hide();
 
-    var t = document.getElementById ("thumbnail");
+    let t = document.getElementById ('thumbnail');
     t.src = t.getAttribute("data-src");
 
     window.onPlayerStateChange = function (event) {
-        if (event.data == YT.PlayerState.ENDED) {
+        if (event.data === YT.PlayerState.ENDED) {
             $('.start-video').fadeIn('normal');
         }
     };
@@ -143,6 +143,8 @@ $(document).ready(function() {
         $("#thumbnail_container").hide();
         player.playVideo();
     });
+}
+
 
 
 
