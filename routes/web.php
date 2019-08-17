@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/product/{varSlug}', 'ProductController@index')->name('product');
 Route::get('/catalog/', 'CatalogController@index')->name('catalog');
+Route::get('/catalog/{varLink}', 'CatalogController@category')->name('category');
 
 Route::prefix('admin')
     ->name('admin.')

@@ -95,8 +95,11 @@ $(document).ready(function() {
 
 });
 
+$('.catalog-sort-filter').on('click', function () {
+    let sort = $(this).data('sort');
 
-
+    window.location.href = window.location.origin + window.location.pathname + '?orderBy=' + sort;
+});
 
 if (document.getElementsByClassName('start-video').length > 0) {
     let tag = document.createElement('script');

@@ -5,7 +5,7 @@
         <div class="breadcrumb-content">
             <div class="container">
                 <h2>
-                    Shop
+                    {{ $titlePage }}
                 </h2>
                 <div class="row-breadcrumb">
                     <ul class="breadcrumb">
@@ -13,7 +13,7 @@
                             <a href="{{ route('home') }}" class="breadcrumb-link">Home</a>
                         </li>
                         <li class="breadcrumb-list">
-                            <span class="breadcrumb-link">Shop</span>
+                            <span class="breadcrumb-link">{{ $titlePage }}</span>
                         </li>
                     </ul>
                 </div>
@@ -22,9 +22,9 @@
 
         <section class="section-shop">
             <div id="filters" class="filters-buttons">
-                <button class="catalog-category-filter btn btn-filters @if(empty($filter['intCatID']))is-checked @endif" data-filter="*">All Items</button>
+                <a class="btn btn-filters @if(empty($filter['intCatID']))is-checked @endif" href="{{ route('catalog') }}">All Items</a>
                 @foreach($categories as $category)
-                    <button class="catalog-category-filter btn btn-filters @if((int) \Illuminate\Support\Arr::get($filter,'intCatID') === $category->intCatID)is-checked @endif" data-category="{{ $category->intCatID }}">{{ $category->varName }}</button>
+                    <a href="{{ route('category', ['varLink' => $category->varLink]) }}" class="btn btn-filters @if((int) \Illuminate\Support\Arr::get($filter,'intCatID') === $category->intCatID)is-checked @endif">{{ $category->varName }}</a>
                 @endforeach
             </div>
 
@@ -78,13 +78,5 @@
         </section>
 
     </div>
-
-    <script src="{{ asset('js/CatalogFilter.js') }}"></script>
-
-    <script>
-        let catalogFilter = new CatalogFilter("{{ route('catalog') }}");
-
-        catalogFilter.setFilters('{!! json_encode($filter) !!}');
-    </script>
 
 @endsection

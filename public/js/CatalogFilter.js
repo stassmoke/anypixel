@@ -1,11 +1,10 @@
 class CatalogFilter {
 
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
+    constructor() {
+        this.baseUrl = window.location.origin + window.location.pathname;
 
         this.filter = {
             orderBy: null,
-            intCatID: null,
             term: null,
         };
 
@@ -23,19 +22,6 @@ class CatalogFilter {
 
                 if (sortBy !== self.filter.orderBy) {
                     self.filter.orderBy = sortBy;
-                    self.submitFilter();
-                }
-            });
-        }
-
-        let categoriesButtons = document.querySelectorAll('.catalog-category-filter');
-
-        for (let categoryButton of categoriesButtons) {
-            categoryButton.addEventListener('click', function () {
-                let intCatID = this.getAttribute('data-category');
-
-                if (intCatID !== self.filter.intCatID) {
-                    self.filter.intCatID = intCatID;
                     self.submitFilter();
                 }
             });

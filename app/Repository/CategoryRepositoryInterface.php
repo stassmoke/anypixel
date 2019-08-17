@@ -56,4 +56,10 @@ interface CategoryRepositoryInterface
      * @return Collection
      */
     public function getEnabledSorted(): Collection;
+
+    /**
+     * @param string $varLink
+     * @return Category|null
+     */
+    public function findEnabledByLink(string $varLink): ?Category;
 }
