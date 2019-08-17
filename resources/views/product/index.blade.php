@@ -62,7 +62,7 @@
                             <div class="item-price">
                                 ${{ number_format($product->varPrice,2) }}
                             </div>
-                            <a href="#" class="btn btn-fill btn-purchase">
+                            <a href="{{ $product->varLink }}" target="_blank" class="btn btn-fill btn-purchase">
                                 ${{ number_format($product->varPrice,2) }} – Purchase
                             </a>
                             <div class="item-rating">
