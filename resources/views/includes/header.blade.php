@@ -2,12 +2,12 @@
     <div class="container">
         <div class="menu-row">
             <a href="/" class="navbar-logo">
-                <img class="navbar-logo__img" src="img/anypixel-logo__nav.png" alt="anypixel">
+                <img class="navbar-logo__img" src="{{ asset('img/anypixel-logo__nav.png') }}" alt="anypixel">
             </a>
             <nav class="desktop-menu">
                 <ul class="navigation">
                     <li class="menu-item">
-                        <a href="/">Home</a>
+                        <a href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="menu-item">
                         <a href="#">About Us</a>
@@ -19,7 +19,7 @@
                         <a href="#">Blog</a>
                     </li>
                     <li class="menu-item">
-                        <a href="page_shop">Shop</a>
+                        <a href="{{ route('catalog') }}">Shop</a>
                     </li>
                     <li class="menu-item">
                         <a href="#">Pages</a>

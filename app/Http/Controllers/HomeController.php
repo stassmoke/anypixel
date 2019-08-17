@@ -62,7 +62,7 @@ class HomeController
             ->getEnabledSorted()
         ;
 
-        return \view('index', [
+        return \view('home.index', [
             'categories' => $categories,
             'latestProducts' => $latestProducts,
             'reviews' => $reviews,

@@ -68,3 +68,9 @@ input.has-error,
      object-fit: contain;
 }
 
+.product-edit-description-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

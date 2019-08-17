@@ -11,7 +11,7 @@
                     </li>
                 </ul>
                 <div class="tab-content mt-3" id="myTabContent">
-                    <general ref="general" class="tab-pane fade" @setParams="setParams" :class="{'active': activeTab === 'general','show': activeTab === 'general'}" :product="product" :errors="errors"></general>
+                    <general @clearSpaces="clearSpaces()" ref="general" class="tab-pane fade" @setParams="setParams" :class="{'active': activeTab === 'general','show': activeTab === 'general'}" :product="product" :errors="errors"></general>
                     <reviews class="tab-pane fade" :reviews_list="reviews" :class="{'active': activeTab === 'reviews','show': activeTab === 'reviews'}" :product_id="product.intProductID"></reviews>
                 </div>
             </div>
@@ -99,6 +99,7 @@
                 }, response => this.showErrors(response.data.errors));
             },
             showErrors(errors) {
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
                 this.errors = errors;
             },
             compactParams() {
@@ -114,6 +115,9 @@
             },
             setParams(key, value) {
                 this.product[key] = value;
+            },
+            clearSpaces() {
+                this.product.varDescription = this.product.varDescription.replace(/>\s+?</g, '><');
             }
         }
     }

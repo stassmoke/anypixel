@@ -707,6 +707,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -717,8 +721,15 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       categories: [],
-      selectedCategory: null
+      selectedCategory: null,
+      isEditor: true,
+      switchWidth: 65
     };
+  },
+  watch: {
+    isEditor: function isEditor() {
+      this.$emit('clearSpaces');
+    }
   },
   mounted: function mounted() {
     var _this = this;
@@ -961,6 +972,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     showErrors: function showErrors(errors) {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
       this.errors = errors;
     },
     compactParams: function compactParams() {
@@ -977,6 +989,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     setParams: function setParams(key, value) {
       this.product[key] = value;
+    },
+    clearSpaces: function clearSpaces() {
+      this.product.varDescription = this.product.varDescription.replace(/>\s+?</g, '><');
     }
   }
 });
@@ -29622,23 +29637,71 @@ var render = function() {
       { staticClass: "form-group mt-3" },
       [
         _c(
-          "label",
-          { staticClass: "col-form-label", attrs: { for: "varText" } },
-          [_vm._v("Description")]
+          "div",
+          { staticClass: "product-edit-description-label" },
+          [
+            _c(
+              "label",
+              { staticClass: "col-form-label", attrs: { for: "varText" } },
+              [_vm._v("Description")]
+            ),
+            _vm._v(" "),
+            _c("toggle-button", {
+              attrs: {
+                width: _vm.switchWidth,
+                value: true,
+                labels: { checked: "Editor", unchecked: "Html" }
+              },
+              model: {
+                value: _vm.isEditor,
+                callback: function($$v) {
+                  _vm.isEditor = $$v
+                },
+                expression: "isEditor"
+              }
+            })
+          ],
+          1
         ),
         _vm._v(" "),
-        _c("vue-editor", {
-          class: { "has-error": _vm.hasError("varDescription") },
-          attrs: { id: "varText", useCustomImageHandler: "" },
-          on: { imageAdded: _vm.handleImageAdded },
-          model: {
-            value: _vm.product.varDescription,
-            callback: function($$v) {
-              _vm.$set(_vm.product, "varDescription", $$v)
-            },
-            expression: "product.varDescription"
-          }
-        })
+        _vm.isEditor
+          ? _c("vue-editor", {
+              class: { "has-error": _vm.hasError("varDescription") },
+              attrs: { id: "varText", useCustomImageHandler: "" },
+              on: { imageAdded: _vm.handleImageAdded },
+              model: {
+                value: _vm.product.varDescription,
+                callback: function($$v) {
+                  _vm.$set(_vm.product, "varDescription", $$v)
+                },
+                expression: "product.varDescription"
+              }
+            })
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.isEditor
+          ? _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.product.varDescription,
+                  expression: "product.varDescription"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { cols: "30", rows: "10" },
+              domProps: { value: _vm.product.varDescription },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.product, "varDescription", $event.target.value)
+                }
+              }
+            })
+          : _vm._e()
       ],
       1
     ),
@@ -30097,7 +30160,12 @@ var render = function() {
                 show: _vm.activeTab === "general"
               },
               attrs: { product: _vm.product, errors: _vm.errors },
-              on: { setParams: _vm.setParams }
+              on: {
+                clearSpaces: function($event) {
+                  return _vm.clearSpaces()
+                },
+                setParams: _vm.setParams
+              }
             }),
             _vm._v(" "),
             _c("reviews", {
@@ -49447,15 +49515,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-star-rating */ "./node_modules/vue-star-rating/dist/star-rating.min.js");
 /* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var vue2_editor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue2-editor */ "./node_modules/vue2-editor/dist/vue2-editor.esm.js");
-/* harmony import */ var _components_CategoriesTableComponent_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/CategoriesTableComponent.vue */ "./resources/js/admin/components/CategoriesTableComponent.vue");
-/* harmony import */ var _components_CreateCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/CreateCategoryComponent.vue */ "./resources/js/admin/components/CreateCategoryComponent.vue");
-/* harmony import */ var _components_EditCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/EditCategoryComponent.vue */ "./resources/js/admin/components/EditCategoryComponent.vue");
-/* harmony import */ var _components_HomepageReviewsTableComponent_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/HomepageReviewsTableComponent.vue */ "./resources/js/admin/components/HomepageReviewsTableComponent.vue");
-/* harmony import */ var _components_CreateHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/CreateHomepageReviewComponent.vue */ "./resources/js/admin/components/CreateHomepageReviewComponent.vue");
-/* harmony import */ var _components_EditHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/EditHomepageReviewComponent.vue */ "./resources/js/admin/components/EditHomepageReviewComponent.vue");
-/* harmony import */ var _components_ProductsTableComponent_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/ProductsTableComponent.vue */ "./resources/js/admin/components/ProductsTableComponent.vue");
-/* harmony import */ var _components_ProductItem_ProductItemComponent_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/ProductItem/ProductItemComponent.vue */ "./resources/js/admin/components/ProductItem/ProductItemComponent.vue");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-js-toggle-button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_CategoriesTableComponent_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/CategoriesTableComponent.vue */ "./resources/js/admin/components/CategoriesTableComponent.vue");
+/* harmony import */ var _components_CreateCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/CreateCategoryComponent.vue */ "./resources/js/admin/components/CreateCategoryComponent.vue");
+/* harmony import */ var _components_EditCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/EditCategoryComponent.vue */ "./resources/js/admin/components/EditCategoryComponent.vue");
+/* harmony import */ var _components_HomepageReviewsTableComponent_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/HomepageReviewsTableComponent.vue */ "./resources/js/admin/components/HomepageReviewsTableComponent.vue");
+/* harmony import */ var _components_CreateHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/CreateHomepageReviewComponent.vue */ "./resources/js/admin/components/CreateHomepageReviewComponent.vue");
+/* harmony import */ var _components_EditHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/EditHomepageReviewComponent.vue */ "./resources/js/admin/components/EditHomepageReviewComponent.vue");
+/* harmony import */ var _components_ProductsTableComponent_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/ProductsTableComponent.vue */ "./resources/js/admin/components/ProductsTableComponent.vue");
+/* harmony import */ var _components_ProductItem_ProductItemComponent_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/ProductItem/ProductItemComponent.vue */ "./resources/js/admin/components/ProductItem/ProductItemComponent.vue");
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
 
 
 
@@ -49471,6 +49541,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('paginate', vuejs_paginate_
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('multiselect', vue_multiselect__WEBPACK_IMPORTED_MODULE_4___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('star-rating', vue_star_rating__WEBPACK_IMPORTED_MODULE_6___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('vue-editor', vue2_editor__WEBPACK_IMPORTED_MODULE_7__["VueEditor"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('toggle-button', !(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-js-toggle-button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 var token = document.head.querySelector('meta[name="csrf-token"]');
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.http.interceptors.push(function (request, next) {
   request.headers.set('X-CSRF-TOKEN', token.content);
@@ -49487,14 +49558,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.http.interceptors.push(function (requ
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   components: {
-    CategoriesTable: _components_CategoriesTableComponent_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
-    CreateCategory: _components_CreateCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
-    EditCategory: _components_EditCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
-    HomepageReviewsTable: _components_HomepageReviewsTableComponent_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
-    CreateHomepageReview: _components_CreateHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
-    EditHomepageReview: _components_EditHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
-    ProductsTable: _components_ProductsTableComponent_vue__WEBPACK_IMPORTED_MODULE_14__["default"],
-    ProductItem: _components_ProductItem_ProductItemComponent_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
+    CategoriesTable: _components_CategoriesTableComponent_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+    CreateCategory: _components_CreateCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+    EditCategory: _components_EditCategoryComponent_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+    HomepageReviewsTable: _components_HomepageReviewsTableComponent_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
+    CreateHomepageReview: _components_CreateHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
+    EditHomepageReview: _components_EditHomepageReviewComponent_vue__WEBPACK_IMPORTED_MODULE_14__["default"],
+    ProductsTable: _components_ProductsTableComponent_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
+    ProductItem: _components_ProductItem_ProductItemComponent_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
   }
 });
 

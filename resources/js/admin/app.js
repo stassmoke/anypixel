@@ -8,6 +8,7 @@ import Multiselect from 'vue-multiselect'
 import VueSilentbox from 'vue-silentbox'
 import StarRating from 'vue-star-rating'
 import { VueEditor } from "vue2-editor";
+import { ToggleButton } from 'vue-js-toggle-button'
 
 Vue.use(VueResource);
 Vue.use(SlimDialog);
@@ -17,6 +18,7 @@ Vue.component('paginate', Paginate);
 Vue.component('multiselect', Multiselect);
 Vue.component('star-rating', StarRating);
 Vue.component('vue-editor', VueEditor);
+Vue.component('toggle-button', ToggleButton);
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 

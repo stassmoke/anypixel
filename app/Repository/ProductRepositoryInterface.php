@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\DTO\PaginationDTO;
 use App\Models\Product;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
 interface ProductRepositoryInterface
@@ -38,4 +39,11 @@ interface ProductRepositoryInterface
      * @return Collection
      */
     public function getLatest(): Collection;
+
+    /**
+     * @param Builder $builder
+     * @param PaginationDTO $paginationDTO
+     * @return LengthAwarePaginator
+     */
+    public function paginateEnabledQuery(Builder $builder, PaginationDTO $paginationDTO): LengthAwarePaginator;
 }
