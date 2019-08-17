@@ -13,7 +13,7 @@
                             <a href="{{ route('home') }}" class="breadcrumb-link">Home</a>
                         </li>
                         <li class="breadcrumb-list">
-                            <a href="#" class="breadcrumb-link">Shop</a>
+                            <span class="breadcrumb-link">Shop</span>
                         </li>
                     </ul>
                 </div>

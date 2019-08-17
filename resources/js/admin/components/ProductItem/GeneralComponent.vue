@@ -37,8 +37,12 @@
         </div>
 
         <div class="form-group mt-3">
-            <label for="varText" class="col-form-label">Description</label>
-            <vue-editor :class="{'has-error':hasError('varDescription')}" id="varText" v-model="product.varDescription" useCustomImageHandler @imageAdded="handleImageAdded"></vue-editor>
+            <div class="product-edit-description-label">
+                <label for="varText" class="col-form-label">Description</label>
+                <toggle-button :width="switchWidth" v-model="isEditor" :value="true" :labels="{checked: 'Editor', unchecked: 'Html'}"/>
+            </div>
+            <vue-editor v-if="isEditor" :class="{'has-error':hasError('varDescription')}" id="varText" v-model="product.varDescription" useCustomImageHandler @imageAdded="handleImageAdded"></vue-editor>
+            <textarea  class="form-control" cols="30" rows="10" v-if="!isEditor" v-model="product.varDescription"></textarea>
         </div>
 
         <div class="form-group">
@@ -92,6 +96,13 @@
             return {
                 categories: [],
                 selectedCategory: null,
+                isEditor: true,
+                switchWidth: 65,
+            }
+        },
+        watch: {
+            isEditor() {
+                this.$emit('clearSpaces');
             }
         },
         mounted() {
