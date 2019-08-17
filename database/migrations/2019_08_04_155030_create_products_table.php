@@ -40,6 +40,7 @@ class CreateProductsTable extends Migration
             $table->index(['isNew']);
             $table->index(['isCheapest']);
             $table->index(['isBestSelling']);
+            $table->index(['isLatest']);
         });
     }
 
