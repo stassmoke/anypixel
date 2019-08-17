@@ -35,6 +35,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
 
             $table->index(['intCatID']);
+            $table->unique(['varSlug']);
             $table->index(['isEnabled']);
             $table->index(['isNew']);
             $table->index(['isCheapest']);
