@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6
     -ms-word-wrap: break-word
     word-wrap: break-word
     color: #2e3d62
+    font-weight: bold
 
 
 h1
@@ -47,6 +48,21 @@ h2
     font-weight: bold
     line-height: 70px
     text-align: center
+
+h3
+    font-size: 30px
+    font-weight: 500
+    margin-bottom: 25px
+
+h4
+    font-size: 24px
+    font-weight: 500
+    margin-bottom: 25px
+
+p
+    margin-top: 0
+    margin-bottom: 16px
+    line-height: 1.5
 
 
 .heading-description
@@ -205,3 +221,57 @@ section
         background: url('img/icons/rating-view__selected.svg') top left no-repeat
         -webkit-background-size: 100%
         background-size: 100px
+
+
+.tabs__caption
+    display: flex
+    position: relative
+    transition: $transition
+    align-items: center
+    justify-content: center
+    li
+        padding: 7px 15px 7px 15px
+        position: relative
+        white-space: nowrap
+        text-align: center
+        background: none
+        border: 1px solid $color2
+        font-weight: 400
+        transition: $transition
+        margin: 0 20px 0 0
+        color: $grey
+        list-style: none !important
+        font-size: 16px
+        border-radius: 40px
+        user-select: none
+        line-height: 25px!important
+        &:last-child
+            margin-right: 0
+        &:not(.active)
+            cursor: pointer
+        &.active
+            transition: $transition
+            border: 1px solid transparent
+            background: $color2
+            color: #fff
+            box-shadow: 0 10px 20px 0 rgba(59, 167, 202, 0.4)
+
+.wrap-tab__content
+    position: relative
+    width: 100%
+    display: block
+
+
+
+.tabs__content
+    display: none
+    transition: $transition
+    opacity: 0
+    z-index: -1
+    &.active
+        display: block
+        opacity: 1
+        z-index: 1
+        transition: $transition
+        height: auto
+
