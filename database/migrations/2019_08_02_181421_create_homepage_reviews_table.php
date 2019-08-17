@@ -22,6 +22,8 @@ class CreateHomepageReviewsTable extends Migration
             $table->integer('intOrder')->default(0);
             $table->boolean('isEnabled')->default(false);
             $table->timestamps();
+
+            $table->index(['isEnabled']);
         });
     }
 
