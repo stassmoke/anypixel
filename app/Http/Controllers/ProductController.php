@@ -36,6 +36,7 @@ class ProductController
 
         return view('product.index', [
             'product' => $product,
+            'titlePage' => $product->varName
         ]);
     }
 }

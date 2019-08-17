@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ time() }}">
     <script src="https://kit.fontawesome.com/efc7be1369.js"></script>
-    <title>Laravel</title>
+    <title>Anypixel @isset($titlePage)- {{ $titlePage }}@endisset</title>
 </head>
 <body>
 

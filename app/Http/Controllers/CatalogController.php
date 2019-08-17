@@ -76,6 +76,7 @@ class CatalogController
             'products' => $products,
             'filter' => $filter,
             'sortBy' => $sortByDTO,
+            'titlePage' => 'Shop'
         ]);
     }
 }
