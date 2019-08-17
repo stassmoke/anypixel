@@ -22,6 +22,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
 
             $table->unique(['varLink']);
+            $table->index(['isEnabled']);
         });
     }
 
