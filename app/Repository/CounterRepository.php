@@ -14,7 +14,7 @@ class CounterRepository implements CounterRepositoryInterface
     {
         return Counter::query()
             ->where('isEnabled','=', true)
-            ->orderBy('intOrder','ASC')
+            ->orderBy('intSort','ASC')
             ->get()
         ;
     }
