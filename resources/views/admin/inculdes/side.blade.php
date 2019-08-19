@@ -1,8 +1,8 @@
 <div class="sidebar-menu">
     <div class="sidebar-header">
         <div class="logo">
-            <a href="index.html">
-                <img src="/admin/assets/images/icon/logo.png" alt="logo">
+            <a href="{{ route('admin.dashboard') }}">
+                <img src="{{ asset('/admin/assets/images/icon/logo.png') }}" alt="logo">
             </a>
         </div>
     </div>
@@ -24,8 +24,20 @@
                     </li>
                     <li class="{{ Nav::hasSegment('products',2) }}">
                         <a href="{{ route('admin.products.index') }}">
-                            <i class="ti-comment-alt"></i>
+                            <i class="ti-video-clapper"></i>
                             <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::hasSegment('counters',2) }}">
+                        <a href="{{ route('admin.counters.index') }}">
+                            <i class="ti-pulse"></i>
+                            <span>Counters</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::hasSegment('subscribers',2) }}">
+                        <a href="{{ route('admin.subscribers.index') }}">
+                            <i class="ti-email"></i>
+                            <span>Subscribers</span>
                         </a>
                     </li>
                 </ul>

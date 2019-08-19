@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\CategoryRepositoryInterface;
+use App\Repository\CounterRepositoryInterface;
 use App\Repository\HomepageReviewRepositoryInterface;
 use App\Repository\ProductRepositoryInterface;
 use Illuminate\View\View;
@@ -25,20 +26,28 @@ class HomeController
     private $homepageReviewRepository;
 
     /**
+     * @var CounterRepositoryInterface
+     */
+    private $counterRepository;
+
+    /**
      * HomeController constructor.
      * @param CategoryRepositoryInterface $categoryRepository
      * @param ProductRepositoryInterface $productRepository
      * @param HomepageReviewRepositoryInterface $homepageReviewRepository
+     * @param CounterRepositoryInterface $counterRepository
      */
     public function __construct(
         CategoryRepositoryInterface $categoryRepository,
         ProductRepositoryInterface $productRepository,
-        HomepageReviewRepositoryInterface $homepageReviewRepository
+        HomepageReviewRepositoryInterface $homepageReviewRepository,
+        CounterRepositoryInterface $counterRepository
     )
     {
         $this->categoryRepository = $categoryRepository;
         $this->productRepository = $productRepository;
         $this->homepageReviewRepository = $homepageReviewRepository;
+        $this->counterRepository = $counterRepository;
     }
 
     /**
@@ -62,10 +71,16 @@ class HomeController
             ->getEnabledSorted()
         ;
 
+        $counters = $this
+            ->counterRepository
+            ->getEnabledSorted()
+        ;
+
         return \view('home.index', [
             'categories' => $categories,
             'latestProducts' => $latestProducts,
             'reviews' => $reviews,
+            'counters' => $counters,
         ]);
     }
 }

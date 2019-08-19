@@ -82,7 +82,7 @@
                                     return category.intCatID === intCatID;
                                 });
 
-                                this.categories = this.categories.splice(index, 1);
+                                this.categories.splice(index, 1);
                             });
                         }
                     })
