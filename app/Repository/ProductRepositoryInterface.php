@@ -46,4 +46,10 @@ interface ProductRepositoryInterface
      * @return LengthAwarePaginator
      */
     public function paginateEnabledQuery(Builder $builder, PaginationDTO $paginationDTO): LengthAwarePaginator;
+
+    /**
+     * @param string $slug
+     * @return Product|null
+     */
+    public function findEnableBySlag(string $slug): ?Product;
 }

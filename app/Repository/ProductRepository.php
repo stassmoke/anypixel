@@ -92,4 +92,17 @@ class ProductRepository implements ProductRepositoryInterface
             ->paginate($paginationDTO->getPerPage(), ['*'],'page', $paginationDTO->getPage())
         ;
     }
+
+    /**
+     * @param string $slug
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null|Product
+     */
+    public function findEnableBySlag(string $slug): ?Product
+    {
+        return Product::query()
+            ->where('isEnabled','=',true)
+            ->where('varSlug','=', $slug)
+            ->first()
+        ;
+    }
 }

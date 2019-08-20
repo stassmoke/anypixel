@@ -115,4 +115,17 @@ class CategoryRepository implements CategoryRepositoryInterface
         ;
     }
 
+    /**
+     * @inheritdoc
+     * @return Category|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
+     */
+    public function findEnabledByLink(string $varLink): ?Category
+    {
+        return Category::query()
+            ->where('isEnabled','=',true)
+            ->where('varLink','=', $varLink)
+            ->first()
+        ;
+    }
+
 }

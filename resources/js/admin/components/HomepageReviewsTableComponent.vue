@@ -80,11 +80,11 @@
                     .then(res => {
                         if (res.ok === true) {
                             this.$http.delete(`/admin/homepage-reviews/delete/${intReviewID}`).then(() => {
-                                let index = this.reviews.find(review => {
+                                let index = this.reviews.findIndex(review => {
                                     return review.intReviewID === intReviewID;
                                 });
 
-                                this.reviews = this.reviews.splice(index, 1);
+                                this.reviews.splice(index, 1);
                             });
                         }
                     })

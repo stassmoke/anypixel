@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\FilterServiceProvider::class,
+        App\Providers\IntegrationServiceProvider::class,
         DevMarketer\EasyNav\EasyNavServiceProvider::class,
 
     ],

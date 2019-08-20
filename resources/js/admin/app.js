@@ -35,6 +35,8 @@ import CreateHomepageReview from './components/CreateHomepageReviewComponent.vue
 import EditHomepageReview from './components/EditHomepageReviewComponent.vue'
 import ProductsTable from './components/ProductsTableComponent.vue'
 import ProductItem from './components/ProductItem/ProductItemComponent.vue'
+import CounterPageComponent from './components/CounterPageComponent.vue'
+import SubscribersPageComponent from './components/SubscribersPageComponent.vue'
 
 new Vue({
     el: '#app',
@@ -47,5 +49,7 @@ new Vue({
         EditHomepageReview,
         ProductsTable,
         ProductItem,
+        CounterPageComponent,
+        SubscribersPageComponent
     }
 });

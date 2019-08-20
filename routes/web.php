@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/product/{varSlug}', 'ProductController@index')->name('product');
 Route::get('/catalog/', 'CatalogController@index')->name('catalog');
+Route::get('/catalog/{varLink}', 'CatalogController@category')->name('category');
 
 Route::prefix('admin')
     ->name('admin.')
@@ -42,6 +43,10 @@ Route::prefix('admin')
             Route::get('products/create', 'ProductController@create')->name('products.create');
             Route::get('products/edit/{intProductID}', 'ProductController@edit')->name('products.edit');
 
+            Route::get('counters', 'CountersController@index')->name('counters.index');
+
+            Route::get('subscribers', 'SubscribersController@index')->name('subscribers.index');
+
             Route::get('categories/list','Api\\CategoriesController@listOfCategories')->name('categories.list');
             Route::get('categories/find/{intCatID}','Api\\CategoriesController@find')->name('categories.find');
             Route::get('categories/options','Api\\CategoriesController@getForOptions')->name('categories.options');
@@ -66,6 +71,12 @@ Route::prefix('admin')
             Route::post('product-reviews/store','Api\\ProductReviewsController@store')->name('product.reviews.store');
             Route::put('product-reviews/update/{intReviewID}','Api\\ProductReviewsController@update')->name('product.reviews.update');
             Route::delete('product-reviews/delete/{intReviewID}','Api\\ProductReviewsController@delete')->name('product.reviews.delete');
+
+            Route::get('counters/list', 'Api\\CountersController@getAll')->name('counters.list');
+            Route::post('counters/update/{alias}', 'Api\\CountersController@update')->name('counters.update');
+
+            Route::get('subscribers/list', 'Api\\SubscribersController@getList')->name('subscribers.list');
+            Route::delete('subscribers/delete/{intSubscriberID}','Api\\SubscribersController@delete')->name('subscribers.delete');
 
             Route::post('images/upload','Api\\ImagesController@upload')->name('images.upload');
         });

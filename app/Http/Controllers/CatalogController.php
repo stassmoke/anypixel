@@ -10,6 +10,7 @@ use App\Repository\CategoryRepositoryInterface;
 use App\Repository\ProductRepositoryInterface;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CatalogController
 {
@@ -76,6 +77,51 @@ class CatalogController
             'products' => $products,
             'filter' => $filter,
             'sortBy' => $sortByDTO,
+            'titlePage' => 'Shop'
+        ]);
+    }
+
+    /**
+     * @param string $varLink
+     * @param Request $request
+     * @return View
+     */
+    public function category(string $varLink, Request $request): View
+    {
+        $category = $this->categoryRepository->findEnabledByLink($varLink);
+
+        if ($category === null) {
+            throw new NotFoundHttpException();
+        }
+
+        $categories = $this->categoryRepository->getEnabledSorted();
+
+        $filter = array_filter($request->query->all());
+
+        $filter['intCatID'] = $category->intCatID;
+
+        $productQuery = Product::query();
+
+        $sortByDTO = new SortByDTO(
+            $request->query->get('orderBy','isNew'),
+            'DESC'
+        );
+
+        $filterQuery = $this->productFilter->filter($productQuery, $sortByDTO, $filter);
+
+        $paginateDTO = new PaginationDTO(
+            $request->query->getInt('page'),
+            9
+        );
+
+        $products = $this->productRepository->paginateEnabledQuery($filterQuery, $paginateDTO)->appends($filter);
+
+        return \view('catalog.index', [
+            'categories' => $categories,
+            'products' => $products,
+            'filter' => $filter,
+            'sortBy' => $sortByDTO,
+            'titlePage' => $category->varName
         ]);
     }
 }

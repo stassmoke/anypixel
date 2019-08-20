@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class CreateCountersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateCategoriesTable extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->bigIncrements('intCatID');
+        Schema::create('counters', function (Blueprint $table) {
+            $table->bigIncrements('intCountID');
             $table->string('varName',255);
-            $table->string('varLink',255);
-            $table->unsignedInteger('intOrder')->default(0);
+            $table->string('varAlias',255);
             $table->boolean('isEnabled')->default(false);
-            $table->timestamps();
+            $table->integer('intSort')->default(0);
+            $table->integer('intValue')->default(0);
 
-            $table->unique(['varLink']);
-            $table->index(['isEnabled']);
+            $table->index('intSort');
+            $table->index('isEnabled');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('counters');
     }
 }

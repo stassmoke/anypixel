@@ -40,7 +40,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-danger" @click="deleteReview(product.intProductID, product.varName)">
+                            <a href="#" class="text-danger" @click="deleteProduct(product.intProductID, product.varName)">
                                 <i class="ti-trash"></i>
                             </a>
                         </li>
@@ -54,9 +54,9 @@
             <paginate
                 v-model="pagination.currentPage"
                 :page-count="pagination.count"
-                :page-range="32"
+                :page-range="16"
                 :margin-pages="8"
-                :click-handler="onPageChange"
+                :click-handler="loadProducts"
                 :prev-text="'Prev'"
                 :next-text="'Next'"
                 :container-class="'pagination pg-color-border'"
@@ -88,7 +88,7 @@
             };
         },
         mounted() {
-           this.loadProducts();
+           this.loadSubscribers();
         },
         methods: {
 
@@ -106,7 +106,7 @@
                                     return product.intProductID === intProductID;
                                 });
 
-                                this.products = this.products.splice(index, 1);
+                                this.products.splice(index, 1);
                             });
                         }
                     })
@@ -115,12 +115,9 @@
             edit(intProductID) {
                 window.location.href = `/admin/products/edit/${intProductID}`;
             },
-            onPageChange(pageNum) {
-                console.log(pageNum);
-            },
-            loadProducts() {
+            loadSubscribers() {
                 let params = {
-                    pagination: this.pagination,
+                    page: this.pagination.currentPage,
                 };
 
                 this.$http.get('/admin/products/list', {params: params}).then(response => {
