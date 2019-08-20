@@ -97,17 +97,37 @@
             </div>
         </section>
     @endif
+    <section class="section-product__sales">
+        <h2>Satisfied Clients</h2>
+        <div class="container">
+            <div class="row-product__sales">
+                <span class="item-sale">
+                    <span class="count">165</span>
+                     <span class="inner-item__sale">Countries</span>
+                </span>
+                <span class="item-sale">
+                    <span class="count">119</span>
+                    <span class="inner-item__sale">Templates</span>
+                </span>
+                <span class="item-sale">
+                    <span class="count">874</span>
+                     <span class="inner-item__sale">followers</span>
+                </span>
+                <span class="item-sale">
+                    <span class="count">14000</span>
+                     <span class="inner-item__sale">sales</span>
+                </span>
+            </div>
+        </div>
 
+    </section>
     <section class="section-reviews" style="background: url('{{ asset('img/background/testimonial.jpg') }}') center no-repeat">
         <div class="container">
             <div class="swiper-container slider-reviews">
                 <div class="swiper-wrapper">
                     @foreach($reviews as $review)
                         <div class="swiper-slide slide-reviews">
-                            <div class="reviews-holder">
-                                <img src="http://themeplace.codecorns.com/wp-content/uploads/2019/05/t-2.jpg" alt="" class="image">
-                            </div>
-                            <div class="wrap-content__slide">
+                            <a href="#" class="wrap-content__slide">
                                 <div class="slide-text">
                                     {!! $review->varText !!}
                                 </div>
@@ -117,7 +137,7 @@
                                 <div class="reviews-position">
                                     {{ $review->varPosition }}
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
 

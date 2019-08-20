@@ -16,6 +16,7 @@
 
 <script src="{{ asset('js/app.js') }}?v={{ time() }}"></script>
 
+@include('includes.modals')
 @include('includes.footer')
 </body>
 </html>

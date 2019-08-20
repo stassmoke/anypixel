@@ -101,6 +101,43 @@ $('.catalog-sort-filter').on('click', function () {
     window.location.href = window.location.origin + window.location.pathname + '?orderBy=' + sort;
 });
 
+// counter //
+
+$('.count').each(function () {
+    var $this = $(this);
+    jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+        duration: 2500,
+        easing: 'swing',
+        step: function () {
+            $this.text(Math.ceil(this.Counter));
+        }
+    });
+});
+
+// counter //
+
+// // modal open subscribe //
+//
+// setTimeout(function(){
+//     $('.wrap-modals').addClass('_open')
+//     $('body').css('overflow', 'hidden')
+// }, 3000);
+
+// modal open subscribe //
+
+// close modals //
+$(document).ready(function () {
+    $('.close-modal').on('click', function (e) {
+        e.preventDefault();
+        $('.wrap-modals').removeClass('_open');
+        $('body').css('overflow', 'initial')
+    });
+});
+
+
+// close modals //
+
+
 if (document.getElementsByClassName('start-video').length > 0) {
     let tag = document.createElement('script');
     tag.src = "//www.youtube.com/iframe_api";

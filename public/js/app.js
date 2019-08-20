@@ -20355,7 +20355,38 @@ $(document).ready(function () {
 $('.catalog-sort-filter').on('click', function () {
   var sort = $(this).data('sort');
   window.location.href = window.location.origin + window.location.pathname + '?orderBy=' + sort;
-});
+}); // counter //
+
+$('.count').each(function () {
+  var $this = $(this);
+  jQuery({
+    Counter: 0
+  }).animate({
+    Counter: $this.text()
+  }, {
+    duration: 2500,
+    easing: 'swing',
+    step: function step() {
+      $this.text(Math.ceil(this.Counter));
+    }
+  });
+}); // counter //
+// // modal open subscribe //
+//
+// setTimeout(function(){
+//     $('.wrap-modals').addClass('_open')
+//     $('body').css('overflow', 'hidden')
+// }, 3000);
+// modal open subscribe //
+// close modals //
+
+$(document).ready(function () {
+  $('.close-modal').on('click', function (e) {
+    e.preventDefault();
+    $('.wrap-modals').removeClass('_open');
+    $('body').css('overflow', 'initial');
+  });
+}); // close modals //
 
 if (document.getElementsByClassName('start-video').length > 0) {
   var tag = document.createElement('script');
@@ -20432,9 +20463,9 @@ if (document.getElementsByClassName('start-video').length > 0) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/app.sass */"./resources/sass/app.sass");
-module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
+__webpack_require__(/*! /var/www/video-service/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/video-service/resources/sass/app.sass */"./resources/sass/app.sass");
+module.exports = __webpack_require__(/*! /var/www/video-service/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
 
 
 /***/ })

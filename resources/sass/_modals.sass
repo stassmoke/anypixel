@@ -1,0 +1,55 @@
+.modal-subscribe
+    background-color: #fff
+    padding: 40px 30px
+    border-radius: 10px
+    text-align: center
+    position: relative
+
+    form
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    .modal-subscribe__title
+        font-size: 28px
+        font-weight: 600
+        margin-bottom: 15px
+
+    .input-default
+        height: 40px
+        margin-bottom: 15px
+        width: auto
+
+    .btn-submit
+        height: 40px
+        line-height: 1
+
+    .close-modal
+        position: absolute
+        right: -16px
+        top: -16px
+        svg
+            width: 14px
+            height: 14px
+
+.wrap-modals
+    z-index: -1
+    pointer-events: none
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    display: flex
+    width: 100%
+    height: 100%
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    background: rgba(29, 32, 35, 0.85)
+    transition: $transition
+    &._open
+        transition: $transition
+        z-index: 1
+        pointer-events: auto
+        opacity: 1
