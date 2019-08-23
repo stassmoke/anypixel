@@ -50,9 +50,9 @@ class ParseCountersCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $nickname = $this->argument('nickname');
         $site = $this->argument('site');
@@ -68,10 +68,16 @@ class ParseCountersCommand extends Command
         $projectCounts = (int) $siteInfo->items;
 
         $salesCount = (int) $userInfo->user->sales;
+        $followers = (int) $userInfo->user->followers;
 
         $this->counterRepository->updateCount(Counter::SALES_ALIAS, $salesCount);
         $this->counterRepository->updateCount(Counter::PROJECTS_ALIAS, $projectCounts);
+        $this->counterRepository->updateCount(Counter::FOLLOWERS_ALIAS, $followers);
 
-        $this->info('SALES:' . $salesCount . ' PROJECTS:' . $projectCounts);
+        $this->info(
+            'SALES:' . $salesCount .
+            ' PROJECTS:' . $projectCounts .
+            ' FOLLOWERS:' . $followers
+        );
     }
 }

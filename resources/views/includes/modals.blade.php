@@ -1,16 +1,13 @@
-<div class="wrap-modals ">
-    <div class="modal-subscribe " id="modal-subscribe">
+<div class="wrap-modals">
+    <div class="modal-subscribe" id="modal-subscribe">
         <div class="modal-subscribe__title">
             Subscribe to Our Newsletter
         </div>
-        <form action="">
-            <input class="input-default" type="email" placeholder="Your email address">
+        <form id="subscribeForm">
+            <input class="input-default" name="email" type="email" required placeholder="Your email address">
             <input type="submit" class="btn btn-fill btn-submit" value="Sign up">
         </form>
         <a href="#" class="close-modal">
-            <?xml version = "1.0" standalone = "no"?>
-            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
-            "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="16px" height="16px" viewBox="0 0 1280.000000 1280.000000"
                  preserveAspectRatio="xMidYMid meet">

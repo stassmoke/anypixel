@@ -4,6 +4,7 @@ require('jquery-nice-select');
 require('isotope-layout/dist/isotope.pkgd.min');
 require('tooltipster/dist/js/tooltipster.bundle.min');
 require('smoothscroll-for-websites/SmoothScroll');
+import Cookies from 'js-cookie';
 
 
 import Swiper from 'swiper';
@@ -90,7 +91,23 @@ $(document).ready(function() {
             .eq($(this).index())
             .addClass("active")
         ;
+    });
 
+    $('#subscribeForm').on('submit', function (e) {
+        e.preventDefault();
+
+        $('#modal-subscribe .modal-subscribe__title').text('Thank you!');
+
+        let $this = $(this).hide();
+
+        $.ajax({
+            type: 'POST',
+            url: '/subscribe',
+            data: $this.serialize(),
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            },
+        });
     });
 
 });
@@ -185,6 +202,12 @@ if (document.getElementsByClassName('start-video').length > 0) {
     });
 }
 
+let subscribe = Cookies.get('subscribe');
 
-
+if (subscribe !== 'done') {
+    setTimeout(function () {
+        $('#modal-subscribe').parent().addClass('_open');
+        Cookies.set('subscribe', 'done');
+    }, 30000);
+}
 

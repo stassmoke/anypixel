@@ -29,4 +29,30 @@ class SubscriberRepository implements SubscriberRepositoryInterface
             ->delete()
         ;
     }
+
+    /**
+     * @inheritdoc
+     * @return Subscriber|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|null|object|Subscriber
+     */
+    public function findByEmail(string $email): ?Subscriber
+    {
+        return Subscriber::query()
+            ->where('varEmail','=',$email)
+            ->first()
+        ;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function create(array $data): Subscriber
+    {
+        $subscriber = new Subscriber();
+
+        $subscriber->varEmail = $data['varEmail'];
+
+        $subscriber->save();
+
+        return $subscriber;
+    }
 }

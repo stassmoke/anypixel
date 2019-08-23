@@ -23,4 +23,5 @@ class Counter extends Model
     public const COUNTRY_ALIAS = 'country';
     public const SALES_ALIAS = 'sales';
     public const PROJECTS_ALIAS = 'projects';
+    public const FOLLOWERS_ALIAS = 'followers';
 }
