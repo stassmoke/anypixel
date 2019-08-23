@@ -208,6 +208,6 @@ if (subscribe !== 'done') {
     setTimeout(function () {
         $('#modal-subscribe').parent().addClass('_open');
         Cookies.set('subscribe', 'done');
-    }, 30000);
+    }, 10000);
 }
 
