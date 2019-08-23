@@ -49,6 +49,10 @@ Route::prefix('admin')
 
             Route::get('subscribers', 'SubscribersController@index')->name('subscribers.index');
 
+            Route::get('homepage-info', 'HomepageInfoController@index')->name('homepage-info.index');
+
+            Route::get('socials', 'SocialsController@index')->name('socials.index');
+
             Route::get('categories/list','Api\\CategoriesController@listOfCategories')->name('categories.list');
             Route::get('categories/find/{intCatID}','Api\\CategoriesController@find')->name('categories.find');
             Route::get('categories/options','Api\\CategoriesController@getForOptions')->name('categories.options');

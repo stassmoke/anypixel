@@ -40,6 +40,18 @@
                             <span>Subscribers</span>
                         </a>
                     </li>
+                    <li class="{{ Nav::hasSegment('homepage-info',2) }}">
+                        <a href="{{ route('admin.homepage-info.index') }}">
+                            <i class="ti-info"></i>
+                            <span>Homepage info</span>
+                        </a>
+                    </li>
+                    <li class="{{ Nav::hasSegment('socials',2) }}">
+                        <a href="{{ route('admin.socials.index') }}">
+                            <i class="ti-apple"></i>
+                            <span>Socials</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
