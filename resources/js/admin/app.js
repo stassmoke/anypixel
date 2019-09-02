@@ -37,6 +37,8 @@ import ProductsTable from './components/ProductsTableComponent.vue'
 import ProductItem from './components/ProductItem/ProductItemComponent.vue'
 import CounterPageComponent from './components/CounterPageComponent.vue'
 import SubscribersPageComponent from './components/SubscribersPageComponent.vue'
+import AfterEffectsListComponent from './components/AfterEffectsListComponent.vue'
+import AfterEffectsCreateEditComponent from './components/AfterEffectsCreateEditComponent.vue'
 
 new Vue({
     el: '#app',
@@ -50,6 +52,8 @@ new Vue({
         ProductsTable,
         ProductItem,
         CounterPageComponent,
-        SubscribersPageComponent
+        SubscribersPageComponent,
+        AfterEffectsListComponent,
+        AfterEffectsCreateEditComponent
     }
 });

@@ -84,7 +84,7 @@
 </template>
 
 <script>
-    import ImageComponent from "./ImageComponent";
+    import ImageComponent from "../ImageComponent";
 
     export default {
         components: {

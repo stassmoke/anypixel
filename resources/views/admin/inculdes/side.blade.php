@@ -52,6 +52,12 @@
                             <span>Socials</span>
                         </a>
                     </li>
+                    <li class="{{ Nav::hasSegment('after-effects-packs',2) }}">
+                        <a href="{{ route('admin.ae-packs.index') }}">
+                            <i class="ti-save-alt"></i>
+                            <span>After Effects Packs</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

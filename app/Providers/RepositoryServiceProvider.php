@@ -52,5 +52,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repository\SocialRepositoryInterface::class,
             \App\Repository\SocialRepository::class
         );
+
+        $this->app->bind(
+            \App\Repository\AfterEffectsPackRepositoryInterface::class,
+            \App\Repository\AfterEffectsPackRepository::class
+        );
     }
 }
