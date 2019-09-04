@@ -20,12 +20,12 @@
                     <td>{{ pack.varName }}</td>
                     <td><a :href="pack.varLink" target="_blank">Open</a></td>
                     <td>
+                        {{ pack.varVersion }}
+                    </td>
+                    <td>
                         <div v-if="pack.varImg !== null" class="product-list-image-block">
                             <img :src="'/storage/images/' + pack.varImg" :alt="pack.varName">
                         </div>
-                    </td>
-                    <td>
-                        {{ pack.varVersion }}
                     </td>
                     <td>{{ pack.created_at }}</td>
                     <td>

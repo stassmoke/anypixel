@@ -29997,6 +29997,14 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("td", [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(pack.varVersion) +
+                    "\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c("td", [
                 pack.varImg !== null
                   ? _c("div", { staticClass: "product-list-image-block" }, [
                       _c("img", {
@@ -30007,14 +30015,6 @@ var render = function() {
                       })
                     ])
                   : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(pack.varVersion) +
-                    "\n                "
-                )
               ]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(pack.created_at))]),
