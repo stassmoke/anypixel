@@ -131,7 +131,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['id'],
+  props: {
+    id: {
+      type: Number,
+      required: false
+    }
+  },
   components: {
     ImageComponent: _ImageComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -29994,7 +29999,7 @@ var render = function() {
                         attrs: { href: "#" },
                         on: {
                           click: function($event) {
-                            return _vm.edit(pack.intCatID)
+                            return _vm.edit(pack.intPackID)
                           }
                         }
                       },
@@ -30010,7 +30015,7 @@ var render = function() {
                         attrs: { href: "#" },
                         on: {
                           click: function($event) {
-                            return _vm.deletePack(pack.intCatID, pack.varName)
+                            return _vm.deletePack(pack.intPackID, pack.varName)
                           }
                         }
                       },

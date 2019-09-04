@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AfterEffectsPacksController
 {
@@ -99,7 +100,7 @@ class AfterEffectsPacksController
         $dataPack = $request->request->get('pack');
 
         $validator = Validator::make($dataPack, [
-            'varName' => 'required|max:255|unique:products',
+            'varName' => 'required|max:255',
             'varLink' => 'required|url',
             'isEnabled' => 'required|boolean',
         ]);
@@ -119,6 +120,44 @@ class AfterEffectsPacksController
                 'link' => route('admin.ae-packs.edit', [
                     'intPackID' => $pack->intPackID,
                 ]),
+                'pack' => $pack,
+            ],
+        ]);
+    }
+
+    /**
+     * @param int $intPackID
+     * @param Request $request
+     * @return Response
+     */
+    public function update(int $intPackID, Request $request): Response
+    {
+        $pack = $this->afterEffectsPackRepository->find($intPackID);
+
+        if ($pack === null) {
+            throw new NotFoundHttpException();
+        }
+
+        $dataPack = $request->request->get('pack');
+
+        $validator = Validator::make($dataPack, [
+            'varName' => 'required|max:255',
+            'varLink' => 'required|url',
+            'isEnabled' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            return new JsonResponse([
+                'data' => [
+                    'errors' => $validator->validate(),
+                ],
+            ]);
+        }
+
+        $pack = $this->afterEffectsPackRepository->update($pack, $dataPack);
+
+        return new JsonResponse([
+            'data' => [
                 'pack' => $pack,
             ],
         ]);

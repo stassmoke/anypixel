@@ -35,7 +35,12 @@
     import ImageComponent from "./ImageComponent";
 
     export default {
-        props: ['id'],
+        props: {
+            id: {
+                type: Number,
+                required: false,
+            }
+        },
         components: {
             ImageComponent,
         },

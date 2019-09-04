@@ -95,6 +95,7 @@ Route::prefix('admin')
             Route::post('after-effects-packs/save-sort','Api\\AfterEffectsPacksController@saveSort')->name('ae-packs.sort');
             Route::post('after-effects-packs/store','Api\\AfterEffectsPacksController@store')->name('ae-packs.store');
             Route::delete('after-effects-packs/delete/{intPackID}','Api\\AfterEffectsPacksController@delete')->name('ae-packs.delete');
+            Route::put('after-effects-packs/update/{intPackID}','Api\\AfterEffectsPacksController@update')->name('ae-packs.update');
         });
     })
 ;

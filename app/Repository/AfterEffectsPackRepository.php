@@ -26,7 +26,7 @@ class AfterEffectsPackRepository implements AfterEffectsPackRepositoryInterface
         AfterEffectsPack::query()
             ->where('intPackID','=', $intPackID)
             ->update([
-                'intOrder' => $intOrder
+                'intSort' => $intOrder
             ])
         ;
     }
@@ -68,6 +68,7 @@ class AfterEffectsPackRepository implements AfterEffectsPackRepositoryInterface
     {
         $afterEffectsPack->varName = $data['varName'];
         $afterEffectsPack->varLink = $data['varLink'];
+        $afterEffectsPack->isEnabled = $data['isEnabled'];
         $afterEffectsPack->varDescription = $data['varDescription'];
         $afterEffectsPack->varImg = $data['varImg'];
 

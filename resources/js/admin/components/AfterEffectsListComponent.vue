@@ -30,12 +30,12 @@
                     <td>
                         <ul class="d-flex justify-content-center">
                             <li class="mr-3">
-                                <a href="#" class="text-secondary" @click="edit(pack.intCatID)">
+                                <a href="#" class="text-secondary" @click="edit(pack.intPackID)">
                                     <i class="fa fa-edit"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="text-danger" @click="deletePack(pack.intCatID, pack.varName)">
+                                <a href="#" class="text-danger" @click="deletePack(pack.intPackID, pack.varName)">
                                     <i class="ti-trash"></i>
                                 </a>
                             </li>
