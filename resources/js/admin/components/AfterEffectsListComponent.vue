@@ -6,6 +6,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Link</th>
+                <th scope="col">Version</th>
                 <th scope="col">Image</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Status</th>
@@ -22,6 +23,9 @@
                         <div v-if="pack.varImg !== null" class="product-list-image-block">
                             <img :src="'/storage/images/' + pack.varImg" :alt="pack.varName">
                         </div>
+                    </td>
+                    <td>
+                        {{ pack.varVersion }}
                     </td>
                     <td>{{ pack.created_at }}</td>
                     <td>

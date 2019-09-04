@@ -103,6 +103,7 @@ class AfterEffectsPacksController
             'varName' => 'required|max:255',
             'varLink' => 'required|url',
             'isEnabled' => 'required|boolean',
+            'varVersion' => 'required|numeric',
         ]);
 
         if ($validator->fails()) {
@@ -144,6 +145,7 @@ class AfterEffectsPacksController
             'varName' => 'required|max:255',
             'varLink' => 'required|url',
             'isEnabled' => 'required|boolean',
+            'varVersion' => 'required|numeric',
         ]);
 
         if ($validator->fails()) {

@@ -16,6 +16,7 @@ class CreateAfterEffectsPacksTable extends Migration
         Schema::create('after_effects_packs', function (Blueprint $table) {
             $table->bigIncrements('intPackID');
             $table->integer('intSort')->default(0);
+            $table->float('varVersion')->default(1.0);
             $table->string('varName',255);
             $table->string('varImg')->nullable();
             $table->text('varDescription');

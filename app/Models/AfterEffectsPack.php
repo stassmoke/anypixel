@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int intSort
  * @property string varName
  * @property string varImg
+ * @property string varVersion
  * @property string varDescription
  * @property string varLink
  * @property int isEnabled

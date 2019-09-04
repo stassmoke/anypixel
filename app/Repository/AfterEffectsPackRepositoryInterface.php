@@ -13,6 +13,11 @@ interface AfterEffectsPackRepositoryInterface
     public function getSorted(): Collection;
 
     /**
+     * @return Collection
+     */
+    public function getEnabledSorted(): Collection;
+
+    /**
      * @param int $intPackID
      * @param int $intOrder
      */

@@ -21,6 +21,18 @@ class AfterEffectsPackRepository implements AfterEffectsPackRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    public function getEnabledSorted(): Collection
+    {
+        return AfterEffectsPack::query()
+            ->where('isEnabled','=', true)
+            ->orderBy('intSort')
+            ->get()
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function updateOrder(int $intPackID, int $intOrder): void
     {
         AfterEffectsPack::query()
@@ -67,6 +79,7 @@ class AfterEffectsPackRepository implements AfterEffectsPackRepositoryInterface
     public function update(AfterEffectsPack $afterEffectsPack, array $data): AfterEffectsPack
     {
         $afterEffectsPack->varName = $data['varName'];
+        $afterEffectsPack->varVersion = $data['varVersion'];
         $afterEffectsPack->varLink = $data['varLink'];
         $afterEffectsPack->isEnabled = $data['isEnabled'];
         $afterEffectsPack->varDescription = $data['varDescription'];

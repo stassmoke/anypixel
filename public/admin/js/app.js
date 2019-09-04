@@ -129,6 +129,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -236,6 +241,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.common.js");
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
 //
 //
 //
@@ -29815,6 +29824,37 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "label",
+            { staticClass: "col-form-label", attrs: { for: "varVersion" } },
+            [_vm._v("Version")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.pack.varVersion,
+                expression: "pack.varVersion"
+              }
+            ],
+            staticClass: "form-control",
+            class: { "has-error": _vm.hasError("varVersion") },
+            attrs: { type: "text", id: "varVersion" },
+            domProps: { value: _vm.pack.varVersion },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.pack, "varVersion", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "custom-control custom-checkbox mt-2" }, [
           _c("input", {
             directives: [
@@ -29969,6 +30009,14 @@ var render = function() {
                   : _vm._e()
               ]),
               _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(pack.varVersion) +
+                    "\n                "
+                )
+              ]),
+              _vm._v(" "),
               _c("td", [_vm._v(_vm._s(pack.created_at))]),
               _vm._v(" "),
               _c("td", [
@@ -30045,6 +30093,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Link")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Version")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Image")]),
         _vm._v(" "),

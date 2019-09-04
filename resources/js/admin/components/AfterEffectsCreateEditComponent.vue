@@ -17,6 +17,11 @@
                     <input :class="{'has-error':hasError('varDescription')}" class="form-control" type="text" v-model="pack.varDescription" id="varDescription">
                 </div>
 
+                <div class="form-group">
+                    <label for="varVersion" class="col-form-label">Version</label>
+                    <input :class="{'has-error':hasError('varVersion')}" class="form-control" type="text" v-model="pack.varVersion" id="varVersion">
+                </div>
+
                 <div class="custom-control custom-checkbox mt-2">
                     <input type="checkbox" v-model="pack.isEnabled" class="custom-control-input" id="isEnabled">
                     <label class="custom-control-label" for="isEnabled">Active: {{ pack.isEnabled ? 'Yes' : 'No' }}</label>
