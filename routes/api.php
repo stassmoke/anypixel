@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/after-effects/packs','Api\\AfterEffectsController@getEnabledSorted');
+Route::middleware('cors')->get('/after-effects/packs','Api\\AfterEffectsController@getEnabledSorted');
