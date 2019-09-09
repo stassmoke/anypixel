@@ -8,6 +8,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ImagesController
 {
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function upload(Request $request): JsonResponse
     {
         /** @var UploadedFile|null $image */

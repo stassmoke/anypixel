@@ -16,6 +16,8 @@ Route::get('/product/{varSlug}', 'ProductController@index')->name('product');
 Route::get('/catalog/', 'CatalogController@index')->name('catalog');
 Route::get('/catalog/{varLink}', 'CatalogController@category')->name('category');
 
+Route::post('/subscribe','SubscribeController@subscribe')->name('subscribe');
+
 Route::prefix('admin')
     ->name('admin.')
     ->namespace('Admin')
@@ -46,6 +48,14 @@ Route::prefix('admin')
             Route::get('counters', 'CountersController@index')->name('counters.index');
 
             Route::get('subscribers', 'SubscribersController@index')->name('subscribers.index');
+
+            Route::get('homepage-info', 'HomepageInfoController@index')->name('homepage-info.index');
+
+            Route::get('socials', 'SocialsController@index')->name('socials.index');
+
+            Route::get('after-effects-packs', 'AfterEffectsPacksController@index')->name('ae-packs.index');
+            Route::get('after-effects-packs/create', 'AfterEffectsPacksController@create')->name('ae-packs.create');
+            Route::get('after-effects-packs/edit/{intPackID}', 'AfterEffectsPacksController@edit')->name('ae-packs.edit');
 
             Route::get('categories/list','Api\\CategoriesController@listOfCategories')->name('categories.list');
             Route::get('categories/find/{intCatID}','Api\\CategoriesController@find')->name('categories.find');
@@ -79,6 +89,13 @@ Route::prefix('admin')
             Route::delete('subscribers/delete/{intSubscriberID}','Api\\SubscribersController@delete')->name('subscribers.delete');
 
             Route::post('images/upload','Api\\ImagesController@upload')->name('images.upload');
+
+            Route::get('after-effects-packs/list','Api\\AfterEffectsPacksController@listOfPacks')->name('ae-packs.list');
+            Route::get('after-effects-packs/find/{intPackID}','Api\\AfterEffectsPacksController@find')->name('ae-packs.find');
+            Route::post('after-effects-packs/save-sort','Api\\AfterEffectsPacksController@saveSort')->name('ae-packs.sort');
+            Route::post('after-effects-packs/store','Api\\AfterEffectsPacksController@store')->name('ae-packs.store');
+            Route::delete('after-effects-packs/delete/{intPackID}','Api\\AfterEffectsPacksController@delete')->name('ae-packs.delete');
+            Route::put('after-effects-packs/update/{intPackID}','Api\\AfterEffectsPacksController@update')->name('ae-packs.update');
         });
     })
 ;

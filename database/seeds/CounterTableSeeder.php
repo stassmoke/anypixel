@@ -14,19 +14,25 @@ class CounterTableSeeder extends Seeder
         $counters = [
             [
                 'varAlias' => \App\Models\Counter::COUNTRY_ALIAS,
-                'varName' => 'Number of countries',
+                'varName' => 'Countries',
                 'isEnabled' => true,
                 'intValue' => 169,
             ],
             [
-                'varAlias' => \App\Models\Counter::SALES_ALIAS,
-                'varName' => 'Number of sales',
+                'varAlias' => \App\Models\Counter::PROJECTS_ALIAS,
+                'varName' => 'Templates',
                 'isEnabled' => true,
                 'intValue' => 0,
             ],
             [
-                'varAlias' => \App\Models\Counter::PROJECTS_ALIAS,
-                'varName' => 'Number of projects',
+                'varAlias' => \App\Models\Counter::FOLLOWERS_ALIAS,
+                'varName' => 'Followers',
+                'isEnabled' => true,
+                'intValue' => 0,
+            ],
+            [
+                'varAlias' => \App\Models\Counter::SALES_ALIAS,
+                'varName' => 'Sales',
                 'isEnabled' => true,
                 'intValue' => 0,
             ],

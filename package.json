@@ -26,6 +26,7 @@
   "dependencies": {
     "isotope-layout": "^3.0.6",
     "jquery-nice-select": "^1.1.0",
+    "js-cookie": "^2.2.1",
     "smoothscroll-for-websites": "^1.4.9",
     "swiper": "^4.5.0",
     "tooltipster": "^4.2.6",
