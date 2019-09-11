@@ -20449,8 +20449,8 @@ this.__instance._$tooltip=b,this.__instance._trigger("created")},__destroy:funct
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
@@ -20626,12 +20626,12 @@ if (document.getElementsByClassName('start-video').length > 0) {
   });
 }
 
-var subscribe = js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.get('subscribe');
+var subscribe = js_cookie__WEBPACK_IMPORTED_MODULE_2___default.a.get('subscribe');
 
 if (subscribe !== 'done') {
   setTimeout(function () {
     $('#modal-subscribe').parent().addClass('_open');
-    js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.set('subscribe', 'done');
+    js_cookie__WEBPACK_IMPORTED_MODULE_2___default.a.set('subscribe', 'done');
   }, 10000);
 }
 
@@ -20666,9 +20666,9 @@ if (subscribe !== 'done') {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/app.sass */"./resources/sass/app.sass");
-module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
+__webpack_require__(/*! /var/www/video-service/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/video-service/resources/sass/app.sass */"./resources/sass/app.sass");
+module.exports = __webpack_require__(/*! /var/www/video-service/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
 
 
 /***/ })

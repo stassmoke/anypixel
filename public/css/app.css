@@ -1268,8 +1268,9 @@ textarea {
 
 .social-list a {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 20px;
   color: #fff;
+  font-size: 26px;
 }
 
 .social-list a:last-of-type {
@@ -1580,6 +1581,99 @@ textarea {
   color: #666e82;
 }
 
+.item-page .reviews-product {
+  padding-top: 30px;
+  border-top: 1px solid #ccc;
+  margin: 40px 0 0 0;
+}
+
+.item-page .reviews-product .section-reviews__title {
+  font-size: 25px;
+  color: #2e3d62;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.item-page .reviews-product__one {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item-page .reviews-product__one .img-holder {
+  margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+}
+
+.item-page .reviews-product__one .img-holder img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.item-page .head-reviews__product--one {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.item-page .head-reviews__product--one .rating {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.item-page .reviewer-name {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.item-page .review-created {
+  color: #333;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.item-page .review-text {
+  width: 91%;
+  margin-left: auto;
+}
+
+.item-page .error-submit {
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+.item-page .review-form label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.item-page .login-username,
+.item-page .login-password,
+.item-page .user-remember {
+  margin-bottom: 20px;
+}
+
+.item-page .user-remember label {
+  cursor: pointer;
+}
+
+.item-page .login-submit .btn {
+  height: 44px;
+  line-height: 18px;
+  box-shadow: none;
+}
+
 .modal-subscribe {
   background-color: #fff;
   padding: 40px 30px;
@@ -1844,6 +1938,14 @@ section {
 .input-default:focus::placeholder {
   transition: 0.3s all ease;
   color: rgba(153, 153, 153, 0.64);
+}
+
+.input-form {
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  width: 100%;
+  height: 40px;
+  padding: 15px;
 }
 
 .row-breadcrumb {
