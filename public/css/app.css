@@ -1562,6 +1562,10 @@ textarea {
   padding: 0 15px;
 }
 
+.item-page .tabs__content .btn-purchase {
+  margin: 25px 0 0 0;
+}
+
 .item-page .tabs__caption {
   margin-bottom: 40px;
   padding-left: 0;

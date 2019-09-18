@@ -13,16 +13,7 @@
                         <a href="#">About Us</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#">Support</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Blog</a>
-                    </li>
-                    <li class="menu-item">
                         <a href="{{ route('catalog') }}">Shop</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Pages</a>
                     </li>
                     <li class="menu-item">
                         <a href="#">Contact</a>
@@ -31,12 +22,12 @@
                         <a href="#">Login</a>
                     </li>
                 </ul>
-                <div class="menu-card">
+                <!-- <div class="menu-card">
                     <a href="#">
                         <i class="fas fa-cart-plus"></i>
                         0
                     </a>
-                </div>
+                </div> -->
             </nav>
         </div>
     </div>
