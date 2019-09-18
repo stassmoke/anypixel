@@ -9,7 +9,7 @@
                 </div>
                 <div class="single-table">
                     <div class="table-responsive">
-
+                        <socials-component></socials-component>
                     </div>
                 </div>
             </div>

@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
          $this->call(CategoriesTableSeeder::class);
          $this->call(HomepageReviewTableSeeder::class);
          $this->call(CounterTableSeeder::class);
+         $this->call(SocialTableSeeder::class);
     }
 }

@@ -96,6 +96,12 @@ Route::prefix('admin')
             Route::post('after-effects-packs/store','Api\\AfterEffectsPacksController@store')->name('ae-packs.store');
             Route::delete('after-effects-packs/delete/{intPackID}','Api\\AfterEffectsPacksController@delete')->name('ae-packs.delete');
             Route::put('after-effects-packs/update/{intPackID}','Api\\AfterEffectsPacksController@update')->name('ae-packs.update');
+
+            Route::get('socials/list', 'Api\\SocialsController@getAll')->name('socials.list');
+            Route::put('socials/update/{intSocialID}', 'Api\\SocialsController@update')->name('socials.update');
+            Route::post('socials/create', 'Api\\SocialsController@create')->name('socials.create');
+            Route::delete('socials/delete/{intSocialID}','Api\\SocialsController@delete')->name('socials.delete');
+            Route::post('socials/save-sort','Api\\SocialsController@saveSort')->name('socials.sort');
         });
     })
 ;

@@ -39,6 +39,7 @@ import CounterPageComponent from './components/CounterPageComponent.vue'
 import SubscribersPageComponent from './components/SubscribersPageComponent.vue'
 import AfterEffectsListComponent from './components/AfterEffectsListComponent.vue'
 import AfterEffectsCreateEditComponent from './components/AfterEffectsCreateEditComponent.vue'
+import SocialsComponent from './components/SocialsComponent.vue'
 
 new Vue({
     el: '#app',
@@ -54,6 +55,7 @@ new Vue({
         CounterPageComponent,
         SubscribersPageComponent,
         AfterEffectsListComponent,
-        AfterEffectsCreateEditComponent
+        AfterEffectsCreateEditComponent,
+        SocialsComponent
     }
 });

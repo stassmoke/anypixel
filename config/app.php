@@ -178,6 +178,7 @@ return [
         App\Providers\FilterServiceProvider::class,
         App\Providers\IntegrationServiceProvider::class,
         DevMarketer\EasyNav\EasyNavServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
     ],
 

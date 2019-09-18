@@ -80,3 +80,17 @@ input.has-error,
   margin-bottom: 10px;
 }
 
+.social-page--item {
+  border-bottom: 1px solid #999;
+  padding: 15px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.social-page--item .social-page--item-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
