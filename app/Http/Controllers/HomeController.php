@@ -6,7 +6,6 @@ use App\Repository\CategoryRepositoryInterface;
 use App\Repository\CounterRepositoryInterface;
 use App\Repository\HomepageReviewRepositoryInterface;
 use App\Repository\ProductRepositoryInterface;
-use App\Repository\SocialRepositoryInterface;
 use Illuminate\View\View;
 
 class HomeController
@@ -32,31 +31,23 @@ class HomeController
     private $counterRepository;
 
     /**
-     * @var SocialRepositoryInterface
-     */
-    private $socialRepository;
-
-    /**
      * HomeController constructor.
      * @param CategoryRepositoryInterface $categoryRepository
      * @param ProductRepositoryInterface $productRepository
      * @param HomepageReviewRepositoryInterface $homepageReviewRepository
      * @param CounterRepositoryInterface $counterRepository
-     * @param SocialRepositoryInterface $socialRepository
      */
     public function __construct(
         CategoryRepositoryInterface $categoryRepository,
         ProductRepositoryInterface $productRepository,
         HomepageReviewRepositoryInterface $homepageReviewRepository,
-        CounterRepositoryInterface $counterRepository,
-        SocialRepositoryInterface $socialRepository
+        CounterRepositoryInterface $counterRepository
     )
     {
         $this->categoryRepository = $categoryRepository;
         $this->productRepository = $productRepository;
         $this->homepageReviewRepository = $homepageReviewRepository;
         $this->counterRepository = $counterRepository;
-        $this->socialRepository = $socialRepository;
     }
 
     /**
@@ -85,17 +76,11 @@ class HomeController
             ->getEnabledSorted()
         ;
 
-        $socials = $this
-            ->socialRepository
-            ->getSorted()
-        ;
-
         return \view('home.index', [
             'categories' => $categories,
             'latestProducts' => $latestProducts,
             'reviews' => $reviews,
             'counters' => $counters,
-            'socials' => $socials,
         ]);
     }
 }

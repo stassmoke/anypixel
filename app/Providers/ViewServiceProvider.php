@@ -14,6 +14,6 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('footer', \App\View\Composers\FooterComposer::class);
+        View::composer('includes.footer', \App\View\Composers\FooterComposer::class);
     }
 }
