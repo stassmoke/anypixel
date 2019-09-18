@@ -33,14 +33,13 @@
                         <div class="wrap-tabs">
                             <ul class="tabs__caption">
                                 <li class="active">Item Details</li>
-                                <li>Comments</li>
-                                <li>Reviews</li>
-                                <li>Support</li>
-                                <li>item FAQ</li>
                             </ul>
                             <div class="wrap-tab__content">
                                 <div class="tabs__content active">
                                     {!! $product->varDescription !!}
+                                    <a href="{{ $product->varLink }}" target="_blank" class="btn btn-fill btn-purchase">
+                                        ${{ number_format($product->varPrice,2) }} – Purchase
+                                    </a>
                                     <div class="reviews-product">
                                         <div class="section-reviews__title">
                                             Reviews
@@ -87,18 +86,6 @@
                                             </div>
                                         </form>
                                     </div>
-                                </div>
-                                <div class="tabs__content">
-                                    Comments
-                                </div>
-                                <div class="tabs__content">
-                                    Reviews
-                                </div>
-                                <div class="tabs__content">
-                                    Support
-                                </div>
-                                <div class="tabs__content">
-                                    item FAQ
                                 </div>
                             </div>
                         </div>
