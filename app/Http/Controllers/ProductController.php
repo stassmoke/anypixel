@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\ProductRepositoryInterface;
+use App\Repository\ProductReviewRepositoryInterface;
 use Illuminate\View\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -14,12 +15,22 @@ class ProductController
     private $productRepository;
 
     /**
+     * @var ProductReviewRepositoryInterface
+     */
+    private $productReviewRepository;
+
+    /**
      * ProductController constructor.
      * @param ProductRepositoryInterface $productRepository
+     * @param ProductReviewRepositoryInterface $productReviewRepository
      */
-    public function __construct(ProductRepositoryInterface $productRepository)
+    public function __construct(
+        ProductRepositoryInterface $productRepository,
+        ProductReviewRepositoryInterface $productReviewRepository
+    )
     {
         $this->productRepository = $productRepository;
+        $this->productReviewRepository = $productReviewRepository;
     }
 
     /**
@@ -34,9 +45,15 @@ class ProductController
             throw new NotFoundHttpException();
         }
 
+        $reviews = $this
+            ->productReviewRepository
+            ->findByProductID($product->intProductID)
+        ;
+
         return view('product.index', [
             'product' => $product,
-            'titlePage' => $product->varName
+            'titlePage' => $product->varName,
+            'reviews' => $reviews,
         ]);
     }
 }

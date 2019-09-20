@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\ProductReview;
+use Illuminate\Support\Collection;
 
 class ProductReviewRepository implements ProductReviewRepositoryInterface
 {
@@ -53,8 +54,7 @@ class ProductReviewRepository implements ProductReviewRepositoryInterface
     }
 
     /**
-     * @param array $reviewsIds
-     * @param int $intProductID
+     * @inheritdoc
      */
     public function setProductID(array $reviewsIds, int $intProductID): void
     {
@@ -70,4 +70,14 @@ class ProductReviewRepository implements ProductReviewRepositoryInterface
         ;
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function findByProductID(int $intProductID): Collection
+    {
+        return ProductReview::query()
+            ->where('intProductID','=', $intProductID)
+            ->get()
+        ;
+    }
 }

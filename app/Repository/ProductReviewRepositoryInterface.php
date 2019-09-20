@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\ProductReview;
+use Illuminate\Support\Collection;
 
 interface ProductReviewRepositoryInterface
 {
@@ -35,4 +36,10 @@ interface ProductReviewRepositoryInterface
      * @param int $intProductID
      */
     public function setProductID(array $reviewsIds, int $intProductID): void;
+
+    /**
+     * @param int $intProductID
+     * @return Collection
+     */
+    public function findByProductID(int $intProductID): Collection;
 }

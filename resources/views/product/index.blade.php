@@ -40,52 +40,36 @@
                                     <a href="{{ $product->varLink }}" target="_blank" class="btn btn-fill btn-purchase">
                                         ${{ number_format($product->varPrice,2) }} – Purchase
                                     </a>
-                                    <div class="reviews-product">
-                                        <div class="section-reviews__title">
-                                            Reviews
-                                        </div>
-                                        <div class="reviews-product__one">
-                                            <div class="head-reviews__product--one">
-                                                <div class="rating" style="--rating-view: 50%">
-                                                    <img src="{{ asset('img/icons/rating-view.svg') }}" alt="{{ $product->varName }} Rating" class="rating-star">
-                                                </div>
-                                                <div class="img-holder">
-                                                    <img src="/img/background/Creative Slideshow Preview Image.jpg" alt="">
-                                                </div>
-                                                <div class="head-reviews__product--block">
-                                                    <div class="reviewer-name">
-                                                        Farhan Khan
+                                    @if (\count($reviews) > 0)
+                                        <div class="reviews-product">
+                                            <div class="section-reviews__title">
+                                                Reviews
+                                            </div>
+                                            @foreach($reviews as $review)
+                                                <div class="reviews-product__one">
+                                                    <div class="head-reviews__product--one">
+                                                        <div class="rating" style="--rating-view: {{ $review->intRating * 20 }}%">
+                                                            <img src="{{ asset('img/icons/rating-view.svg') }}" alt="{{ $product->varName }} Rating" class="rating-star">
+                                                        </div>
+                                                        <div class="img-holder">
+                                                            <img src="/img/background/Creative Slideshow Preview Image.jpg" alt="">
+                                                        </div>
+                                                        <div class="head-reviews__product--block">
+                                                            <div class="reviewer-name">
+                                                                {{ $review->varName }}
+                                                            </div>
+                                                            <time datetime="2019-05-20T06:47:25+00:00" class="review-created">
+                                                                {{ \Carbon\Carbon::parse($review->created_at)->format('M d, Y h:i a') }}
+                                                            </time>
+                                                        </div>
                                                     </div>
-                                                    <time datetime="2019-05-20T06:47:25+00:00" class="review-created">
-                                                        May 20, 2019 at 6:47 am
+                                                    <div class="review-text">
+                                                        <p>{!! $review->varComment !!}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="review-text">
-                                                <p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose.</p>
-                                            </div>
+                                            @endforeach
                                         </div>
-                                        <form class="review-form">
-                                            <div class="error-submit">
-                                                You must log in to submit a review.
-                                            </div>
-                                            <div class="login-username">
-                                                <label for="review-name">Username or Email Address</label>
-                                                <input id="user-name" class="input-form" type="name" require>
-                                            </div>
-                                            <div class="login-password">
-                                                <label for="user-pass">Password</label>
-                                                <input id="user-pass" class="input-form" type="password" require>
-                                            </div>
-                                            <div class="user-remember">
-                                                <label for="rememberme">
-                                                    <input id="rememberme" type="checkbox"> Remember Me
-                                                </label>
-                                            </div>
-                                            <div class="login-submit">
-                                                <button type="submit" class="btn btn-fill">Log in</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -104,7 +88,6 @@
                                     <img src="{{ asset('img/icons/rating-view.svg') }}" alt="{{ $product->varName }} Rating" class="rating-star">
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
