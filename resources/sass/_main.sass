@@ -12,11 +12,20 @@
         font-weight: 800
         span
             font-size: 60px
+    @media screen and ( max-width: 640px )
+        h1
+            font-size: 32px
+            line-height: 45px
+            span
+                font-size: 40px
 
     p
         margin-bottom: 70px
         font-size: 24px
         font-weight: 300
+        @media screen and ( max-width: 640px )
+            font-size: 18px
+            
 
 .search-form
     max-width: 650px
@@ -28,6 +37,9 @@
 .search-form__flex
     display: flex
     height: 60px
+    
+
+        
 
 
 .search-form__filter
@@ -107,6 +119,9 @@
     -webkit-appearance: none
     &:-webkit-autofill
         color: #fff !important
+    @media screen and ( max-width: 640px )
+        font-size: 12px    
+        padding-left: 15px
 
 .row
     .btn
@@ -307,32 +322,37 @@
         object-fit: cover
         width: 100%
         height: auto
+
     .tooltip-name
         color: $accent2
         font-size: 18px
         font-weight: 600
         margin-bottom: 10px
+
     .create-item
         font-size: 10px
         font-weight: 400
         color: $grey
         margin-bottom: 5px
+
     .body-tooltip__item
         position: relative
+
     .price-item
         position: absolute
         bottom: 10px
         right: 10px
         color: $grey
-        font-size: 22px
+        font-size: 22px 10px
         font-weight: 600
-        &:after
+        &:after10px
             content: '$'
             position: absolute
             font-weight: 600
             font-size: 16px
             top: -3px
             left: -10px
+
     .tag-item
         font-size: 15px
         color: $accent2
@@ -343,9 +363,11 @@
     width: 100%
     max-width: 400px
     border: none
+
     .tooltipster-box
         border: none
         background-color: #fff
+
     .tooltipster-arrow
         display: none
 
@@ -353,6 +375,9 @@
     width: 100%
     padding: 50px 20px
     margin: 0 -20px
+    @media screen and ( max-width: 640px )
+        margin: 0 auto
+
     .slide-reviews
         box-shadow: 0 10px 30px 0 rgba(54, 56, 110, 0.15)
         cursor: move
@@ -360,6 +385,10 @@
         background-color: #fff
         padding: 100px 50px 70px 50px
         text-align: center
+
+        @media screen and ( max-width: 640px )
+            padding: 65px 30px 30px 30px
+
     .wrap-content__slide
         max-width: 730px
         margin: 0 auto
@@ -368,10 +397,16 @@
         color: $accent2
         font-size: 20px
         line-height: 32px
+
+        @media screen and ( max-width: 640px )
+            font-size: 16px
+            margin-bottom: 30px
+
     .reviews-name
         font-size: 20px
         color: $accent2
         margin-bottom: 10px
+
     .reviews-position
         font-size: 16px
         color: #2b2a5a
@@ -391,14 +426,17 @@
     h2
         color: #fff
         margin-bottom: 40px
+
     .row-product__sales
         width: 100%
         display: flex
         justify-content: space-between
+
         .item-sale
             font-weight: 600
             font-size: 32px
             color: #fff
+            
         .inner-item__sale
             font-size: 24px
             font-weight: 600
@@ -406,3 +444,32 @@
 
 
 
+@media screen and ( max-width: 640px)
+    .section-banner
+        padding: 75px 0
+
+    .search-form__flex,
+    .search-form__filter,
+    .search-form__input
+        height: 35px
+
+    .select-filter
+        line-height: 35px
+
+    .search-form__filter
+        width: 40%
+
+    .search-form__input
+        width: 60%   
+
+    .search-form__input 
+        input        
+            font-size: 12px
+            line-height: 37px
+            &:placeholder
+                font-size: 10px
+
+    .search-icon 
+        .icon            
+            width: 45px
+            height: 15px

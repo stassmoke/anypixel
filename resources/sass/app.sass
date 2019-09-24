@@ -19,8 +19,6 @@
 body
     font-family: 'Poppins', sans-serif
     color: $grey
-
-
 .container
     max-width: 1170px
     padding-right: 15px
@@ -28,6 +26,13 @@ body
     margin-right: auto
     margin-left: auto
     width: 100%    
+
+    @media screen and ( max-width: 992px )
+        max-width: 720px
+
+    @media screen and ( max-width: 725px )   
+        max-width: 540px 
+        
 
 .text-center
     text-align: center
@@ -44,6 +49,9 @@ h1
     font-size: 50px
     font-weight: bold
     line-height: 70px
+    @media screen and ( max-width: 640px )
+        font-size: 32px
+        line-height: 45px
 
 h2
     font-size: 40px
@@ -88,11 +96,13 @@ p
     text-transform: capitalize
     border-radius: 50px
     line-height: 30px
-
     border: 2px solid transparent
 
     &:hover
         transition: $transition
+
+    @media screen and ( max-width: 640px)
+        padding: 5px 30px
 
 .btn-fill
     background-color: $color2
@@ -124,6 +134,10 @@ p
 
 section
     padding: 90px 0
+    overflow: hidden
+    @media screen and ( max-width: 640px )
+        padding: 50px 0
+        
 
 .btn-submit
     box-shadow: none
@@ -284,3 +298,8 @@ section
         transition: $transition
         height: auto
 
+@media screen and ( max-width: 640px )
+    .btn-filters
+        white-space: nowrap
+        padding: 0 8px
+    

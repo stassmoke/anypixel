@@ -20474,7 +20474,12 @@ $(document).ready(function () {
   var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container', {
     speed: 400,
     spaceBetween: 100,
-    autoplay: true
+    autoplay: true // breakpoints: {
+    //     640: {
+    //       spaceBetween: 0,
+    //     },
+    // }
+
   }); // isotope grid
 
   var $grid = $('.grid').isotope({
@@ -20666,9 +20671,9 @@ if (subscribe !== 'done') {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/app.sass */"./resources/sass/app.sass");
-module.exports = __webpack_require__(/*! /Users/mr_evrey/Sites/video-serivce/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
+__webpack_require__(/*! /var/www/video-service/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/video-service/resources/sass/app.sass */"./resources/sass/app.sass");
+module.exports = __webpack_require__(/*! /var/www/video-service/resources/sass/admin/app.sass */"./resources/sass/admin/app.sass");
 
 
 /***/ })

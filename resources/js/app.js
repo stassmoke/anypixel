@@ -22,7 +22,12 @@ $(document).ready(function() {
     let mySwiper = new Swiper('.swiper-container', {
         speed: 400,
         spaceBetween: 100,
-        autoplay: true
+        autoplay: true,
+        // breakpoints: {
+        //     640: {
+        //       spaceBetween: 0,
+        //     },
+        // }
     });
 
 // isotope grid

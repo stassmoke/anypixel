@@ -35,6 +35,20 @@
                                 <li class="active">Item Details</li>
                             </ul>
                             <div class="wrap-tab__content">
+                                <div class="widget-price">
+                                    <div class="item-price">
+                                        ${{ number_format($product->varPrice,2) }}
+                                    </div>
+                                    <a href="{{ $product->varLink }}" target="_blank" class="btn btn-fill btn-purchase">
+                                        ${{ number_format($product->varPrice,2) }} – Purchase
+                                    </a>
+                                    <div class="item-rating">
+                                        <span>Item Rating</span>
+                                        <div class="rating" style="--rating-view: {{ $product->intRating * 20 }}%;">
+                                            <img src="{{ asset('img/icons/rating-view.svg') }}" alt="{{ $product->varName }} Rating" class="rating-star">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="tabs__content active">
                                     {!! $product->varDescription !!}
                                     <a href="{{ $product->varLink }}" target="_blank" class="btn btn-fill btn-purchase">
