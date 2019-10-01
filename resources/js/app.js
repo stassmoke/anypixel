@@ -216,3 +216,10 @@ if (subscribe !== 'done') {
     }, 10000);
 }
 
+$('#menuToggle').on('click', function(){
+    $('#menu').toggleClass('__open').parents('.wrap-nav__mob').toggleClass('__open')
+});
+
+$('.navbar-logo__close').on('click', function(){
+    $('#menu').removeClass('__open').parents('.wrap-nav__mob').removeClass('__open')
+});

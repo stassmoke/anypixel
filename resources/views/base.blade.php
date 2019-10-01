@@ -10,13 +10,16 @@
 </head>
 <body>
 
-@include('includes.header')
+    
+        @include('includes.header')
 
-@yield('body')
+        @yield('body')
+    
+    
 
-<script src="{{ asset('js/app.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('js/app.js') }}?v={{ time() }}"></script>
 
-@include('includes.modals')
-@include('includes.footer')
+    @include('includes.modals')
+    @include('includes.footer')
 </body>
 </html>
