@@ -1,22 +1,7 @@
 @extends('base')
 
 @section('body')
-    <div class="wrap-nav__mob">
-        <ul id="menu">
-            <div class="navbar-logo__close">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <a href="/" class="navbar-logo">
-                <img class="navbar-logo__img" src="{{ asset('img/anypixel-logo__nav.png') }}" alt="anypixel">
-            </a>
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="{{ route('catalog') }}">Shop</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
+    
     <section class="section-banner">
 
         <div class="container text-center">
