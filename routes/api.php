@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('cors')->get('/after-effects/packs','Api\\AfterEffectsController@getEnabledSorted');
-Route::middleware('cors')->get('/check-evantro-code','Api\\EvantroController@checkCode');
+Route::middleware('cors')->post('/check-evantro-code','Api\\EvantroController@checkCode');

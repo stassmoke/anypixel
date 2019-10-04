@@ -79,7 +79,7 @@ class AfterEffectsPackRepository implements AfterEffectsPackRepositoryInterface
     public function update(AfterEffectsPack $afterEffectsPack, array $data): AfterEffectsPack
     {
         $afterEffectsPack->varName = $data['varName'];
-        $afterEffectsPack->varVersion = $data['varVersion'];
+        $afterEffectsPack->intEvantroID = $data['intEvantroID'];
         $afterEffectsPack->varLink = $data['varLink'];
         $afterEffectsPack->isEnabled = $data['isEnabled'];
         $afterEffectsPack->varDescription = $data['varDescription'];

@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
  * Class AfterEffectsPack
  * @package App\Models
  * @property int intPackID
+ * @property int intEvantroID
  * @property int intSort
  * @property string varName
  * @property string varImg
- * @property string varVersion
  * @property string varDescription
  * @property string varLink
  * @property int isEnabled

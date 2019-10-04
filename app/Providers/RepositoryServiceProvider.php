@@ -57,5 +57,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repository\AfterEffectsPackRepositoryInterface::class,
             \App\Repository\AfterEffectsPackRepository::class
         );
+
+        $this->app->bind(
+            \App\Repository\EvantroCodeRepositoryInterface::class,
+            \App\Repository\EvantroCodeRepository::class
+        );
     }
 }

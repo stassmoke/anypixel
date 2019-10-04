@@ -32,7 +32,7 @@ class AfterEffectsController
             ->getEnabledSorted()
             ->map(function (AfterEffectsPack $afterEffectsPack) {
                 return [
-                    'intPackID' => $afterEffectsPack->intPackID,
+                    'intPackID' => $afterEffectsPack->intEvantroID,
                     'varName' => $afterEffectsPack->varName,
                     'varDescription' => $afterEffectsPack->varDescription,
                     'varLink' => $afterEffectsPack->varLink,

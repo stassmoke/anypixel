@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="varVersion" class="col-form-label">Version</label>
-                    <input :class="{'has-error':hasError('varVersion')}" class="form-control" type="text" v-model="pack.varVersion" id="varVersion">
+                    <label for="intEvantroID" class="col-form-label">Evantro ID</label>
+                    <input :class="{'has-error':hasError('intEvantroID')}" class="form-control" type="text" v-model="pack.intEvantroID" id="intEvantroID">
                 </div>
 
                 <div class="custom-control custom-checkbox mt-2">
@@ -54,6 +54,7 @@
             return {
                 pack: {
                     intPackID: 0,
+                    intEvantroID: null,
                     varImg: null,
                 },
                 errors: {},

@@ -6,7 +6,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Link</th>
-                <th scope="col">Version</th>
+                <th scope="col">Evantro ID</th>
                 <th scope="col">Image</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Status</th>
@@ -20,7 +20,7 @@
                     <td>{{ pack.varName }}</td>
                     <td><a :href="pack.varLink" target="_blank">Open</a></td>
                     <td>
-                        {{ pack.varVersion }}
+                        {{ pack.intEvantroID }}
                     </td>
                     <td>
                         <div v-if="pack.varImg !== null" class="product-list-image-block">
