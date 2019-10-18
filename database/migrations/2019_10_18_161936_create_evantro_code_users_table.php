@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEvantroCodesTable extends Migration
+class CreateEvantroCodeUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateEvantroCodesTable extends Migration
      */
     public function up(): void
     {
-        Schema::create('evantro_codes', function (Blueprint $table) {
-            $table->bigIncrements('intCodeID');
-            $table->bigInteger('intEvantroID');
-            $table->string('varCode',255)->unique();
+        Schema::create('evantro_code_users', function (Blueprint $table) {
+            $table->bigIncrements('intCodeUserID');
+            $table->integer('intCodeID');
+            $table->string('varUserName',255);
+            $table->string('varEmail',255);
             $table->timestamps();
+            $table->index(['intCodeID']);
         });
     }
 
@@ -28,6 +30,6 @@ class CreateEvantroCodesTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evantro_codes');
+        Schema::dropIfExists('evantro_code_users');
     }
 }

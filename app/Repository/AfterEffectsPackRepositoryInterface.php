@@ -35,6 +35,12 @@ interface AfterEffectsPackRepositoryInterface
     public function find(int $intPackID): ?AfterEffectsPack;
 
     /**
+     * @param int $intEvantroID
+     * @return AfterEffectsPack|null
+     */
+    public function findByEvantroID(int $intEvantroID): ?AfterEffectsPack;
+
+    /**
      * @param array $data
      * @return AfterEffectsPack
      */

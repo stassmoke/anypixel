@@ -56,11 +56,23 @@ class AfterEffectsPackRepository implements AfterEffectsPackRepositoryInterface
 
     /**
      * {@inheritdoc}
-     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
+     * @return AfterEffectsPack|null|object
      */
     public function find(int $intPackID): ?AfterEffectsPack
     {
         return AfterEffectsPack::query()->find($intPackID);
+    }
+
+    /**
+     * @inheritdoc
+     * @return AfterEffectsPack|null|object
+     */
+    public function findByEvantroID(int $intEvantroID): ?AfterEffectsPack
+    {
+        return AfterEffectsPack::query()
+            ->where('intEvantroID','=', $intEvantroID)
+            ->first()
+        ;
     }
 
     /**

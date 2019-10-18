@@ -105,6 +105,6 @@ class EvantoMarketApi
 
         $content = curl_exec($curl);
 
-        return json_decode($content);
+        return empty($content) ? new \stdClass() : json_decode($content);
     }
 }

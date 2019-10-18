@@ -62,5 +62,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repository\EvantroCodeRepositoryInterface::class,
             \App\Repository\EvantroCodeRepository::class
         );
+
+        $this->app->bind(
+            \App\Repository\EvantroCodeUserRepositoryInterface::class,
+            \App\Repository\EvantroCodeUserRepository::class
+        );
     }
 }

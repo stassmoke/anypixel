@@ -10,14 +10,14 @@ class EvantroCodeRepository implements EvantroCodeRepositoryInterface
      * @inheritdoc
      * @return EvantroCode|null|object
      */
-    public function findByCodeAndEvantroID(string $varCode, int $intEvantroID): ?EvantroCode
+    public function findByCode(string $varCode): ?EvantroCode
     {
         return EvantroCode::query()
-            ->where('intEvantroID','=', $intEvantroID)
             ->where('varCode','=', $varCode)
             ->first()
         ;
     }
+
 
     /**
      * @inheritdoc
