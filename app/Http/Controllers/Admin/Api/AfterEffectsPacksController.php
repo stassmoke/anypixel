@@ -103,7 +103,6 @@ class AfterEffectsPacksController
             'varName' => 'required|max:255',
             'varLink' => 'required|url',
             'isEnabled' => 'required|boolean',
-            'varVersion' => 'required|numeric',
             'intEvantroID' => 'required|numeric',
         ]);
 
