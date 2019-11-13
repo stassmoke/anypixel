@@ -4,10 +4,9 @@
     
     <section class="section-banner">
         <div id="video-bg">
-            <video width="100%" height="auto" preload="auto" autoplay="autoplay"
-            loop="loop" poster="bg/daisy-stock-poster.jpg">
-                <source src="public/videos/bg.mp4" type="video/mp4"></source>
-                <!-- <source src="bg/daisy-stock-webm-video.webm" type="video/webm"></source> -->
+            <video width="100%" height="auto" preload loop muted autoplay poster="bg/daisy-stock-poster.jpg">
+                <source src="/videos/bg.mp4" type="video/mp4"></source>
+                <source src="/videos" type="video/webm"></source>
             </video>
         </div>
         <div class="container text-center">
