@@ -23,6 +23,11 @@ $(document).ready(function() {
         speed: 400,
         spaceBetween: 100,
         autoplay: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
         // breakpoints: {
         //     640: {
         //       spaceBetween: 0,

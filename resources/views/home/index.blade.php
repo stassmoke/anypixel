@@ -3,7 +3,13 @@
 @section('body')
     
     <section class="section-banner">
-
+        <div id="video-bg">
+            <video width="100%" height="auto" preload="auto" autoplay="autoplay"
+            loop="loop" poster="bg/daisy-stock-poster.jpg">
+                <source src="public/videos/bg.mp4" type="video/mp4"></source>
+                <!-- <source src="bg/daisy-stock-webm-video.webm" type="video/webm"></source> -->
+            </video>
+        </div>
         <div class="container text-center">
             <div class="banner-content">
                 <h1>
@@ -117,7 +123,7 @@
     @endif
 
     @if(\count($reviews) > 0)
-        <section class="section-reviews" style="background: url('{{ asset('img/background/testimonial.jpg') }}') center no-repeat">
+        <section class="section-reviews">
             <div class="container">
                 <div class="swiper-container slider-reviews">
                     <div class="swiper-wrapper">
@@ -137,6 +143,7 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
